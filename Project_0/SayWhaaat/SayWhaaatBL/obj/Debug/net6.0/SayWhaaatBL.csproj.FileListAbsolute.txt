@@ -1,0 +1,12 @@
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\bin\Debug\net6.0\SayWhaaatBL.deps.json
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\bin\Debug\net6.0\SayWhaaatBL.dll
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\bin\Debug\net6.0\SayWhaaatBL.pdb
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\obj\Debug\net6.0\SayWhaaatBL.csproj.AssemblyReference.cache
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\obj\Debug\net6.0\SayWhaaatBL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\obj\Debug\net6.0\SayWhaaatBL.AssemblyInfoInputs.cache
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\obj\Debug\net6.0\SayWhaaatBL.AssemblyInfo.cs
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\obj\Debug\net6.0\SayWhaaatBL.csproj.CoreCompileInputs.cache
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\obj\Debug\net6.0\SayWhaaatBL.dll
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\obj\Debug\net6.0\refint\SayWhaaatBL.dll
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\obj\Debug\net6.0\SayWhaaatBL.pdb
+C:\Revature\Project_0\SayWhaaat\SayWhaaatBL\obj\Debug\net6.0\ref\SayWhaaatBL.dll

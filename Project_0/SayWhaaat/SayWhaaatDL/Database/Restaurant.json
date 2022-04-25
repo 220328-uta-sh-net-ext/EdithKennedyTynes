@@ -1,0 +1,25 @@
+[
+  {
+    "Name": "Captain Georges",
+    "Theme": "SeaFood",
+    "Address": "214 SayWhaaat Ave, Virginia Beach, Va 23462",
+    "Rating": 5,
+    "Reviews": "The BEST in the city!!!",
+
+    {
+      "Name": "Standard",
+      "CapacityAccomodations": "DateNight",
+      "Type": "Contemporary Casual",
+      "popularityScore": 8
+    },
+
+    {
+      "Name": "Style",
+      "styleType": "Traditional",
+      "Pricing": "//$$$$",
+      "Entertainment": "Alcoholic Bevaerages, Bar,"
+
+    }
+  }
+  
+]

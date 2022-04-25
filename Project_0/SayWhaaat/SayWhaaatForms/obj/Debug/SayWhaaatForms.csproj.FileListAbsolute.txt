@@ -1,0 +1,6 @@
+C:\Revature\Project_0\SayWhaaat\SayWhaaatForms\bin\Debug\SayWhaaatForms.dll
+C:\Revature\Project_0\SayWhaaat\SayWhaaatForms\bin\Debug\SayWhaaatForms.pdb
+C:\Revature\Project_0\SayWhaaat\SayWhaaatForms\obj\Debug\SayWhaaatForms.csproj.AssemblyReference.cache
+C:\Revature\Project_0\SayWhaaat\SayWhaaatForms\obj\Debug\SayWhaaatForms.csproj.CoreCompileInputs.cache
+C:\Revature\Project_0\SayWhaaat\SayWhaaatForms\obj\Debug\SayWhaaatForms.dll
+C:\Revature\Project_0\SayWhaaat\SayWhaaatForms\obj\Debug\SayWhaaatForms.pdb
