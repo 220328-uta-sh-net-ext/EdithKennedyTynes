@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "lXFoFKob+PDlEQHLo6nZ6owR/Olp+7NWtjPLKCZXXeCekk6pyHedFGnTVmE8fKainL7chhtkaD9d/+n0gzA7YA==",
+  "success": false,
+  "projectFilePath": "C:\\Revature\\Project_0\\SayWhaaat\\SayWhaaatUI\\SayWhaaatUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\emeli\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
+    "C:\\Users\\emeli\\.nuget\\packages\\serilog.sinks.console\\4.0.1\\serilog.sinks.console.4.0.1.nupkg.sha512",
+    "C:\\Users\\emeli\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Revature\\Project_0\\SayWhaaat\\SayWhaaatDL\\SayWhaaatBL.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Revature\\Project_0\\SayWhaaat\\SayWhaaatDL\\SayWhaaatBL.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
