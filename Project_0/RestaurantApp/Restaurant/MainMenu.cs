@@ -12,8 +12,11 @@ namespace RestaurantUI
         {
             Console.WriteLine("Welcome to my Restaurant App");
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("Press <2> Search Restaurant");
-            Console.WriteLine("Press <1> Add Restaurant to your database");
+            Console.WriteLine("Press <6> ");
+            Console.WriteLine("Press <5> Login");//LoginMenu
+            Console.WriteLine("Press <3> Create an Account");//create account
+            Console.WriteLine("Press <2> Search Restaurant");//Search 
+            Console.WriteLine("Press <1> Add Restaurant to your database"); //Add
             Console.WriteLine("Press <0> to exit ");
         }
 

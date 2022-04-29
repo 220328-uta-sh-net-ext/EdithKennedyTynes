@@ -7,4 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RestaurantBL\RestaurantBL.csproj" />
+    <ProjectReference Include="..\RestaurantDL\RestaurantDL.csproj" />
+  </ItemGroup>
+
 </Project>

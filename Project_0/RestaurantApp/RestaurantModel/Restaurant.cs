@@ -3,7 +3,7 @@
     public class Restaurant
     {
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string Review { get; set; }
         public string City { get; set; }
         public string State { get; set; }
 
@@ -20,7 +20,7 @@
         public Restaurant()
         {
             Name = "??";
-            Description = "Tell me about the food";
+            Review = "Tell me about the food";
             City = "Norfolk";
             State = "Va";
             _storeIDs = new List<StoreID>()
@@ -31,7 +31,7 @@
 
         public override string ToString()
         {
-            return $"Name: {Name}\nDescription: {Description}\nCity: {City}\nState: {State}";
+            return $"Name: {Name}\nReview: {Review}\nCity: {City}\nState: {State}";
         }
 
 

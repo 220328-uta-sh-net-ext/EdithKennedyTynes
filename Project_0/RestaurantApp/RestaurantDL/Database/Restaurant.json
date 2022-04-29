@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "Panera",
+    "Review": "I live nearby I like this location but it is not better than the one in the beach!",
+    "City": "Norfolk",
+    "State": "Virginia",
+    "StoreID": [
+      {
+        "ID": 4587,
+        "Accomodations": "Casual Dinind",
+        "managerID": 854632,
+        "Rating": 4,
+        "Standards":"QSR"
+      }
+    ]
+  }
+]
+  

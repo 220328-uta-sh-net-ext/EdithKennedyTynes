@@ -8,7 +8,8 @@ namespace RestaurantModel
 {
     public class StoreID
     {
-        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Accommodations { get; set; }
         private int _ManagerID { get; set; }
         public int ManagerID
         {
@@ -23,14 +24,15 @@ namespace RestaurantModel
            
         }
         
-        public string TPNumber { get; set; }
+        public int Rating { get; set; } //1-5 stars
         public string Standards { get; set; }
 
         public StoreID()
         {
-            Name = "DowntoEarth";
+            ID = 4569;
+            Accommodations = "family friendly and business casual";
             ManagerID = 5555555;
-            TPNumber = "757-339-4328";
+            Rating = 5;
             Standards = " CafeBistro";
 
 

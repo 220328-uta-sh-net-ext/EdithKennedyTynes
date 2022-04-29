@@ -18,7 +18,7 @@ while (repeat)
             Console.WriteLine("SearchRestaurant() Method implementation is in progress....");
             break;
         case "AddRestaurant":
-            //call AddRestaurant method
+            //call AddRestaurant met
             System.Console.WriteLine("AddRestaurant() Method implementaion is in progress....");
             break;
         case "MainMenu":

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "pYUVTC5qa/4kgTMuuKcPltsdc25g3A0qCm31mkHYgnYWvSWvEF3VWlnEUseLWIqeLzY5aGtL/ycWr+mRaEUG1A==",
+  "dgSpecHash": "VFsQzJ+E7ya6tREPGlHME8vZ5NaoQ88gf8SAj4aFW+4STVXfEpUcIZkGijpoezFaosyuiLU5esrI7uNmdrOGHQ==",
   "success": true,
   "projectFilePath": "C:\\Revature\\Project_0\\RestaurantApp\\Restaurant\\RestaurantUI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\emeli\\.nuget\\packages\\serilog\\2.11.0\\serilog.2.11.0.nupkg.sha512"
+  ],
   "logs": []
 }
