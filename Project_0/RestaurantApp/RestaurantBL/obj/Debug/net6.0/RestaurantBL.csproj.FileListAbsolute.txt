@@ -1,0 +1,12 @@
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\bin\Debug\net6.0\RestaurantBL.deps.json
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\bin\Debug\net6.0\RestaurantBL.dll
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\bin\Debug\net6.0\RestaurantBL.pdb
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\obj\Debug\net6.0\RestaurantBL.csproj.AssemblyReference.cache
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\obj\Debug\net6.0\RestaurantBL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\obj\Debug\net6.0\RestaurantBL.AssemblyInfoInputs.cache
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\obj\Debug\net6.0\RestaurantBL.AssemblyInfo.cs
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\obj\Debug\net6.0\RestaurantBL.csproj.CoreCompileInputs.cache
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\obj\Debug\net6.0\RestaurantBL.dll
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\obj\Debug\net6.0\refint\RestaurantBL.dll
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\obj\Debug\net6.0\RestaurantBL.pdb
+C:\Revature\Project_0\RestaurantApp\RestaurantBL\obj\Debug\net6.0\ref\RestaurantBL.dll
