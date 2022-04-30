@@ -8,16 +8,16 @@ namespace RestaurantModel
 {
     internal class RestaurantRating
     {
-        private int _rating;
+        private double _ratings;
 
-        public int Rating
+        public double Rating
         {
-            get { return _rating; }
+            get { return _ratings; }
 
             set
             {
                 if (value < 0)
-                    _rating = value;
+                    _ratings = value;
                 else
                     throw new Exception("rate must be no more than 5 stars");
             }
@@ -27,4 +27,40 @@ namespace RestaurantModel
             Rating = 1;
         }
     }
+    List<double>ratings = new List<double>();
+    double calculateAverage(double SumOfRates, double numberOfRates);
+    double main(void)
+    {
+        double i;
+        double SumOfRates = 0;
+        double numberOfRates = 0;
+
+        for (i = 1; i < numberOfRates; i++)
+        {
+            calculateAverage(SumOfRates, numberofGrades); 
+        }
+        return 0;
+    }
+
+    void calculateAverage(double sumOfRates, object numberofGrades)
+    {
+        throw new NotImplementedException();
+    }
+
+    double calculateAverage (double SumOfRates, double numberOfRates)
+    {
+        double average;
+        double rates = 0;
+
+        while (rates != -1)
+        {
+            numberOfRates++;
+            SumOfRates += rates;
+        }
+
+    }
+    average = SumofRates / numberOfRates
+    Console.WriteLine("the average is  %.2f\n", average);
+    
+    return average;
 }    
