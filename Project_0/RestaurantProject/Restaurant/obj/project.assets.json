@@ -1,0 +1,175 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "Serilog/2.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Serilog.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Serilog.dll": {}
+        }
+      },
+      "RestaurantBL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RestaurantDL": "1.0.0",
+          "RestaurantModel": "1.0.0",
+          "Serilog": "2.11.0"
+        },
+        "compile": {
+          "bin/placeholder/RestaurantBL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RestaurantBL.dll": {}
+        }
+      },
+      "RestaurantDL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RestaurantModel": "1.0.0",
+          "Serilog": "2.11.0"
+        },
+        "compile": {
+          "bin/placeholder/RestaurantDL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RestaurantDL.dll": {}
+        }
+      },
+      "RestaurantModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RestaurantModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RestaurantModel.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Serilog/2.11.0": {
+      "sha512": "ysv+hBzTul6Dp+Hvm10FlhJO3yMQcFKSAleus+LpiIzvNstpeV4Z7gGuIZ1OPNfIMulSHOjmLuGAEDKzpnV8ZQ==",
+      "type": "package",
+      "path": "serilog/2.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net45/Serilog.dll",
+        "lib/net45/Serilog.xml",
+        "lib/net46/Serilog.dll",
+        "lib/net46/Serilog.xml",
+        "lib/net5.0/Serilog.dll",
+        "lib/net5.0/Serilog.xml",
+        "lib/netstandard1.0/Serilog.dll",
+        "lib/netstandard1.0/Serilog.xml",
+        "lib/netstandard1.3/Serilog.dll",
+        "lib/netstandard1.3/Serilog.xml",
+        "lib/netstandard2.0/Serilog.dll",
+        "lib/netstandard2.0/Serilog.xml",
+        "lib/netstandard2.1/Serilog.dll",
+        "lib/netstandard2.1/Serilog.xml",
+        "serilog.2.11.0.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    },
+    "RestaurantBL/1.0.0": {
+      "type": "project",
+      "path": "../RestaurantBL/RestaurantBL.csproj",
+      "msbuildProject": "../RestaurantBL/RestaurantBL.csproj"
+    },
+    "RestaurantDL/1.0.0": {
+      "type": "project",
+      "path": "../RestaurantDL/RestaurantDL.csproj",
+      "msbuildProject": "../RestaurantDL/RestaurantDL.csproj"
+    },
+    "RestaurantModel/1.0.0": {
+      "type": "project",
+      "path": "../RestaurantModel/RestaurantModel.csproj",
+      "msbuildProject": "../RestaurantModel/RestaurantModel.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "RestaurantBL >= 1.0.0",
+      "RestaurantDL >= 1.0.0",
+      "Serilog >= 2.11.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\emeli\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Revature\\Project_0\\RestaurantProject\\Restaurant\\RestaurantUI.csproj",
+      "projectName": "RestaurantUI",
+      "projectPath": "C:\\Revature\\Project_0\\RestaurantProject\\Restaurant\\RestaurantUI.csproj",
+      "packagesPath": "C:\\Users\\emeli\\.nuget\\packages\\",
+      "outputPath": "C:\\Revature\\Project_0\\RestaurantProject\\Restaurant\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\emeli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Revature\\Project_0\\RestaurantProject\\RestaurantBL\\RestaurantBL.csproj": {
+              "projectPath": "C:\\Revature\\Project_0\\RestaurantProject\\RestaurantBL\\RestaurantBL.csproj"
+            },
+            "C:\\Revature\\Project_0\\RestaurantProject\\RestaurantDL\\RestaurantDL.csproj": {
+              "projectPath": "C:\\Revature\\Project_0\\RestaurantProject\\RestaurantDL\\RestaurantDL.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "Serilog": {
+            "target": "Package",
+            "version": "[2.11.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
