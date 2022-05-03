@@ -10,3 +10,15 @@ C:\Revature\Project_0\RestaurantApp\RestaurantModel\obj\Debug\net6.0\RestaurantM
 C:\Revature\Project_0\RestaurantApp\RestaurantModel\obj\Debug\net6.0\refint\RestaurantModel.dll
 C:\Revature\Project_0\RestaurantApp\RestaurantModel\obj\Debug\net6.0\RestaurantModel.pdb
 C:\Revature\Project_0\RestaurantApp\RestaurantModel\obj\Debug\net6.0\ref\RestaurantModel.dll
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\bin\Debug\net6.0\RestaurantModel.deps.json
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\bin\Debug\net6.0\RestaurantModel.dll
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\bin\Debug\net6.0\RestaurantModel.pdb
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\obj\Debug\net6.0\RestaurantModel.csproj.AssemblyReference.cache
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\obj\Debug\net6.0\RestaurantModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\obj\Debug\net6.0\RestaurantModel.AssemblyInfoInputs.cache
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\obj\Debug\net6.0\RestaurantModel.AssemblyInfo.cs
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\obj\Debug\net6.0\RestaurantModel.csproj.CoreCompileInputs.cache
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\obj\Debug\net6.0\RestaurantModel.dll
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\obj\Debug\net6.0\refint\RestaurantModel.dll
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\obj\Debug\net6.0\RestaurantModel.pdb
+C:\Revature\Project_0\RestaurantProject\RestaurantModel\obj\Debug\net6.0\ref\RestaurantModel.dll

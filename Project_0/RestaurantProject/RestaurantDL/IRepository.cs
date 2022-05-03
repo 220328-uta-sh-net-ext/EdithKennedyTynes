@@ -19,10 +19,8 @@ namespace RestaurantDL
         List<Restaurant> GetAllRestaurants(); // method to view all restaurants in database and return them as a generic list 
 
 
-        Restaurant AddReview(Restaurant rest);
-
-
-
+        Restaurant AddReview(Restaurant rest); // method to add review 
+        void AddReview(int StoreIDs, Repository.Review reviewToAdd);
     }
     
 }

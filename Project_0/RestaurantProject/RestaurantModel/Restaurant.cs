@@ -3,9 +3,10 @@
     public class Restaurant
     {
         public string Name { get; set; }
-        public string Review { get; set; }
         public string City { get; set; }
         public string State { get; set; }
+        public string Rating { get; set; }
+        public string Review { get; set; }
 
         private List<StoreID> _storeIDs;
         public List<StoreID> StoreIDs
@@ -20,9 +21,10 @@
         public Restaurant()
         {
             Name = "??";
-            Review = "Tell me about the food";
             City = "Norfolk";
             State = "Va";
+            Rating = "5";
+            Review = "Tell me about the food";
             _storeIDs = new List<StoreID>()
             {
                 new StoreID()
@@ -31,7 +33,7 @@
 
         public override string ToString()
         {
-            return $"Name: {Name}\nReview: {Review}\nCity: {City}\nState: {State}";
+            return $"Name: {Name}\nCity: {City}\nState: {State}\nRating: {Rating}\nReview: {Review}";
         }
 
        

@@ -18,3 +18,11 @@ C:\Revature\Project_0\RestaurantApp\Restaurant\bin\Debug\net6.0\RestaurantModel.
 C:\Revature\Project_0\RestaurantApp\Restaurant\bin\Debug\net6.0\RestaurantDL.pdb
 C:\Revature\Project_0\RestaurantApp\Restaurant\bin\Debug\net6.0\RestaurantModel.pdb
 C:\Revature\Project_0\RestaurantApp\Restaurant\obj\Debug\net6.0\RestaurantUI.csproj.CopyComplete
+C:\Revature\Project_0\RestaurantProject\Restaurant\obj\Debug\net6.0\RestaurantUI.csproj.AssemblyReference.cache
+C:\Revature\Project_0\RestaurantProject\Restaurant\obj\Debug\net6.0\RestaurantUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Revature\Project_0\RestaurantProject\Restaurant\obj\Debug\net6.0\RestaurantUI.AssemblyInfoInputs.cache
+C:\Revature\Project_0\RestaurantProject\Restaurant\obj\Debug\net6.0\RestaurantUI.AssemblyInfo.cs
+C:\Revature\Project_0\RestaurantProject\Restaurant\obj\Debug\net6.0\RestaurantUI.csproj.CoreCompileInputs.cache
+C:\Revature\Project_0\RestaurantProject\Restaurant\obj\Debug\net6.0\RestaurantUI.dll
+C:\Revature\Project_0\RestaurantProject\Restaurant\obj\Debug\net6.0\refint\RestaurantUI.dll
+C:\Revature\Project_0\RestaurantProject\Restaurant\obj\Debug\net6.0\RestaurantUI.pdb

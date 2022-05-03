@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 
 
+
 namespace RestaurantBL
 {
-    internal interface IRestaurantLogic
+    public interface IRestaurantLogic 
     {
         Restaurant AddRestaurant(Restaurant r);
 
@@ -21,5 +22,5 @@ namespace RestaurantBL
     {
         List<Restaurant> SearchAll();
     }
-    public void AddReview(int StoreIDs, Review reviewToAdd);
+    public void AddReview();
 }

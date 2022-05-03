@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RestaurantBL;
 using RestaurantDL;
 using RestaurantModel;
 
@@ -21,7 +22,7 @@ namespace RestaurantUI
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~");
             }
         }
-        public static void AddDummyRestaurant()
+        public static void AddRestaurant()
         {
 
             Restaurant restaurant1 = new Restaurant()
@@ -44,12 +45,16 @@ namespace RestaurantUI
             };
 
             repository.AddRestaurant(restaurant1);
-    
-
-
-            
+      
         }
-
+        public static void AddReview()
+        {
+            var review = repository.AddReview();
+            foreach (var view in Review)
+            {
+                Console.WriteLine("How was your experience");
+            }
+        }
     }
 
 }

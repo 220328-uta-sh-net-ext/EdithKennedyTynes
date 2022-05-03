@@ -34,11 +34,56 @@ namespace RestaurantDL
 
             }
             return rest;
-        }   
+        }
+
+        public Review AddReview(int StoreIDs, Review reviewToAdd)
+        {
+            var Reviews = reviewToAdd();
+            Reviews.Add(reviewToAdd);
+            var reviewString = JsonSerializer.Serialize<List<Review>>(Reviews, new JsonSerializerOptions { WriteIndented = true });
+
+            try
+            {
+                File.WriteAllText(filePath + "Restaurant.json", reviewString);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                Console.WriteLine("Please check the path, " + ex.Message);
+            }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine("Please check the file name, " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return reviewToAdd;
+        }
+
+        public Restaurant AddReview(Restaurant rest)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Restaurant> GetAllRestaurants()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IRepository.AddReview(int StoreIDs, Review reviewToAdd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public class Review
+        {
+        }
+    }
 
 
 
-        public List<Restaurant> GetAllRestaurants() //Deserialization
+    public List<Restaurant> GetAllRestaurants() //Deserialization
         {
             try
             {
@@ -63,6 +108,6 @@ namespace RestaurantDL
 
 
         }
-     
+        
     }
 }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace RestaurantBL
 {
-    internal interface RestaurantRates :
+    internal interface RestaurantRates : IRestaurantLogic
     {
-        
+       
     }
 }

@@ -1,10 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
-//global using Serilog;
+global using Serilog;
 using RestaurantUI;
+using Serilog;
 using System;
 
 bool repeat = true;
 IMenu menu = new MainMenu();
+
+Log.Logger = new LoggerConfiguration()
+   .MinimumLevel.Debug()
+   .WriteTo.File("C:/Revature/Project_0/RestaurantProject/Restaurant/Logs.txt").MinimumLevel.Debug().MinimumLevel.Information()
+   .CreateLogger();
+
 
 while (repeat)
 {
@@ -13,13 +20,17 @@ while (repeat)
 
     switch (ans)
     {
+        case "AddReview":
+            RestaurantOperations.AddReview();
+            Console.WriteLine("....");
+            break;
         case "SearchRestaurant":
-            //call SearchRestaurant method
-            Console.WriteLine("SearchRestaurant() Method implementation is in progress....");
+            RestaurantOperations.GetAllRestaurants();
+            Console.WriteLine("....");
             break;
         case "AddRestaurant":
-            //call AddRestaurant met
-            System.Console.WriteLine("AddRestaurant() Method implementaion is in progress....");
+            RestaurantOperations.AddRestaurant();
+            System.Console.WriteLine("....");
             break;
         case "MainMenu":
             menu = new MainMenu();

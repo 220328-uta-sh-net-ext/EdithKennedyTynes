@@ -13,8 +13,12 @@ namespace RestaurantBL
         IRepository repo = new Repository();
         public Restaurant AddRestaurant(Restaurant r)
         {
-            Random rendom = new Random();
+            List <string> rest = new List <string>();
             var Restaurant = repo.GetAllRestaurants();
+            return r;
+            
+
+           
         }
 
         public void SearchRestaurant()
@@ -25,15 +29,22 @@ namespace RestaurantBL
         public List<Restaurant> SearchRestaurant(string name)
         {
             var Restaurants = repo.GetAllRestaurants();
+            return Restaurants;
+            
+
+            
+
         }
 
         public object SearchRestaurants(string? name)
         {
             throw new NotImplementedException();
         }
-        public void AddReview(string StoreId RateToAdd)
+        public void AddReview()
         {
-
+            var Review = repo.AddReview();
+            return Review;
+           
         }
     }
 }
