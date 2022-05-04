@@ -78,6 +78,7 @@ namespace ChopHouseDL
     }
     public class UserRepo : IRepositoryUser
     {
+        readonly string connectionString;
         public User AddUser(User use)
         {
             string selectCommandString = "INSERT INTO UserAccount(FirstName,LastName,UserName,Password,Email,VALUES"+
