@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChopHouseDraftUI", "ChopHouseDraftUI\ChopHouseDraftUI.csproj", "{C8A338BD-46D6-4B42-A8BE-E6B70354BFD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CHModel", "CHModel\CHModel.csproj", "{496DC16F-6CD9-4839-BDDC-1CE3D63A3BC5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CHDL", "CHDL\CHDL.csproj", "{E6B509DC-0B06-4B5A-8C87-EBC51C3B2F8B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CHBL", "CHBL\CHBL.csproj", "{5DE28209-FA14-443F-B373-E8FE01875A8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChopHouseAPI", "ChopHouseAPI\ChopHouseAPI.csproj", "{3B5EE23A-5EE2-4FFB-9B6B-26DA809862B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChopHouse Test", "ChopHouse Test\ChopHouse Test.csproj", "{BF024557-1935-4A49-B8B0-99259DB338C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8A338BD-46D6-4B42-A8BE-E6B70354BFD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A338BD-46D6-4B42-A8BE-E6B70354BFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A338BD-46D6-4B42-A8BE-E6B70354BFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A338BD-46D6-4B42-A8BE-E6B70354BFD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496DC16F-6CD9-4839-BDDC-1CE3D63A3BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496DC16F-6CD9-4839-BDDC-1CE3D63A3BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496DC16F-6CD9-4839-BDDC-1CE3D63A3BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496DC16F-6CD9-4839-BDDC-1CE3D63A3BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6B509DC-0B06-4B5A-8C87-EBC51C3B2F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B509DC-0B06-4B5A-8C87-EBC51C3B2F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B509DC-0B06-4B5A-8C87-EBC51C3B2F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6B509DC-0B06-4B5A-8C87-EBC51C3B2F8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DE28209-FA14-443F-B373-E8FE01875A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DE28209-FA14-443F-B373-E8FE01875A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DE28209-FA14-443F-B373-E8FE01875A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DE28209-FA14-443F-B373-E8FE01875A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B5EE23A-5EE2-4FFB-9B6B-26DA809862B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B5EE23A-5EE2-4FFB-9B6B-26DA809862B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B5EE23A-5EE2-4FFB-9B6B-26DA809862B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B5EE23A-5EE2-4FFB-9B6B-26DA809862B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF024557-1935-4A49-B8B0-99259DB338C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF024557-1935-4A49-B8B0-99259DB338C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF024557-1935-4A49-B8B0-99259DB338C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF024557-1935-4A49-B8B0-99259DB338C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDB77077-5BB5-4B4C-A4F6-6E911EDA9A8A}
+	EndGlobalSection
+EndGlobal
