@@ -11,7 +11,7 @@ namespace ChopHouseDraftUI
     {
         public interface IUser
         {
-            void Mainmenu();
+            void MainMenu();
         }
         public void Display()
         {

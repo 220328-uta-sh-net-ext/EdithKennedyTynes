@@ -572,3 +572,60 @@
 2022-05-10 13:18:21.847 -04:00 [DBG] Redirecting user to Search Menu
 2022-05-10 13:18:28.535 -04:00 [INF] Searching database for filtered Restaurants
 2022-05-10 13:18:34.215 -04:00 [INF] Searching by city
+2022-05-10 15:56:37.271 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 15:56:40.110 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 15:56:44.013 -04:00 [INF] Restaurant added successfully
+2022-05-10 15:56:54.701 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 15:56:57.724 -04:00 [INF] Review added successfully
+2022-05-10 15:56:59.980 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 17:06:07.294 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 17:06:11.144 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 17:06:15.576 -04:00 [INF] Restaurant added successfully
+2022-05-10 17:06:25.096 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 17:06:27.177 -04:00 [INF] Review added successfully
+2022-05-10 17:06:29.983 -04:00 [INF] Adding Store ID - CH5555
+2022-05-10 17:06:37.353 -04:00 [INF] ID added successfully
+2022-05-10 17:06:38.904 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 17:07:00.987 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 17:07:02.152 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 17:07:10.520 -04:00 [INF] Restaurant added successfully
+2022-05-10 17:07:15.624 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 17:07:17.848 -04:00 [INF] Review added successfully
+2022-05-10 17:07:20.155 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 17:18:03.857 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 17:18:05.415 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 17:18:09.738 -04:00 [INF] Restaurant added successfully
+2022-05-10 17:18:12.137 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 17:18:16.136 -04:00 [INF] Review added successfully
+2022-05-10 17:18:19.783 -04:00 [INF] Adding Restaurant Rating Number - 1
+2022-05-10 17:18:21.178 -04:00 [INF] NumRating Number added successfully
+2022-05-10 17:18:27.560 -04:00 [INF] Adding Store ID - CH5555
+2022-05-10 17:18:32.712 -04:00 [INF] ID added successfully
+2022-05-10 17:18:35.549 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 17:21:08.719 -04:00 [WRN] failed to save Restaurant
+2022-05-10 17:21:08.722 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-10 17:21:08.738 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-10 17:21:08.752 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-10 17:21:15.271 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 17:57:27.096 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 17:58:11.494 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 17:59:03.554 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 17:59:05.496 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 17:59:10.342 -04:00 [INF] Restaurant added successfully
+2022-05-10 17:59:19.876 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 17:59:24.812 -04:00 [INF] Review added successfully
+2022-05-10 17:59:26.711 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 18:10:20.934 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 18:10:23.006 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 18:10:27.636 -04:00 [INF] Restaurant added successfully
+2022-05-10 18:10:30.324 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 18:11:00.128 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 18:11:04.677 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 18:11:08.761 -04:00 [INF] Restaurant added successfully
+2022-05-10 18:11:14.438 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 18:11:16.249 -04:00 [WRN] failed to save Restaurant
+2022-05-10 18:11:16.249 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-10 18:13:07.173 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 18:13:08.115 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 18:13:09.735 -04:00 [WRN] failed to save Restaurant
+2022-05-10 18:13:09.735 -04:00 [DBG] Displaying MainMenu to the User

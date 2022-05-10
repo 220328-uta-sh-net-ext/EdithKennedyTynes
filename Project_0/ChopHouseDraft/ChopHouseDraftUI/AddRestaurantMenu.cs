@@ -57,7 +57,9 @@ namespace ChopHouseDraftUI
 
         public string UserChoice()
         {
-            var userInput = Console.ReadLine();
+            if (Console.ReadLine() is not string userInput)
+                throw new InvalidDataException("");
+            //var userInput = Console.ReadLine();
 
             switch (userInput)
             {
