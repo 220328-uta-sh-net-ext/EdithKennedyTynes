@@ -9,20 +9,18 @@ using System.Threading.Tasks;
 
 namespace ChopHouseBL
 {
-    public class ChopHouseLogic : IRestaurantLogic // do your business here not in the interface for user 
+    public class ChopHouseLogic : IChopHouseLogic //implements what the instructions are : IRestaurantLogic // do your business/methods here not in the interface for user 
     {
         readonly IRepository Repo;
 
-        public ChopHouseLogic()
+        public ChopHouseLogic(IRepository repo)//injecting dependency through repo
         {
+            this.Repo = repo;
         }
-
-        public ChopHouseLogic(IRepository repo)
+        public ChopHouse AddRestaurant(ChopHouse Chop) //talks to IRepo
         {
-            Repo = repo;
-        }
-        public ChopHouse AddRestaurant(ChopHouse Chop)
-        {
+           
+            ChopHouse chophouse = new ChopHouse();
             return Repo.AddRestaurant(Chop);
         }
 

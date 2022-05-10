@@ -8,12 +8,13 @@ using ChopHouseDL;
 bool repeat = true;
 IMenu menu = new MainMenu();
 
-string connectinStrringFilePath = "../../../Confidential.txt";
-string connectinStrring = File.ReadAllText(connectinStrringFilePath);
+string connectinStringFilePath = "C:/Revature/Project_0/ChopHouse/ChopHouseDL/Connection-string.txt";
+string connectinString = File.ReadAllText(connectinStringFilePath);
 //IRepositoryUser UserRepo = new UserRepo(connectinStrring);
 //IUserLogic Userlogic = new UserLogic(UserRepo);
-IRepository Repo = new Repository(connectinStrring);
-IRestaurantLogic Rlogic = new ChopHouseLogic(Repo);
+//SQLRepository SqlRepo = new SQLRepository(connectinString);
+IRepository Repo = new SQLRepository(connectinString);// an object of the class in the sql repository
+IChopHouseLogic Rlogic = new ChopHouseLogic(Repo);
 
 
 Log.Logger = new LoggerConfiguration()
@@ -28,25 +29,33 @@ while (repeat)
 
     switch (ans)
     {
-        case "AddReview":
-            //ChopHouseOperations.AddReview();
-            Console.WriteLine(".....");
+        case "AddRestaurant":
+            Log.Debug("redirecting user to AddRestaurant Menu");
+            menu = new AddRestaurantMenu();
             break;
         case "SearchRestaurant":
-            //ChopHouseOperations.GetAllRestaurants();
-            Console.WriteLine(".....");
+            Log.Debug("Redirecting user to Search Menu");
+            menu = new SearchRestaurantMenu(); //
             break;
-        case "AddRestaurant":
-            //ChopHouseOperations.AddRestaurant();
-            System.Console.WriteLine(".....");
+        case "GetRestaurants":
+            Log.Debug("Displaying all Restaurants to the user");
+            Console.WriteLine("~~~Retreiving all Restaurants~~~");
+            menu = new SearchRestaurantMenu();
+            break;
+        case "CreateAccount":
+            Log.Debug("Promted user to create an account");
+            Console.WriteLine("~~~Welcome to Account Registration~~~");
+            break;
+        case "Login":
+            Log.Debug("Redirected to Account Login");
+            Console.WriteLine("~~~Welcome to Account Login~~~");
             break;
         case "MainMenu":
+            Log.Debug("Displaying MainMenu to the User");
             menu = new MainMenu();
             break;
         default:
-            Console.WriteLine("View does not exist");
             Console.WriteLine("Please Press <Enter> to continue");
-            Console.ReadLine();
             break;
     }
 }

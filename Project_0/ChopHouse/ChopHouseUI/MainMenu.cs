@@ -7,40 +7,51 @@ using ChopHouseUI;
 
 namespace ChopHouseUI
 {
-    class MainMenu : IMenu 
+    public class MainMenu : IMenu
     {
+        public interface IUser
+        {
+            void MainMenu();
+        }
         public void Display()
         {
             Console.WriteLine("Welcome to my Restaurant App");
-            Console.WriteLine("What would you like to do?");
-            Console.WriteLine("Press <6> ");
+            Console.WriteLine("How would you like to proceed?");
             Console.WriteLine("Press <5> Login");//LoginMenu
-            Console.WriteLine("Press <3> Create an Account");//create account
+            Console.WriteLine("Press <4> Create an Account");//create account
+            Console.WriteLine("Press <3> Display all Restaurants");
             Console.WriteLine("Press <2> Search Restaurant");//Search 
-            Console.WriteLine("Press <1> Add Restaurant to your database"); //Add
+            Console.WriteLine("Press <1> Add Restaurant to ChopHouse"); //Add
             Console.WriteLine("Press <0> to exit ");
         }
 
         public string UserChoice()
         {
-            string userInput = Console.ReadLine();
+            if (Console.ReadLine() is not string userInput)
+                throw new InvalidDataException("end of input");
+
             switch (userInput)
             {
                 case "0":
                     return "Exit";
                 case "1":
-                    return "Add a Restaurant";
+                    return "AddRestaurant";
                 case "2":
-                    return "Search for a Restaurant";
+                    return "SearchRestaurant";
+                case "3":
+                    return "GetAllRestaurants";
+                case "4":
+                    return "CreateAccount";
+                case "5":
+                    return "Login";
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press <Enter> to continue");
                     return "MainMenu";
 
             }
-        }   
-        
-    
+
+        }
 
     }
 }

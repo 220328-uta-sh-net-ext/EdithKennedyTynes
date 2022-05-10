@@ -7,31 +7,36 @@ using Microsoft.Data.SqlClient;
 
 namespace ChopHouseDL
 {
-    public class Repository : IRepository
+    public class SQLRepository : IRepository
     {
+        public const string connectionStringFilePath = "C:/Revature/Project_0/ChopHouse/ChopHouseDL/Connection-string.txt";
         readonly string connectionString;
-        public Repository(string connectionString)
+        public SQLRepository(string connectionString)//initalizing the connection string variable on  line 14 and file path on Line 13 
         {
+            connectionString = File.ReadAllText(connectionStringFilePath); //assigning the connection string file path and reading the text.
             this.connectionString = connectionString;
         }
 
-        public ChopHouse AddRestaurant(ChopHouse rest)
+        public ChopHouse AddRestaurant(ChopHouse Chop)
         {
             string selectCommandString = "INSERT INTO ChopHouse(Name,City,State,Rating,Review,NumRatings,StoreID) VALUES" +
                 "(@name,@city,@state,@rating,@review,@numrating,@storeid)";
+
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(selectCommandString, connection);
-            command.Parameters.AddWithValue("@name",rest.Name);
-            command.Parameters.AddWithValue("@city",rest.City);
-            command.Parameters.AddWithValue("state", rest.State);
-            command.Parameters.AddWithValue("@rating", rest.Rating);
-            command.Parameters.AddWithValue("@review", rest.Review);
-            command.Parameters.AddWithValue("@numratings", rest.NumRatings);
-            command.Parameters.AddWithValue("@store", rest.StoreID);
+
+            command.Parameters.AddWithValue("@name",Chop.Name);
+            command.Parameters.AddWithValue("@city",Chop.City);
+            command.Parameters.AddWithValue("state", Chop.State);
+            command.Parameters.AddWithValue("@rating", Chop.Rating);
+            command.Parameters.AddWithValue("@review", Chop.Review);
+            command.Parameters.AddWithValue("@numratings", Chop.NumRatings);
+            command.Parameters.AddWithValue("@store", Chop.StoreID);
+
             connection.Open();
             command.ExecuteNonQuery();
 
-            return rest;
+            return Chop;
         }
 
         public void AddReview(string StoreIDs, int reviewToAdd)

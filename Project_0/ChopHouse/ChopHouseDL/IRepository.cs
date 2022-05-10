@@ -13,7 +13,7 @@ namespace ChopHouseDL
     /// </summary>
     public interface IRepository      
     {
-        ChopHouse AddRestaurant(ChopHouse rest); //Method to add restaurant
+        public ChopHouse AddRestaurant(ChopHouse Chop); //Method to add restaurant adding to sql repo
 
 
         List<ChopHouse> GetAllRestaurants(); // method to view all restaurants in database and return them as a generic list 

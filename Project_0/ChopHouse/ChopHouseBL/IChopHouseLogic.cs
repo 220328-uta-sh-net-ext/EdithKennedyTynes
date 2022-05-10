@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChopHouseBL
 { 
-    public interface IRestaurantLogic
+    public interface IChopHouseLogic
     {
         ChopHouse AddRestaurant(ChopHouse Chop);
 
