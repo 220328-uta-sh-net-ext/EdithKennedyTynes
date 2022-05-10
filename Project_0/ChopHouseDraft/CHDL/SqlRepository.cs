@@ -65,7 +65,7 @@ namespace CHDL
             command.Parameters.AddWithValue("state", rest.State);
             command.Parameters.AddWithValue("@rating", rest.Rating);
             command.Parameters.AddWithValue("@review", rest.Review);
-            command.Parameters.AddWithValue("@numrating", rest.NumRatings);
+            command.Parameters.AddWithValue("@numratings", rest.NumRatings);
             command.Parameters.AddWithValue("@storeid", rest.StoreID);
 
 
@@ -103,7 +103,7 @@ namespace CHDL
             {
                 connection.Close();
             }
-            return result;
+            return search;
 
             var restaurants = new List<ChopHouse>();
             DataColumn levelColumn = dataSet.Tables[0].Columns[2];
@@ -160,6 +160,11 @@ namespace CHDL
         }
 
         public List<ChopHouse>? DisplayAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ChopHouse> GetRestaurants()
         {
             throw new NotImplementedException();
         }

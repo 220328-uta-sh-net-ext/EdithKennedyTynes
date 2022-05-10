@@ -20,7 +20,7 @@ namespace ChopHouseDraftUI
 
         public void GetRestaurants()
         {
-            List<ChopHouse>? restaurants = repository.GetRestaurants("name", "s");
+            List<ChopHouse>? restaurants = repository.GetRestaurants();
             foreach (ChopHouse? rest in restaurants)
             {
                 Console.WriteLine(rest);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CHModel
 {
 
-    public class User 
+    public class User
     {
         
         public string UserID { get; set; }

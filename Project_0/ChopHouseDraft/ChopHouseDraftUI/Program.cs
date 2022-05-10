@@ -12,14 +12,13 @@ IMenu menu = new MainMenu();
 
 string connectionStringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
 string connectionString = File.ReadAllText(connectionStringFilePath);
-//IRepositoryUser UserRepo = new UserRepo(connectinString);
-//IUserLogic Userlogic = new UserLogic(UserRepo);
+
+IRepositoryUser UserRepo = new UserRepo (connectionString);
+IUserLogic Userlogic = new CHUserLogic();
 
 IRepository repo = new Repository(connectionString); // an object of the class in the sql repository
 IChopHouseLogic HouseLogic = new ChopHouseLogic();
-
-
-
+IRepository SqlRepo = new SqlRepository (connectionString);
 
 
 
@@ -43,11 +42,11 @@ while (repeat)
 
         case "AddRestaurant":
             Log.Debug("redirecting user to AddRestaurant Menu");
-            menu = new AddRestaurantMenu();
+            menu = new AddRestaurantMenu(HouseLogic);
             break;
         case "SearchRestaurant":
             Log.Debug("Redirecting user to Search Menu");
-            menu = new SearchRestaurantMenu(HouseLogic);
+            menu = new SearchRestaurantMenu(HouseLogic); //
             break;
         case "GetRestaurants":
             Log.Debug("Displaying all Restaurants to the user");

@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CHModel;
 
-namespace CHModel
+
+namespace CHBL
 {
-        public interface IUser 
-        {
-            static User NewUser = new User();
+    public interface IUser 
+    {
+        User CreateUser(User Create);
+
+        List<User> SearchALL();
 
 
-            bool Login(string username, string password);
-            bool Register(string username, string password);
-        }
+
+        bool Login(string username, string password);
+        bool Register(string username, string password);
+
         interface Ilog
         {
             void LogError(string error);
@@ -24,5 +29,10 @@ namespace CHModel
             bool SendEmail(string emailContent);
         }
 
+    }
+}    
+
+
+
+     
     
-}

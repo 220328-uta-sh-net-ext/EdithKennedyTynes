@@ -12,7 +12,7 @@ namespace CHBL
         ChopHouse AddRestaurant(ChopHouse Chop);
 
 
-        List<ChopHouse> GetRestaurants(string name , string s);
+        List<ChopHouse> GetRestaurants(string Name, string City);
         
         List<ChopHouse> DisplayAll(string r, string seeAll); // CALLED IN REPO
 

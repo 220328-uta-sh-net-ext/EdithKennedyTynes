@@ -20,7 +20,7 @@ namespace ChopHouseDraftUI
 
         readonly IChopHouseLogic logic;
 
-        public AddRestaurantMenu()
+        public AddRestaurantMenu(IChopHouseLogic logic) //constructor with argument is getting connection from program.cs sending to function with logic
         {
             this.logic = logic;
         }
@@ -33,7 +33,7 @@ namespace ChopHouseDraftUI
             Console.WriteLine("<3> State - " + newRestaurant.State);
             Console.WriteLine("<4> Rating - " + newRestaurant.Rating);
             Console.WriteLine("<5> Review - " + newRestaurant.Review);
-            Console.WriteLine("<6> Rating - " + newRestaurant.NumRatings);
+            Console.WriteLine("<6> NumRating - " + newRestaurant.NumRatings);
             Console.WriteLine("<7> StoreID - " + newRestaurant.StoreID);
             Console.WriteLine("<8> Save Restaurant");
             
@@ -141,11 +141,11 @@ namespace ChopHouseDraftUI
                         Log.Information("Adding Restaurant Rating Number - " + newRestaurant.NumRatings);
                         Console.Write("Please enter Restaurant Rating Number");
                         newRestaurant.NumRatings = Convert.ToInt32(Console.ReadLine());
-                        Log.Information("Rating Number added successfully");
+                        Log.Information("NumRating Number added successfully");
                     }
                     catch (Exception ex)
                     {
-                        Log.Warning("failed to add Restaurant Rating Number");
+                        Log.Warning("failed to add Restaurant NumRating");
                         Console.WriteLine(ex.Message);
                     }
                     return "AddRestaurantMenu";
@@ -166,7 +166,8 @@ namespace ChopHouseDraftUI
                 case "8":
                     try
                     {
-                        Log.Information("Saving to ChopHouse.......");
+                        //ChopHouseLogic chopHouseLogic = new ChopHouseLogic();
+                        Log.Information("Saving to ChopHouse.......");         
                         logic.AddRestaurant(newRestaurant); //calling method AddRestaurant: to add new restaurant into the database (sqlRepository)
                         Console.Write("......Saving to Datatbase......");
                         Log.Information("Saved successfully");

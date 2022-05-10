@@ -16,6 +16,11 @@ namespace CHDL
     {
         public const string connectionStringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
         readonly string connectionString;
+
+        public Repository()
+        {
+        }
+
         public Repository(string connectionString)
         {
             this.connectionString = connectionString;
@@ -97,9 +102,9 @@ namespace CHDL
             throw new NotImplementedException();
         }
 
-        public List<ChopHouse> GetRestaurants(string name, string s)
+        public List<ChopHouse> GetRestaurants()
             {
-                string selectCommandString = $"SELECT * FROM ChopHouse WHERE {name} = '{s}';";
+                string selectCommandString = "SELECT * FROM ChopHouse";
 
                 using SqlConnection connection = new(connectionString);
                 using SqlCommand command = new(selectCommandString, connection);
@@ -126,59 +131,62 @@ namespace CHDL
                 return Restaurants;
 
             }
-        
+    }
+    public class UserRepo : IRepositoryUser
+    {
+        readonly string connectionString;
 
-
-        public class UserRepo : IRepositoryUser
+        public UserRepo(string connectionString)
         {
-            readonly string connectionString;
-            public User CreateUser(User use)
-            {
-                string selectCommandString = "INSERT INTO UserAccount(FirstName,LastName,UserName,Password,Email,VALUES" +
-                                                "(@lastname,@firstname,@username,@password,@email)";
-                using SqlConnection connection = new(connectionString);
-                using SqlCommand command = new(selectCommandString, connection);
-                command.Parameters.AddWithValue("@firstname", use.FirstName);
-                command.Parameters.AddWithValue("@lastname", use.LastName);
-                command.Parameters.AddWithValue("@username", use.UserName);
-                command.Parameters.AddWithValue("@password", use.Password);
-                command.Parameters.AddWithValue("@email", use.Email);
+            this.connectionString = connectionString;
+        }
+        public User CreateUser(User use)
+        {
+            string selectCommandString = "INSERT INTO UserAccount(FirstName,LastName,UserName,Password,Email,VALUES" +
+                                            "(@lastname,@firstname,@username,@password,@email)";
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(selectCommandString, connection);
+            command.Parameters.AddWithValue("@firstname", use.FirstName);
+            command.Parameters.AddWithValue("@lastname", use.LastName);
+            command.Parameters.AddWithValue("@username", use.UserName);
+            command.Parameters.AddWithValue("@password", use.Password);
+            command.Parameters.AddWithValue("@email", use.Email);
 
-                connection.Open();
-                command.ExecuteNonQuery();
+            connection.Open();
+            command.ExecuteNonQuery();
 
-                return use;
-
-            }
-
-            public List<User> DisplayUsers()
-            {
-                string selectCommandString = "SELECT * FROM UserAccount";
-
-                using SqlConnection connection = new(connectionString);
-                using SqlCommand command = new(selectCommandString, connection);
-                connection.Open();
-                using SqlDataReader reader = command.ExecuteReader();
-
-                var Users = new List<User>();
-                while (reader.Read())
-                {
-                    Users.Add(new User
-                    {
-                        FirstName = reader.GetString(0),
-                        LastName = reader.GetString(1),
-
-                        UserName = reader.GetString(2),
-                        Password = reader.GetString(3),
-
-                        Email = reader.GetString(4),
-
-                    });
-                }
-                return Users;
-            }
+            return use;
 
         }
+
+        public List<User> DisplayUsers()
+        {
+            string selectCommandString = "SELECT * FROM UserAccount";
+
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(selectCommandString, connection);
+            connection.Open();
+            using SqlDataReader reader = command.ExecuteReader();
+
+            var Users = new List<User>();
+            while (reader.Read())
+            {
+                Users.Add(new User
+                {
+                    FirstName = reader.GetString(0),
+                    LastName = reader.GetString(1),
+
+                    UserName = reader.GetString(2),
+                    Password = reader.GetString(3),
+
+                    Email = reader.GetString(4),
+
+                });
+            }
+            return Users;
+        }
+
     }
+
 }
 

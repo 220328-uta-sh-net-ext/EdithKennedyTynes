@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace CHModel
 {
     public class AdminView
     {
         public int StoreID { get; set; }
         public int UserId { get; set; }
-        public int Rating { get; set; } 
+        public int Rating { get; set; }
         public int NumRatings { get; set; }
 
         public AdminView()

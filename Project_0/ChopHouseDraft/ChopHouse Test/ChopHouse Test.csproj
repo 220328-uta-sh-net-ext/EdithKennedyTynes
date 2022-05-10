@@ -21,4 +21,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CHBL\CHBL.csproj" />
+    <ProjectReference Include="..\CHDL\CHDL.csproj" />
+    <ProjectReference Include="..\CHModel\CHModel.csproj" />
+    <ProjectReference Include="..\ChopHouseDraftUI\ChopHouseDraftUI.csproj" />
+  </ItemGroup>
+
 </Project>
