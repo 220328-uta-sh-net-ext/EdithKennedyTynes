@@ -167,7 +167,7 @@ namespace ChopHouseDraftUI
                     try
                     {
                         //ChopHouseLogic chopHouseLogic = new ChopHouseLogic();
-                        Log.Information("Saving to ChopHouse.......");         
+                        Log.Information("Saving to ChopHouse.......");
                         logic.AddRestaurant(newRestaurant); //calling method AddRestaurant: to add new restaurant into the database (sqlRepository)
                         Console.Write("......Saving to Datatbase......");
                         Log.Information("Saved successfully");

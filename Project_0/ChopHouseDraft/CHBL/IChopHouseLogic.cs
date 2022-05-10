@@ -9,7 +9,7 @@ namespace CHBL
 {
     public interface IChopHouseLogic
     {
-        ChopHouse AddRestaurant(ChopHouse Chop);
+        ChopHouse AddRestaurant(ChopHouse rest);
 
 
         List<ChopHouse> GetRestaurants(string Name, string City);

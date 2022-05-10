@@ -418,3 +418,157 @@
 2022-05-10 11:31:25.278 -04:00 [INF] Adding Restaurant Review - Tell me about the food
 2022-05-10 11:31:30.654 -04:00 [INF] Review added successfully
 2022-05-10 11:31:32.686 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 11:46:13.663 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 11:46:15.950 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 11:46:23.357 -04:00 [INF] Restaurant added successfully
+2022-05-10 11:46:24.318 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 11:46:29.293 -04:00 [INF] Review added successfully
+2022-05-10 11:46:30.483 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 11:51:31.168 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 11:51:34.558 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 11:51:42.334 -04:00 [INF] Restaurant added successfully
+2022-05-10 11:51:46.366 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 11:51:57.295 -04:00 [INF] Review added successfully
+2022-05-10 11:51:58.941 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 11:54:51.982 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 11:54:56.287 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 11:55:01.277 -04:00 [INF] Restaurant added successfully
+2022-05-10 11:55:14.749 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 11:55:17.581 -04:00 [INF] Review added successfully
+2022-05-10 11:55:19.581 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 11:56:06.686 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 11:56:09.162 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 11:56:23.949 -04:00 [INF] Restaurant added successfully
+2022-05-10 11:56:26.861 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 11:56:33.917 -04:00 [INF] Review added successfully
+2022-05-10 11:56:38.525 -04:00 [INF] Adding Restaurant Rating Number - 1
+2022-05-10 11:56:43.280 -04:00 [INF] NumRating Number added successfully
+2022-05-10 11:56:49.597 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 11:57:53.759 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 11:57:55.293 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 11:58:07.020 -04:00 [INF] Restaurant added successfully
+2022-05-10 11:58:12.861 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 11:58:54.413 -04:00 [INF] Review added successfully
+2022-05-10 11:58:57.517 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:05:19.028 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:05:41.357 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:05:49.165 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:06:00.956 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:06:05.372 -04:00 [INF] Review added successfully
+2022-05-10 12:06:08.252 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:06:08.269 -04:00 [WRN] failed to save Restaurant
+2022-05-10 12:06:08.275 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-10 12:07:45.456 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:07:51.084 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:07:55.821 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:08:03.756 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:08:17.564 -04:00 [INF] Review added successfully
+2022-05-10 12:08:19.571 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:14:00.575 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:14:18.412 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:14:22.363 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:14:31.212 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:14:35.932 -04:00 [INF] Review added successfully
+2022-05-10 12:14:37.452 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:20:41.133 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:20:46.332 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:20:55.404 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:20:58.091 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:21:05.947 -04:00 [INF] Review added successfully
+2022-05-10 12:21:07.531 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:23:36.623 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:23:39.403 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:23:49.851 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:23:57.291 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:24:05.523 -04:00 [INF] Review added successfully
+2022-05-10 12:24:06.780 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:24:50.689 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:24:55.260 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:25:01.819 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:25:03.163 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:25:05.051 -04:00 [INF] Review added successfully
+2022-05-10 12:25:06.043 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:34:38.066 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:34:40.155 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:34:44.043 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:34:53.595 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:34:56.250 -04:00 [INF] Review added successfully
+2022-05-10 12:34:58.250 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:36:57.198 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:36:59.066 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:37:03.018 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:37:05.851 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:37:11.740 -04:00 [INF] Review added successfully
+2022-05-10 12:37:13.306 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:39:17.941 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:39:24.299 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:39:30.058 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:39:43.562 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:39:46.522 -04:00 [INF] Review added successfully
+2022-05-10 12:39:47.899 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:44:36.764 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:44:41.434 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:44:57.561 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:44:59.562 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:45:01.265 -04:00 [INF] Review added successfully
+2022-05-10 12:45:02.825 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:54:28.148 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:54:36.908 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:54:49.195 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:54:57.369 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:54:59.689 -04:00 [INF] Review added successfully
+2022-05-10 12:55:01.419 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:57:37.338 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:57:46.956 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 12:57:52.537 -04:00 [INF] Restaurant added successfully
+2022-05-10 12:57:54.217 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:57:58.777 -04:00 [INF] Review added successfully
+2022-05-10 12:58:00.960 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 12:59:44.769 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 12:59:48.553 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 12:59:52.121 -04:00 [INF] Review added successfully
+2022-05-10 12:59:56.920 -04:00 [INF] Returning to Main Menu
+2022-05-10 12:59:56.921 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-10 12:59:58.729 -04:00 [DBG] Redirected to Account Login
+2022-05-10 13:00:11.836 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 13:00:30.603 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 13:00:35.784 -04:00 [INF] Restaurant added successfully
+2022-05-10 13:00:43.256 -04:00 [INF] Adding a Restaurant -  ChopHouse
+2022-05-10 13:00:47.770 -04:00 [INF] Restaurant added successfully
+2022-05-10 13:00:49.976 -04:00 [INF] Adding Restaurant Review - 
+2022-05-10 13:00:53.944 -04:00 [INF] Review added successfully
+2022-05-10 13:00:57.515 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 13:05:15.981 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 13:05:23.017 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 13:05:26.072 -04:00 [INF] Restaurant added successfully
+2022-05-10 13:05:28.424 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 13:05:31.433 -04:00 [INF] Review added successfully
+2022-05-10 13:05:32.808 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 13:06:47.868 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 13:08:52.810 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 13:08:54.792 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 13:08:57.512 -04:00 [INF] Restaurant added successfully
+2022-05-10 13:08:58.584 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-10 13:09:00.844 -04:00 [INF] Review added successfully
+2022-05-10 13:09:02.328 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 13:09:06.040 -04:00 [WRN] failed to save Restaurant
+2022-05-10 13:09:06.041 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-10 13:10:41.302 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 13:10:47.208 -04:00 [INF] Adding Restaurant Rating Number - 1
+2022-05-10 13:10:49.658 -04:00 [INF] NumRating Number added successfully
+2022-05-10 13:10:51.275 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 13:12:47.106 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-10 13:12:51.124 -04:00 [INF] Adding a Restaurant - ??
+2022-05-10 13:12:58.441 -04:00 [INF] Restaurant added successfully
+2022-05-10 13:13:01.928 -04:00 [INF] Adding Restaurant Rating Number - 1
+2022-05-10 13:13:06.130 -04:00 [INF] NumRating Number added successfully
+2022-05-10 13:13:13.698 -04:00 [INF] Saving to ChopHouse.......
+2022-05-10 13:16:00.729 -04:00 [WRN] failed to save Restaurant
+2022-05-10 13:16:00.740 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-10 13:18:02.251 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-10 13:18:05.113 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-10 13:18:20.265 -04:00 [INF] Searching by name
+2022-05-10 13:18:21.844 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-10 13:18:21.847 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-10 13:18:28.535 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-10 13:18:34.215 -04:00 [INF] Searching by city

@@ -26,8 +26,6 @@ namespace CHDL
             this.connectionString = connectionString;
         }
 
-        
-
         public ChopHouse AddRestaurant(ChopHouse Chop)
         {
 

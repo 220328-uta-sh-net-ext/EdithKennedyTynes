@@ -11,11 +11,12 @@ namespace CHDL
     //user input through the methods in the Repo 
     public class SqlRepository : IRepository
     {
-        private const string connectionStringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
+        public const string connectionStringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
         readonly string connectionString;
         public SqlRepository(string connectionString) //initalizing the connection string variable on  line 14 and file path on Line 13 
         {
              connectionString = File.ReadAllText(connectionStringFilePath); //assigning the connection string file path and reading the text.
+             this.connectionString = connectionString;
         }
 
 
@@ -71,7 +72,7 @@ namespace CHDL
 
             connection.Open();
             command.ExecuteNonQuery();
-            connection.Close();
+            
 
             return rest;
 
