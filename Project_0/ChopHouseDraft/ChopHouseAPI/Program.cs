@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();//middleware
 //builder.Services.AddScoped<IRepository>(repo => new SqlRepository(connectionString));
 //builder.Services.AddScoped<IChopHouseLogic, ChopHouseLogic>();
 
-var app = builder.Build();
+var app = builder.Build();// app here refers to the pipeline middleware
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())// no error pages
