@@ -2,6 +2,7 @@ namespace ChopHouseAPI
 {
     public class WeatherForecast
     {
+        // controller is like the security guard the front desk give access to rest of infrastructure to handle users request 
         public DateTime Date { get; set; }
 
         public int TemperatureC { get; set; }

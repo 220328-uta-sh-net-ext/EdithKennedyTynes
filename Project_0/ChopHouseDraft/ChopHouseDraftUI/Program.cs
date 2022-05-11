@@ -13,8 +13,8 @@ IMenu menu = new MainMenu();
 string connectionStringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
 string connectionString = File.ReadAllText(connectionStringFilePath);
 
-IRepositoryUser UserRepo = new UserRepo (connectionString);
-IUserLogic Userlogic = new CHUserLogic();
+//IRepositoryUser UserRepo = new UserRepo (connectionString);
+//IUserLogic Userlogic = new CHUserLogic();
 
 IRepository repo = new Repository(connectionString); // an object of the class in the sql repository
 IChopHouseLogic HouseLogic = new ChopHouseLogic(repo);
