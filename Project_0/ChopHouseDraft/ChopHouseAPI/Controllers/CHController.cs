@@ -21,15 +21,15 @@ namespace ChopHouseAPI.Controllers
         //Action Methods : ways to access or manipulate the resources, its uses the HTTP VERBS/methods(GET, PUT, POST, DELETE, PATCH, HEAD etc....)
         [HttpGet]//Http method mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
         /*[Http] */
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(200, Type=typeof(List<ChopHouse>))]
 
         public ActionResult<List<ChopHouse>> Get()
         {
             return Ok(_chBL);
         }
         [HttpGet("name")]// passing value in name 
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(200, Type = typeof(List<ChopHouse>))]
+        [ProducesResponseType(404)]
         public ActionResult<ChopHouse> Get(string name)
         {
             var rest = _chBL.Find(x => x.Name.Contains(name)); //LINQ query using Lambdas expression 
@@ -37,16 +37,21 @@ namespace ChopHouseAPI.Controllers
             if (rest == null)
                 return BadRequest($"Restaurant {name} you are looking for is not found in database");
             return Ok(rest);
-            
-
-            
-
-            
 
 
         }
 
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
+        public ActionResult Post([FromBody] ChopHouse rest)//Request of values from the body, parameters passed to rest 
+        {
+            if (rest == null)//condition check 
+                return BadRequest("invalid Restaurant, try again with valid values");
+            _chBL.Add(rest);
+            return CreatedAtAction("Get", rest);
+        }
 
     }
     

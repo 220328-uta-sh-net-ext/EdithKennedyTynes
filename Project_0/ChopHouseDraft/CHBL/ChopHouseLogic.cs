@@ -27,15 +27,19 @@ namespace CHBL
 
         public ChopHouse AddRestaurant(ChopHouse rest)/// talks to the IRepo
         {
-            //ChopHouse chopHouse = new ChopHouse();
+            ChopHouse _chopHouse = new ChopHouse();
+            //return Repo.AddRestaurant(rest);
+            if (rest == null)
+                return (rest);
+            //_chopHouse.Add(rest);
             return Repo.AddRestaurant(rest);
-
-            /*if (rest == null)
+            /*...or?
+             (rest == null)
             
                 Console.WriteLine(rest);
             else
                 Console.WriteLine("Null");*/
-            
+
 
 
 

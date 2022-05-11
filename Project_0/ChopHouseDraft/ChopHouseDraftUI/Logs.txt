@@ -629,3 +629,11 @@
 2022-05-10 18:13:08.115 -04:00 [INF] Saving to ChopHouse.......
 2022-05-10 18:13:09.735 -04:00 [WRN] failed to save Restaurant
 2022-05-10 18:13:09.735 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-11 13:57:46.572 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-11 13:57:48.794 -04:00 [INF] Adding a Restaurant - ??
+2022-05-11 13:57:51.866 -04:00 [INF] Restaurant added successfully
+2022-05-11 13:58:03.369 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-11 13:58:12.505 -04:00 [INF] Review added successfully
+2022-05-11 13:58:14.329 -04:00 [INF] Saving to ChopHouse.......
+2022-05-11 13:58:18.492 -04:00 [WRN] failed to save Restaurant
+2022-05-11 13:58:18.493 -04:00 [DBG] Displaying MainMenu to the User
