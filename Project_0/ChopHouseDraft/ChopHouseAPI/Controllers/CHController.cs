@@ -19,21 +19,21 @@ namespace ChopHouseAPI.Controllers
             new ChopHouse {Name ="Golden Rays", City = "Norfolk", State = "VA", Rating = 5, Review = "Hate it", NumRatings = 1, StoreID = "CH9633" },
         };
         //Action Methods : ways to access or manipulate the resources, its uses the HTTP VERBS/methods(GET, PUT, POST, DELETE, PATCH, HEAD etc....)
-        [HttpGet]//mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
+        [HttpGet]//Http method mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
         /*[Http] */
 
-        public List<ChopHouse> Get()
+        public ActionResult<List<ChopHouse>> Get()
         {
-            return _chBL;
+            return Ok(_chBL);
         }
         [HttpGet("name")]// passing value in name 
-        public ChopHouse Get(string name)
+        public ActionResult<ChopHouse> Get(string name)
         {
             var rest = _chBL.Find(x => x.Name.Contains(name)); //LINQ query using Lambdas expression 
             //^stored in variable 
             if (rest == null)
-                return null;
-            return rest;
+                return BadRequest($"Restaurant {name} you are looking for is not found in database");
+            return Ok(rest);
             
 
             
