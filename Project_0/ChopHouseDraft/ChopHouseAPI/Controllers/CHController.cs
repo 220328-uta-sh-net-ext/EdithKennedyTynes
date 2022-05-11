@@ -45,7 +45,7 @@ namespace ChopHouseAPI.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        public ActionResult Post([FromBody] ChopHouse rest)//Request of values from the body, parameters passed to rest 
+        public ActionResult Put([FromBody] ChopHouse rest)//Request of values from the body, parameters passed to rest 
         {
             if (rest == null)//condition check 
                 return BadRequest("invalid Restaurant, try again with valid values");
