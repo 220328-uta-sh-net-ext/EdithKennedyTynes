@@ -13,13 +13,10 @@ namespace ChopHouseUI
     internal class AddRestaurantMenu : IMenu
     {
         //static non-access modifiers are needed to keep this variable consistent to all objects we create out of our AddRestaurantMenu 
-        public static ChopHouse newRestaurant = new ChopHouse();
-        
-        readonly IChopHouseLogic logic;
+        static ChopHouse newRestaurant = new ChopHouse();
+        private IChopHouseLogic logic;
 
-        public AddRestaurantMenu()
-        {
-        }
+        //public IRepository Repository = new SQLRepository();
 
         public AddRestaurantMenu(IChopHouseLogic logic)//
         {

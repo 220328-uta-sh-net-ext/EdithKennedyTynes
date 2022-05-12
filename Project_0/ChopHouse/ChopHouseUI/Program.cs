@@ -13,8 +13,8 @@ string connectinString = File.ReadAllText(connectinStringFilePath);
 //IRepositoryUser UserRepo = new UserRepo(connectinStrring);
 //IUserLogic Userlogic = new UserLogic(UserRepo);
 //SQLRepository SqlRepo = new SQLRepository(connectinString);
-IRepository Repo = new SQLRepository(connectinString);// an object of the class in the sql repository
-IChopHouseLogic Rlogic = new ChopHouseLogic(Repo);
+IRepository repo = new SQLRepository(connectinString);// an object of the class in the sql repository
+IChopHouseLogic logic = new ChopHouseLogic(repo);
 
 
 Log.Logger = new LoggerConfiguration()
@@ -31,7 +31,7 @@ while (repeat)
     {
         case "AddRestaurant":
             Log.Debug("redirecting user to AddRestaurant Menu");
-            menu = new AddRestaurantMenu();
+            menu = new AddRestaurantMenu(logic);
             break;
         case "SearchRestaurant":
             Log.Debug("Redirecting user to Search Menu");

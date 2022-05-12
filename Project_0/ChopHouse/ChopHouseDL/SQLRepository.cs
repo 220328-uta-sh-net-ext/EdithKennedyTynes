@@ -11,6 +11,11 @@ namespace ChopHouseDL
     {
         public const string connectionStringFilePath = "C:/Revature/Project_0/ChopHouse/ChopHouseDL/Connection-string.txt";
         readonly string connectionString;
+
+        public SQLRepository()
+        {
+        }
+
         public SQLRepository(string connectionString)//initalizing the connection string variable on  line 14 and file path on Line 13 
         {
             connectionString = File.ReadAllText(connectionStringFilePath); //assigning the connection string file path and reading the text.

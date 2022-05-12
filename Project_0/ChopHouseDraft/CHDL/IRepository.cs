@@ -18,7 +18,7 @@ namespace CHDL
         
         //ChopHouse AddReview(ChopHouse rest); 
         void AddReview(string StoreIDs, int reviewToAdd);// method to add review 
-        List<ChopHouse>? DisplayAll();
+        List<ChopHouse> DisplayAll();
     }
     public interface IRepositoryUser
     {

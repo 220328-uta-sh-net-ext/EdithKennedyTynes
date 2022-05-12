@@ -23,7 +23,7 @@ namespace CHDL
 
         public List<ChopHouse> GetRestaurants(string name, string s)
         {
-            string selectCommandString = $"SELECT * FROM ChopHouse WHERE {name} = '{s}';";
+            string selectCommandString = "SELECT * FROM ChopHouse ;";
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(selectCommandString, connection);

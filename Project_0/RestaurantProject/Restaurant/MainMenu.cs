@@ -36,7 +36,7 @@ namespace RestaurantUI
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press <Enter> to continue");
             }
-            return "Mainmenu";
+            return "MainMenu";
         }
     }
 }

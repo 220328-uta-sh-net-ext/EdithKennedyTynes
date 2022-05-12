@@ -16,9 +16,9 @@ string connectionString = File.ReadAllText(connectionStringFilePath);
 //IRepositoryUser UserRepo = new UserRepo (connectionString);
 //IUserLogic Userlogic = new CHUserLogic();
 
-IRepository repo = new Repository(connectionString); // an object of the class in the sql repository
-IChopHouseLogic HouseLogic = new ChopHouseLogic(repo);
-//IRepository SqlRepo = new SqlRepository (connectionString);
+IRepository Sqlrepo = new SqlRepository(connectionString); // an object of the class in the sql repository
+IChopHouseLogic HouseLogic = new ChopHouseLogic(Sqlrepo);
+
 
 
 
