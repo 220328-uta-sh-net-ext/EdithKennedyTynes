@@ -55,13 +55,15 @@ namespace ChopHouseAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
-        public ActionResult Put([FromBody] ChopHouse rest, [FromRoute] string name)//[Put] [FromRoute] update restaurant.. to change restaurant by its name 
+        public ActionResult Put([FromBody] ChopHouse rest)//[Put] [FromRoute] update restaurant.. to change restaurant by its name 
         {
             if (rest == null)//condition check 
                 return BadRequest("Invalid Restaurant, try again with valid values"); // if changed to status code 404 "Restaurant name cannot be found....
-            var chophouse = _chBL.Find(x => x.Name.Contains(name));
+            var chophouse = _chBL.Find(x => x.Name.Contains(rest.Name));
             if (chophouse == null)
                 return BadRequest("Restaurant NOT FOUND");// bad request can be interchanged with <NotFound> code 404
+            chophouse.Name = rest.Name;
+            //_chBL.Remove(rest);
             _chBL.Add(rest);
             return Created("Get", rest);// return Created("Get",rest); ... to return status code 201
         }
