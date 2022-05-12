@@ -33,7 +33,7 @@ namespace ChopHouseDraftUI
             Console.WriteLine("<3> State - " + newRestaurant.State);
             Console.WriteLine("<4> Rating - " + newRestaurant.Rating);
             Console.WriteLine("<5> Review - " + newRestaurant.Review);
-            Console.WriteLine("<6> NumRating - " + newRestaurant.NumRatings);
+            Console.WriteLine("<6> NumRatings - " + newRestaurant.NumRatings);
             Console.WriteLine("<7> StoreID - " + newRestaurant.StoreID);
             Console.WriteLine("<8> Save Restaurant");
             

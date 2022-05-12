@@ -57,7 +57,7 @@ namespace CHDL
         /// <returns>the added restaurant <returns
         {
             string commandString = "INSERT INTO ChopHouse (Name,City,State,Rating,Review,NumRatings,StoreID) VALUES" +
-                "(@name,@city,@state,@rating,@review,@numrating,@storeid)";
+                "(@name,@city,@state,@rating,@review,@numratings,@storeid)";
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(commandString, connection);

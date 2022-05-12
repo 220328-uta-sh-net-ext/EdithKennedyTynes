@@ -637,3 +637,17 @@
 2022-05-11 13:58:14.329 -04:00 [INF] Saving to ChopHouse.......
 2022-05-11 13:58:18.492 -04:00 [WRN] failed to save Restaurant
 2022-05-11 13:58:18.493 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-12 02:24:29.508 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 02:24:36.219 -04:00 [INF] Adding a Restaurant - ??
+2022-05-12 02:24:44.558 -04:00 [INF] Restaurant added successfully
+2022-05-12 02:24:54.192 -04:00 [INF] Saving to ChopHouse.......
+2022-05-12 02:24:57.281 -04:00 [WRN] failed to save Restaurant
+2022-05-12 02:24:57.282 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-12 11:34:43.687 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 11:34:45.911 -04:00 [INF] Adding a Restaurant - ??
+2022-05-12 11:34:49.180 -04:00 [INF] Restaurant added successfully
+2022-05-12 11:34:50.759 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-12 11:34:52.071 -04:00 [INF] Review added successfully
+2022-05-12 11:34:53.542 -04:00 [INF] Saving to ChopHouse.......
+2022-05-12 11:34:55.230 -04:00 [INF] Saved successfully
+2022-05-12 11:34:55.230 -04:00 [DBG] Displaying MainMenu to the User
