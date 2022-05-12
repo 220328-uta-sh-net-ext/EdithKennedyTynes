@@ -83,3 +83,31 @@
 2022-05-12 11:08:44.558 -04:00 [INF] Saving to ChopHouse.......
 2022-05-12 11:08:47.055 -04:00 [WRN] failed to save Restaurant
 2022-05-12 11:08:47.056 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-12 11:40:41.929 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 11:41:04.451 -04:00 [INF] Adding a Restaurant - ??
+2022-05-12 11:41:16.563 -04:00 [INF] Restaurant added successfully
+2022-05-12 11:41:19.699 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-12 11:41:36.836 -04:00 [INF] Review added successfully
+2022-05-12 11:41:38.004 -04:00 [INF] Saving to ChopHouse.......
+2022-05-12 11:41:39.279 -04:00 [WRN] failed to save Restaurant
+2022-05-12 11:41:39.279 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-12 11:43:57.984 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 11:43:58.857 -04:00 [INF] Adding a Restaurant - ??
+2022-05-12 11:44:05.321 -04:00 [INF] Restaurant added successfully
+2022-05-12 11:44:12.506 -04:00 [INF] Adding Restaurant Rating Number - 1
+2022-05-12 11:44:21.067 -04:00 [INF] NumRating Number added successfully
+2022-05-12 11:44:22.457 -04:00 [INF] Adding Restaurant Review - Tell me about the food
+2022-05-12 11:44:26.938 -04:00 [INF] Review added successfully
+2022-05-12 11:44:28.058 -04:00 [INF] Saving to ChopHouse.......
+2022-05-12 11:44:29.737 -04:00 [WRN] failed to save Restaurant
+2022-05-12 11:44:29.737 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-12 11:44:40.890 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 11:44:50.203 -04:00 [INF] Adding a Restaurant - DaBombBurger
+2022-05-12 11:45:03.019 -04:00 [INF] Restaurant added successfully
+2022-05-12 11:45:10.427 -04:00 [INF] Adding Restaurant Review - Great food
+2022-05-12 11:45:16.699 -04:00 [INF] Review added successfully
+2022-05-12 11:45:19.852 -04:00 [INF] Adding Store ID - 55555
+2022-05-12 11:45:27.388 -04:00 [INF] ID added successfully
+2022-05-12 11:45:28.940 -04:00 [INF] Saving to ChopHouse.......
+2022-05-12 11:45:29.042 -04:00 [INF] Saved successfully
+2022-05-12 11:45:29.042 -04:00 [DBG] Displaying MainMenu to the User

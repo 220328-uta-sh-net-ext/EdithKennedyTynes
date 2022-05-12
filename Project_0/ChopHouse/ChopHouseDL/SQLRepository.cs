@@ -25,7 +25,7 @@ namespace ChopHouseDL
         public ChopHouse AddRestaurant(ChopHouse Chop)
         {
             string selectCommandString = "INSERT INTO ChopHouse(Name,City,State,Rating,Review,NumRatings,StoreID) VALUES" +
-                "(@name,@city,@state,@rating,@review,@numrating,@storeid)";
+                "(@name,@city,@state,@rating,@review,@numratings,@storeid)";
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(selectCommandString, connection);
@@ -36,7 +36,7 @@ namespace ChopHouseDL
             command.Parameters.AddWithValue("@rating", Chop.Rating);
             command.Parameters.AddWithValue("@review", Chop.Review);
             command.Parameters.AddWithValue("@numratings", Chop.NumRatings);
-            command.Parameters.AddWithValue("@store", Chop.StoreID);
+            command.Parameters.AddWithValue("@storeid", Chop.StoreID);
 
             connection.Open();
             command.ExecuteNonQuery();
@@ -44,9 +44,9 @@ namespace ChopHouseDL
             return Chop;
         }
 
-        public void AddReview(string StoreIDs, int reviewToAdd)
+        public void AddReview(string StoreID, int reviewToAdd)
         {
-            string selectCommandString = $"UPDATE ChopHouse SET Review = Review + @rate,NumRatings = NumRatings + 1 WHERE StoreID = '{StoreIDs}'";
+            string selectCommandString = $"UPDATE ChopHouse SET Review = Review + @rate,NumRatings = NumRatings + 1 WHERE StoreID = '{StoreID}'";
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(selectCommandString, connection);
             command.Parameters.AddWithValue("@rate", reviewToAdd);
