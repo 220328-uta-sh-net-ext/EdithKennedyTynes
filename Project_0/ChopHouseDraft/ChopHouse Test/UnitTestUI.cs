@@ -15,22 +15,21 @@ namespace ChopHouse_Test
             //arrange, act, assert
             ChopHouse Restaurants = new ChopHouse();
             {
+                Restaurants.StoreID = "CH96325";
                 Restaurants.Name = "Tropical Smoothie";
                 Restaurants.City = "Norfolk";
                 Restaurants.State = "VA";
-                Restaurants.Rating = 5;
-                Restaurants.Review = "Great";
-                Restaurants.NumRatings = 1;
-                Restaurants.StoreID = "CH96325";
+           
+                
 
 
+                Assert.Equal("CH96325", Restaurants.StoreID);
                 Assert.Equal("Tropical Smoothie", Restaurants.Name);
                 Assert.Equal("Norfolk", Restaurants.City);
                 Assert.Equal("VA", Restaurants.State);
-                Assert.Equal(5, Restaurants.Rating);
-                Assert.Equal("Great", Restaurants.Review);
+                /*Assert.Equal("Great", Restaurants.Review);
                 Assert.Equal(1, Restaurants.NumRatings);
-                Assert.Equal("CH96325", Restaurants.StoreID);
+                Assert.Equal("CH96325", Restaurants.StoreID);*/
             }
         }
         [Fact]

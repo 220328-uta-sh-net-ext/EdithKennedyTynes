@@ -23,7 +23,7 @@ namespace CHDL
 
         public List<ChopHouse> GetRestaurants(string name, string s)
         {
-            string selectCommandString = "SELECT * FROM ChopHouse ;";
+            string selectCommandString = "SELECT * FROM ChopHouse;";
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(selectCommandString, connection);
@@ -72,15 +72,31 @@ namespace CHDL
             
 
             return rest;
-
-            
-
         }
-        public void AddReview(string StoreIDs, int reviewToAdd)
+
+        public HouseReview AddHouseReview(HouseReview view)
         {
-            throw new NotImplementedException();
+            string selectCommandString = "INSERT INTO HouseReview(StoreID, UserId, Rating, Feedback) VALUES" +
+               "(@storeid,@ userid,@rating,@feedback)";
+
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(selectCommandString, connection);
+            command.Parameters.AddWithValue("@storeid", view.StoreID);
+            command.Parameters.AddWithValue("@userid", view.UserId);
+            command.Parameters.AddWithValue("rating", view.Rating);
+            command.Parameters.AddWithValue("@feedback", view.Feedback);
+
+
+            connection.Open();
+            command.ExecuteNonQuery();
+
+
+            return view;
+
+
+
         }
-        public ChopHouse SearchRestaurants(ChopHouse search)
+        /*public ChopHouse SearchRestaurants(ChopHouse search)
         {
             string commandString = "SELECT * FROM ChopHouse";
 
@@ -121,7 +137,7 @@ namespace CHDL
 
             }
             return search;
-        }
+        }*/
 
         public List<ChopHouse> DisplayAll(string r, string seeAll)
         {

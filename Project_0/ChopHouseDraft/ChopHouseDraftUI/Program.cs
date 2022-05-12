@@ -33,13 +33,13 @@ while (repeat)
     string ans = menu.UserChoice();
 
     switch (ans)
-    { 
-        /*case "AddReview":
-            Log.Debug("Adding a Review");
-            menu = new AddReview();
-            Console.WriteLine(".....");
-            break;*/
+    {
 
+        case "AddHouseReview":
+            Log.Debug("Adding a Review");
+            menu = new AddHouseReview(HouseLogic);
+            Console.WriteLine(".....");
+            break;
         case "AddRestaurant":
             Log.Debug("redirecting user to AddRestaurant Menu");
             menu = new AddRestaurantMenu(HouseLogic);

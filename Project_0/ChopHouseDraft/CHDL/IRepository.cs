@@ -17,7 +17,7 @@ namespace CHDL
         List<ChopHouse> DisplayAll(ChopHouse play); // display collection of all restaurants
         
         //ChopHouse AddReview(ChopHouse rest); 
-        void AddReview(string StoreIDs, int reviewToAdd);// method to add review 
+        public HouseReview AddHouseReview(HouseReview view);// method to add review 
         List<ChopHouse> DisplayAll();
     }
     public interface IRepositoryUser

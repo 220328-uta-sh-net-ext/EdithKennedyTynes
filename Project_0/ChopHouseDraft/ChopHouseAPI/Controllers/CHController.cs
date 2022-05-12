@@ -15,8 +15,8 @@ namespace ChopHouseAPI.Controllers
     {
         private static List<ChopHouse> _chBL = new List<ChopHouse>
         {
-            new ChopHouse {Name ="Golden Dragon", City = "Norfolk", State = "VA", Rating = 5, Review = "Love it", NumRatings = 1, StoreID = "CH9632" },
-            new ChopHouse {Name ="Golden Rays", City = "Norfolk", State = "VA", Rating = 5, Review = "Hate it", NumRatings = 1, StoreID = "CH9633" },
+            new ChopHouse {StoreID = "CH9632", Name = "Golden Dragon", City = "Norfolk", State = "VA" },
+            new ChopHouse {StoreID = "CH9633", Name = "Golden Rays", City = "Norfolk", State = "VA"},
         };
         //Action Methods : ways to access or manipulate the resources, its uses the HTTP VERBS/methods(GET, PUT, POST, DELETE, PATCH, HEAD etc....)
         [HttpGet]//Http method mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
@@ -62,13 +62,14 @@ namespace ChopHouseAPI.Controllers
             var chophouse = _chBL.Find(x => x.Name.Contains(name));
             if (chophouse == null)
                 return NotFound("Restaurant NOT FOUND");// bad request can be interchanged with <NotFound> code 404
+            chophouse.StoreID = rest.StoreID;
             chophouse.Name = rest.Name;
             chophouse.City = rest.City;
             chophouse.State = rest.State;
-            chophouse.Rating = rest.Rating;
+            /*chophouse.Rating = rest.Rating;
             chophouse.Review = rest.Review;
-            chophouse.NumRatings = rest.NumRatings;
-            chophouse.StoreID = rest.StoreID;
+            chophouse.NumRatings = rest.NumRatings;*/
+            
 
             //_chBL.Remove(rest);
             //_chBL.Add(rest);

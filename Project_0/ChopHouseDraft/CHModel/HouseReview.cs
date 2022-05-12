@@ -6,24 +6,27 @@ using System.Threading.Tasks;
 
 namespace CHModel
 {
-    public class AdminView
+    public class HouseReview
     {
         public string StoreID { get; set; }
         public string UserId { get; set; }
         public int Rating { get; set; }
-        public int NumRatings { get; set; }
-
-        public AdminView()
+       public string Feedback { get; set; }
+        public HouseReview()
         {
-            StoreID = "CH55555";
-            UserId = "CHU86523";
-            Rating = 5;
-            NumRatings = 1;
+            StoreID = "CH5555";
+            UserId = "CHU45655";
+            Rating = 0;
+            Feedback = "Great Place";
+            
 
         }
         public override string ToString()
         {
-            return $"StoreID: {StoreID}\nUserId: {UserId}\nRating: {Rating}\nReview: {NumRatings}\n: {NumRatings}";
+            return $"StoreID: {StoreID}\nUserId: {UserId}\nRating: {Rating}\nFeedback: {Feedback}";
+            
         }
+
     }
+   
 }

@@ -14,10 +14,10 @@ namespace CHBL
 
         List<ChopHouse> GetRestaurants(string Name, string City);
         
-        List<ChopHouse> DisplayAll(string r, string seeAll); // CALLED IN REPO
+        List<ChopHouse> DisplayAll(string r, string seeAll); // CALLED IN sqlREPO
 
 
-        void AddReview(string ID, int Rating);
+        HouseReview AddHouseReview(HouseReview view);
 
 
     }

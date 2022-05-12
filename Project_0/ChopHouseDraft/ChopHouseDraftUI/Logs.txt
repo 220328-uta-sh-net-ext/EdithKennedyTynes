@@ -652,3 +652,15 @@
 2022-05-12 11:34:55.230 -04:00 [INF] Saved successfully
 2022-05-12 11:34:55.230 -04:00 [DBG] Displaying MainMenu to the User
 2022-05-12 12:20:32.681 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 15:22:49.880 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 15:22:52.406 -04:00 [INF] Adding a Restaurant - ??
+2022-05-12 15:22:58.247 -04:00 [INF] Restaurant added successfully
+2022-05-12 15:23:01.814 -04:00 [INF] Adding Store ID - CH5555
+2022-05-12 15:23:10.184 -04:00 [INF] ID added successfully
+2022-05-12 15:23:12.264 -04:00 [INF] Saving to ChopHouse.......
+2022-05-12 15:23:13.895 -04:00 [INF] Saved successfully
+2022-05-12 15:23:13.895 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-12 15:39:48.364 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 15:39:56.154 -04:00 [INF] Returning to Main Menu
+2022-05-12 15:39:56.154 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-12 15:40:50.623 -04:00 [DBG] Adding a Review

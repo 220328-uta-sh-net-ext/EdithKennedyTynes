@@ -45,9 +45,11 @@ namespace CHBL
 
         }
 
-        public void AddReview(string ID, int Rating)
+        public HouseReview AddHouseReview(HouseReview view)
 
         {
+            HouseReview houseReview = new HouseReview();
+            return Repo.AddHouseReview(view);
             //--database : name..  (id = StoreId)  <-find the restaurant
             //--set (review : Rating + review) (numRatings = numRatings + 1 )
             // numRatings / Rating 

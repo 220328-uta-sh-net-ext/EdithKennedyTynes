@@ -17,10 +17,11 @@ namespace ChopHouseDraftUI
         {
             Console.WriteLine("Welcome to my Restaurant App");
             Console.WriteLine("How would you like to proceed?");
-            Console.WriteLine("Press <5> Login");//LoginMenu
-            Console.WriteLine("Press <4> Create an Account");//create account
-            Console.WriteLine("Press <3> Display all Restaurants");
-            Console.WriteLine("Press <2> Search Restaurant");//Search 
+            Console.WriteLine("Press <6> Login");//LoginMenu
+            Console.WriteLine("Press <5> Create an Account");//create account
+            Console.WriteLine("Press <4> Display all Restaurants");
+            Console.WriteLine("Press <3> Search Restaurant");//Search
+            Console.WriteLine("Press <2> Add Review to ChopHouse Restaurants");
             Console.WriteLine("Press <1> Add Restaurant to ChopHouse"); //Add
             Console.WriteLine("Press <0> to exit ");
         }
@@ -37,12 +38,14 @@ namespace ChopHouseDraftUI
                 case "1":
                     return "AddRestaurant";
                 case "2":
-                    return "SearchRestaurant";
+                    return "AddHouseReview";
                 case "3":
-                    return "GetAllRestaurants";
+                    return "SearchRestaurant";
                 case "4":
-                    return "CreateAccount";
+                    return "GetAllRestaurants";
                 case "5":
+                    return "CreateAccount";
+                case "6":
                     return "Login";
                 default:
                     Console.WriteLine("Please input a valid response");
