@@ -651,3 +651,4 @@
 2022-05-12 11:34:53.542 -04:00 [INF] Saving to ChopHouse.......
 2022-05-12 11:34:55.230 -04:00 [INF] Saved successfully
 2022-05-12 11:34:55.230 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-12 12:20:32.681 -04:00 [DBG] redirecting user to AddRestaurant Menu

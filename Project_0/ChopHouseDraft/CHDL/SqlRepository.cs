@@ -39,10 +39,10 @@ namespace CHDL
                     City = reader.GetString(1),
 
                     State = reader.GetString(2),
-                    Rating = reader.GetInt32(3),
+                    /*Rating = reader.GetInt32(3),
 
                     Review = reader.GetString(4),
-                    NumRatings = reader.GetInt32(5),
+                    NumRatings = reader.GetInt32(5),*/
                     StoreID = reader.GetString(6),
 
                 });
@@ -56,17 +56,14 @@ namespace CHDL
         /// <param name="rest"></param>
         /// <returns>the added restaurant <returns
         {
-            string commandString = "INSERT INTO ChopHouse (Name,City,State,Rating,Review,NumRatings,StoreID) VALUES" +
-                "(@name,@city,@state,@rating,@review,@numratings,@storeid)";
+            string selectCommandString = "INSERT INTO ChopHouse(Name,City,State,StoreID) VALUES" +
+               "(@name,@city,@state,@storeid)";
 
             using SqlConnection connection = new(connectionString);
-            using SqlCommand command = new(commandString, connection);
+            using SqlCommand command = new(selectCommandString, connection);
             command.Parameters.AddWithValue("@name", rest.Name);
             command.Parameters.AddWithValue("@city", rest.City);
             command.Parameters.AddWithValue("state", rest.State);
-            command.Parameters.AddWithValue("@rating", rest.Rating);
-            command.Parameters.AddWithValue("@review", rest.Review);
-            command.Parameters.AddWithValue("@numratings", rest.NumRatings);
             command.Parameters.AddWithValue("@storeid", rest.StoreID);
 
 
@@ -144,12 +141,7 @@ namespace CHDL
                     City = reader.GetString(1),
 
                     State = reader.GetString(2),
-                    Rating = reader.GetInt32(3),
-
-                    Review = reader.GetString(4),
-                    NumRatings = reader.GetInt32(5),
                     StoreID = reader.GetString(6),
-
                 });
             }
             return Restaurants;

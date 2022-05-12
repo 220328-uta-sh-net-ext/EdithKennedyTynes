@@ -111,3 +111,20 @@
 2022-05-12 11:45:28.940 -04:00 [INF] Saving to ChopHouse.......
 2022-05-12 11:45:29.042 -04:00 [INF] Saved successfully
 2022-05-12 11:45:29.042 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-12 12:22:49.227 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 12:22:53.093 -04:00 [INF] Adding a Restaurant - ??
+2022-05-12 12:22:56.786 -04:00 [INF] Restaurant added successfully
+2022-05-12 12:23:00.735 -04:00 [INF] Adding Store ID - 55555
+2022-05-12 12:23:06.211 -04:00 [INF] ID added successfully
+2022-05-12 12:23:07.467 -04:00 [INF] Saving to ChopHouse.......
+2022-05-12 12:23:12.397 -04:00 [WRN] failed to save Restaurant
+2022-05-12 12:23:12.398 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-12 12:23:54.733 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 12:24:02.574 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-12 12:24:04.526 -04:00 [INF] Adding a Restaurant - ??
+2022-05-12 12:24:08.861 -04:00 [INF] Restaurant added successfully
+2022-05-12 12:24:11.373 -04:00 [INF] Adding Store ID - 55555
+2022-05-12 12:24:16.637 -04:00 [INF] ID added successfully
+2022-05-12 12:24:17.389 -04:00 [INF] Saving to ChopHouse.......
+2022-05-12 12:24:18.344 -04:00 [INF] Saved successfully
+2022-05-12 12:24:18.345 -04:00 [DBG] Displaying MainMenu to the User

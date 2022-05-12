@@ -24,18 +24,20 @@ namespace ChopHouseDL
 
         public ChopHouse AddRestaurant(ChopHouse Chop)
         {
-            string selectCommandString = "INSERT INTO ChopHouse(Name,City,State,Rating,Review,NumRatings,StoreID) VALUES" +
-                "(@name,@city,@state,@rating,@review,@numratings,@storeid)";
+            string selectCommandString = "INSERT INTO ChopHouse(Name,City,State,StoreID) VALUES" +
+                "(@name,@city,@state,@storeid)";
 
+            /*,Rating,Review,NumRatings*/
+            /* VALUES,@rating,@review,@numratings */
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(selectCommandString, connection);
 
             command.Parameters.AddWithValue("@name",Chop.Name);
             command.Parameters.AddWithValue("@city",Chop.City);
             command.Parameters.AddWithValue("state", Chop.State);
-            command.Parameters.AddWithValue("@rating", Chop.Rating);
+            /*command.Parameters.AddWithValue("@rating", Chop.Rating);
             command.Parameters.AddWithValue("@review", Chop.Review);
-            command.Parameters.AddWithValue("@numratings", Chop.NumRatings);
+            command.Parameters.AddWithValue("@numratings", Chop.NumRatings);*/
             command.Parameters.AddWithValue("@storeid", Chop.StoreID);
 
             connection.Open();
@@ -49,6 +51,7 @@ namespace ChopHouseDL
             string selectCommandString = $"UPDATE ChopHouse SET Review = Review + @rate,NumRatings = NumRatings + 1 WHERE StoreID = '{StoreID}'";
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(selectCommandString, connection);
+
             command.Parameters.AddWithValue("@rate", reviewToAdd);
             connection.Open();
             command.ExecuteNonQuery();
@@ -74,10 +77,10 @@ namespace ChopHouseDL
                     City = reader.GetString(1),
 
                     State = reader.GetString(2),
-                    Rating = reader.GetInt32(3),
+                    /*Rating = reader.GetInt32(3),
 
                     Review = reader.GetString(4),
-                    NumRatings = reader.GetInt32(5),
+                    NumRatings = reader.GetInt32(5),*/
                     StoreID = reader.GetString(6),
                    
                 });

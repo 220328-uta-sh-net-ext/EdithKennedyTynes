@@ -29,11 +29,11 @@ namespace ChopHouseUI
             Console.WriteLine("<1> Name - " + newRestaurant.Name);
             Console.WriteLine("<2> City - " + newRestaurant.City);
             Console.WriteLine("<3> State - " + newRestaurant.State);
-            Console.WriteLine("<4> Rating - " + newRestaurant.Rating);
+            /*Console.WriteLine("<4> Rating - " + newRestaurant.Rating);
             Console.WriteLine("<5> Review - " + newRestaurant.Review);
-            Console.WriteLine("<6> NumRatings - " + newRestaurant.NumRatings);
-            Console.WriteLine("<7> StoreID - " + newRestaurant.StoreID);
-            Console.WriteLine("<8> Save Restaurant");
+            Console.WriteLine("<6> NumRatings - " + newRestaurant.NumRatings);*/
+            Console.WriteLine("<4> StoreID - " + newRestaurant.StoreID);
+            Console.WriteLine("<5> Save Restaurant");
         }
 
          public string UserChoice()
@@ -88,7 +88,7 @@ namespace ChopHouseUI
                         Console.WriteLine(ex.Message);
                     }
                     return "AddRestaurantMenu";
-                case "4":
+                /*case "4":
                     try
                     {
                         Log.Information("Adding Restaurant Rating - " + newRestaurant.Rating);
@@ -129,8 +129,8 @@ namespace ChopHouseUI
                         Log.Warning("failed to add Restaurant NumRating");
                         Console.WriteLine(ex.Message);
                     }
-                    return "AddRestaurantMenu";
-                case "7":
+                    return "AddRestaurantMenu";*/
+                case "4":
                     try
                     {
                         Log.Information("Adding Store ID - " + newRestaurant.StoreID);
@@ -143,8 +143,8 @@ namespace ChopHouseUI
                         Log.Warning("failed to add Store ID");
                         Console.WriteLine(ex.Message);
                     }
-                    return "AddRestaurantMenu";
-                case "8":
+                    return "AddRestaurantMenu"; 
+                case "5":
                     try
                     {
                         Log.Information("Saving to ChopHouse.......");

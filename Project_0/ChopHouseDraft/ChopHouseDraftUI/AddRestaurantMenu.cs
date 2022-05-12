@@ -31,26 +31,26 @@ namespace ChopHouseDraftUI
             Console.WriteLine("<1> Name - " + newRestaurant.Name);
             Console.WriteLine("<2> City - " + newRestaurant.City);
             Console.WriteLine("<3> State - " + newRestaurant.State);
-            Console.WriteLine("<4> Rating - " + newRestaurant.Rating);
+            /*Console.WriteLine("<4> Rating - " + newRestaurant.Rating);
             Console.WriteLine("<5> Review - " + newRestaurant.Review);
-            Console.WriteLine("<6> NumRatings - " + newRestaurant.NumRatings);
-            Console.WriteLine("<7> StoreID - " + newRestaurant.StoreID);
-            Console.WriteLine("<8> Save Restaurant");
-            
-                        /*
-                        public string dothis(ChopHouse n)
-                        {
-                            try
-                            {
-                                Log.Information("Adding a Restaurant - " + n.Name);
-                                logic.AddRestaurant(n);
-                                Log.Information("Restaurant added successfully");
-                            }
-                            catch (Exception ex)
-                            {
-                                Log.Warning("failed to add restaurant");
-                                Console.WriteLine(ex.Message);
-                            }*/
+            Console.WriteLine("<6> NumRatings - " + newRestaurant.NumRatings);*/
+            Console.WriteLine("<4> StoreID - " + newRestaurant.StoreID);
+            Console.WriteLine("<5> Save Restaurant");
+
+            /*
+            public string dothis(ChopHouse n)
+            {
+                try
+                {
+                    Log.Information("Adding a Restaurant - " + n.Name);
+                    logic.AddRestaurant(n);
+                    Log.Information("Restaurant added successfully");
+                }
+                catch (Exception ex)
+                {
+                    Log.Warning("failed to add restaurant");
+                    Console.WriteLine(ex.Message);
+                }*/
         }
 
        
@@ -109,7 +109,7 @@ namespace ChopHouseDraftUI
                         Console.WriteLine(ex.Message);
                     }
                     return "AddRestaurantMenu";
-                case "4":
+               /* case "4":
                     try
                     {
                         Log.Information("Adding Restaurant Rating - " + newRestaurant.Rating);
@@ -150,8 +150,8 @@ namespace ChopHouseDraftUI
                         Log.Warning("failed to add Restaurant NumRating");
                         Console.WriteLine(ex.Message);
                     }
-                    return "AddRestaurantMenu";
-                case "7":
+                    return "AddRestaurantMenu";*/
+                case "4":
                     try
                     {
                         Log.Information("Adding Store ID - " + newRestaurant.StoreID);
@@ -165,7 +165,7 @@ namespace ChopHouseDraftUI
                         Console.WriteLine(ex.Message);
                     }
                     return "AddRestaurantMenu";
-                case "8":
+                case "5":
                     try
                     {
                         //ChopHouseLogic chopHouseLogic = new ChopHouseLogic();
