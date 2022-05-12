@@ -21,14 +21,14 @@ namespace ChopHouseAPI.Controllers
         //Action Methods : ways to access or manipulate the resources, its uses the HTTP VERBS/methods(GET, PUT, POST, DELETE, PATCH, HEAD etc....)
         [HttpGet]//Http method mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
         /*[Http] */
-        [ProducesResponseType(200, Type=typeof(List<ChopHouse>))]
+        [ProducesResponseType(200, Type = typeof(List<ChopHouse>))]
 
         public ActionResult<List<ChopHouse>> Get()
         {
             return Ok(_chBL);
         }
         [HttpGet("name")]// passing value in name 
-        [ProducesResponseType(200, Type = typeof(List<ChopHouse>))]
+        [ProducesResponseType(200, Type = typeof(ChopHouse))]
         [ProducesResponseType(404)]
         public ActionResult<ChopHouse> Get(string name)
         {
@@ -37,21 +37,37 @@ namespace ChopHouseAPI.Controllers
             if (rest == null)
                 return BadRequest($"Restaurant {name} you are looking for is not found in database");
             return Ok(rest);
-
-
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        public ActionResult Put([FromBody] ChopHouse rest)//Request of values from the body, parameters passed to rest 
+        public ActionResult Post([FromBody] ChopHouse rest)//Request of values from the body, parameters passed to rest 
         {
             if (rest == null)//condition check 
-                return BadRequest("invalid Restaurant, try again with valid values");
+                return BadRequest("Invalid Restaurant, try again with valid values");
             _chBL.Add(rest);
             return CreatedAtAction("Get", rest);
         }
+        [HttpPut] // BE SURE TO CHANGE Verbs must matcg in code block 
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+
+        public ActionResult Put([FromBody] ChopHouse rest, [FromRoute] string name)//[Put] [FromRoute] update restaurant.. to change restaurant by its name 
+        {
+            if (rest == null)//condition check 
+                return BadRequest("Invalid Restaurant, try again with valid values"); // if changed to status code 404 "Restaurant name cannot be found....
+            var chophouse = _chBL.Find(x => x.Name.Contains(name));
+            if (chophouse == null)
+                return BadRequest("Restaurant NOT FOUND");// bad request can be interchanged with <NotFound> code 404
+            _chBL.Add(rest);
+            return Created("Get", rest);// return Created("Get",rest); ... to return status code 201
+        }
+
+
+
 
     }
     
