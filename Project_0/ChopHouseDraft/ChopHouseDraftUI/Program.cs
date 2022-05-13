@@ -5,6 +5,7 @@ using CHDL;
 using CHModel;
 using ChopHouseDraftUI;
 using System;
+using static CHBL.ChopHouseLogic;
 
 bool repeat = true;
 IMenu menu = new MainMenu();
@@ -13,8 +14,9 @@ IMenu menu = new MainMenu();
 string connectionStringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
 string connectionString = File.ReadAllText(connectionStringFilePath);
 
-//IRepositoryUser UserRepo = new UserRepo (connectionString);
-//IUserLogic Userlogic = new CHUserLogic();
+
+IRepositoryUser userRepo = new UserRepository(connectionString);
+//IUserLogic userlogic = new SqlRepository();
 
 IRepository Sqlrepo = new SqlRepository(connectionString); // an object of the class in the sql repository
 IChopHouseLogic HouseLogic = new ChopHouseLogic(Sqlrepo);
@@ -53,13 +55,16 @@ while (repeat)
             Console.WriteLine("~~~Retreiving all Restaurants~~~");
             menu = new SearchRestaurantMenu(HouseLogic);
             break;
-        case "CreateAccount":
-            Log.Debug("Promted user to create an account");
-            Console.WriteLine("~~~Welcome to Account Registration~~~");
-            break;
         case "Login":
             Log.Debug("Redirected to Account Login");
             Console.WriteLine("~~~Welcome to Account Login~~~");
+            menu = new Login();
+            break;
+        case "RegUserMenu":
+            Log.Debug("Register new User");
+            Console.WriteLine("~~~Welcome to Account Registration~~~");
+           
+            menu = new RegUserMenu();
             break;
         case "MainMenu":
             Log.Debug("Displaying MainMenu to the User");

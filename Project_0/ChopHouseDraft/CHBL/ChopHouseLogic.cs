@@ -66,86 +66,89 @@ namespace CHBL
             //throw new NotImplementedException();
         }
 
-        public List<ChopHouse> DisplayAll(string r, string seeAll)
+                /*public List<ChopHouse> DisplayAll(string r, string seeAll)
+                {
+                    List<ChopHouse>? seeRest = Repo.DisplayAll();
+                    var filteredRestaurants = seeRest;
+                    throw new NotImplementedException();
+                    if (Console.ReadLine() is not string Name)
+                        throw new InvalidDataException("");
+                    return filteredRestaurants;
+                }*/
+
+
+
+        public List<ChopHouse> SearchRestaurants(string name, string s) // talks to repo 
         {
-            List<ChopHouse>? seeRest = Repo.GetRestaurants();
-            var filteredRestaurants = seeRest;
-            throw new NotImplementedException();
+            List<ChopHouse>? restaurants = Repo.SearchRestaurants(name, s);
+            var filteredRestaurants = restaurants;
             if (Console.ReadLine() is not string Name)
                 throw new InvalidDataException("");
+            if (s == "Name")// when ever s is read is it == to name and city? else print all restaurants
+                filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(Name)).ToList();
+            else if (s == "City")
+                filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains(s)).ToList();
+            else
+                filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains("")).ToList();
             return filteredRestaurants;
-        }
+                        /*foreach (var rest in Restaurants)
+                        {
+                            if (rest.Name.Contains(name))
+                            {
+                                filteredRestaurants.Add(rest);
+                                return filteredRestaurants;
+                            }
 
-        public List<ChopHouse> GetRestaurants(string name, string city) // talks to repo 
-        {
-            List<ChopHouse>? restaurants = Repo.GetRestaurants();
-            //var filteredRestaurants = Repo.GetRestaurants(name);
-            var filterRestaurants = from r in restaurants where r.Name.Contains(name) select r;
 
-            var filteredrestaurants = from r in restaurants where r.City.Contains(city) select r;
 
-            /*List<ChopHouse> filteredRestaurants = new List<ChopHouse>();
-            foreach (var house in restaurants)
-            {
-                if (house.Name.Contains(name))
+                            /*
+                            List<ChopHouse> filteredRestaurants = new List<ChopHouse>();
+                            foreach (var house in restaurants)
+                            {
+                                if (house.Name.Contains(name))
+                                {
+                                    filterRestaurants.Add(house);
+                                }
+                                return restaurants;
+                            }
+
+
+
+                            string Name = Console.ReadLine();
+                                if (Console.ReadLine() is not string Name)
+                                throw new InvalidDataException("");
+                            if (s == "Name")// when ever s is read is it == to name and city? else print all restaurants
+                                filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(Name)).ToList();
+                            else if (s == "City")
+                                filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains(Name)).ToList();
+                            else
+                                filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains("")).ToList();
+                            return filteredRestaurants;
+                            foreach (var rest in Restaurants)
+                            {
+                                if (rest.Name.Contains(name))
+                                {
+                                    filteredRestaurants.Add(rest);
+
+                                }
+                            
+                    }
+
+
+
+                public class CHUserLogic : IUserLogic
                 {
-                    filterRestaurants.Add(house);
-                }*/
-            return restaurants;
+
+                    readonly IRepositoryUser Repo;
+
+                    public CHUserLogic()//injecting dependency through Re
+                    {
+                        this.Repo = Repo;
+                    }*/
+
+           
+
         }
-
-        /*string Name = Console.ReadLine();
-            if (Console.ReadLine() is not string Name)
-            throw new InvalidDataException("");
-        if (s == "Name")// when ever s is read is it == to name and city? else print all restaurants
-            filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(Name)).ToList();
-        else if (s == "City")
-            filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains(Name)).ToList();
-        else
-            filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains("")).ToList();
-        return filteredRestaurants;
-        foreach (var rest in Restaurants)
-        {
-            if (rest.Name.Contains(name))
-            {
-                filteredRestaurants.Add(rest);
-
-            }return filteredRestaurants;
-        }*/
-    }
-
-
-
-    public class CHUserLogic : IUserLogic
-    {
-
-        readonly IRepositoryUser Repo;
-
-        public CHUserLogic()//injecting dependency through Re
-        {
-            this.Repo = Repo;
-        }
-
-        public User CreateUser(User Create)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Login(string username, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Register(string username, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<User> SearchAll()
-        {
-            throw new NotImplementedException();
-        }
-    
     }
 }
   

@@ -11,20 +11,34 @@ namespace CHDL
     {
         public ChopHouse AddRestaurant(ChopHouse rest); //Method to add restaurant CALLING ONE 
 
-
-        List<ChopHouse> GetRestaurants(); // method to view a restaurants filtered in database and return them as a generic list... CALLING A COLLECTION 
-
-        List<ChopHouse> DisplayAll(ChopHouse play); // display collection of all restaurants
         
-        //ChopHouse AddReview(ChopHouse rest); 
         public HouseReview AddHouseReview(HouseReview view);// method to add review 
-        List<ChopHouse> DisplayAll();
+        public List<ChopHouse> SearchRestaurants(string name, string s);// method to view a restaurants filtered in database and return them as a generic list... CALLING A COLLECTION 
+        //List<ChopHouse> DisplayAll();
     }
-    public interface IRepositoryUser
+    public interface IRepositoryUser 
     {
-        User CreateUser(User use); 
+        public User CreateUser(User Create);
 
-        List<User> DisplayUsers();
+
+        bool Login(string username, string password);
+        bool Register(string username, string password);
+
+        interface Ilog
+        {
+            void LogError(string error);
+
+        }
+        interface IEmail
+        {
+            bool SendEmail(string emailContent);
+        }
+
+
     }
 
 }
+
+//List<ChopHouse> GetRestaurants(string name, string s);// method to view a restaurants filtered in database and return them as a generic list... CALLING A COLLECTION
+//List<ChopHouse> DisplayAll(ChopHouse play); // display collection of all restaurants
+

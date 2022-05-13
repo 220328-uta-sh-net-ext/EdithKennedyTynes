@@ -9,7 +9,8 @@ namespace CHModel
 
     public class User
     {
-        
+        private string connectionString;
+
         public string UserID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -28,10 +29,19 @@ namespace CHModel
             Email = "code007@gmail.com";
 
         }
+
+        public User(string connectionString, string userName, string password)
+        {
+            this.connectionString = connectionString;
+            UserName = userName;
+            Password = password;
+        }
+
         public override string ToString()
         {
             return $"UserID: {UserID}\nFirstName: {FirstName}\nLastName: {LastName}\nUserName: {UserName}\npassword: {Password}\nEmail: {Email}";
         }
 
     }
+
 }

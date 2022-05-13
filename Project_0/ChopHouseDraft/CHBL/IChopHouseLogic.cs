@@ -9,26 +9,22 @@ namespace CHBL
 {
     public interface IChopHouseLogic
     {
-        ChopHouse AddRestaurant(ChopHouse rest);
+        public ChopHouse AddRestaurant(ChopHouse rest);
 
 
-        List<ChopHouse> GetRestaurants(string Name, string City);
-        
-        List<ChopHouse> DisplayAll(string r, string seeAll); // CALLED IN sqlREPO
+        public List<ChopHouse> SearchRestaurants(string name, string s);
+
+        //List<ChopHouse> DisplayAll(string r, string seeAll); // CALLED IN sqlREPO
 
 
-        HouseReview AddHouseReview(HouseReview view);
+        public HouseReview AddHouseReview(HouseReview view);
 
 
     }
     interface IRestaurantSearch
     {
-        List<ChopHouse> SearchAll();
+        string Name { get; }    
+        //public List<ChopHouse> SearchRestaurants(string name, string city);
     }
-    public interface IUserLogic
-    {
-        User CreateUser(User Create);
-        List<User> SearchAll();
-    }
-
+    
 }

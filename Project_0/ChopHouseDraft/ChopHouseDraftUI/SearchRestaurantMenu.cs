@@ -11,8 +11,11 @@ namespace ChopHouseDraftUI
 {
     public class SearchRestaurantMenu : IMenu
     {
+        public static ChopHouse newSearch = new ChopHouse();
+
         readonly IChopHouseLogic logic; 
-        static readonly ChopHouse newSearch = new ChopHouse();
+
+        
         public SearchRestaurantMenu(IChopHouseLogic logic)
         {
             this.logic = logic;
@@ -42,19 +45,19 @@ namespace ChopHouseDraftUI
                     Console.Write("Please enter the name");
                     string name = Console.ReadLine();
                     Log.Information("Searching by name");
-                    logic.GetRestaurants("name", "s");
+                    logic.SearchRestaurants(name, userInput);
                     Console.WriteLine("Press <enter> to continue");
                     return "SearchRestaurantMenu";
                 case "2":
                     Console.Write("Please enter the city");
-                    string City = Console.ReadLine();
+                    string s = Console.ReadLine();
                     Log.Information("Searching by city");
-                    logic.GetRestaurants("name", "s");
+                    logic.SearchRestaurants(s, userInput);
                     Console.WriteLine("Press <enter> to continue");
                     return "SearchRestaurantMenu";
                 default:
                     Console.WriteLine("Please press <enter> to continue");
-                    return "SearchRestaurant";
+                    return "SearchRestaurantMenu";
             }
         }
     }

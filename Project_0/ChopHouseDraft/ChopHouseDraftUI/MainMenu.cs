@@ -9,10 +9,8 @@ namespace ChopHouseDraftUI
     
     public class MainMenu : IMenu
     {
-        public interface IUser
-        {
-            void MainMenu();
-        }
+      
+        
         public void Display()
         {
             Console.WriteLine("Welcome to my Restaurant App");
@@ -44,7 +42,7 @@ namespace ChopHouseDraftUI
                 case "4":
                     return "GetAllRestaurants";
                 case "5":
-                    return "CreateAccount";
+                    return "RegUserMenu";
                 case "6":
                     return "Login";
                 default:

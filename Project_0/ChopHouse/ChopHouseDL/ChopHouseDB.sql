@@ -2,15 +2,33 @@
 --DROP TABLE ChopHouse
 
 CREATE TABLE ChopHouse (
+    StoreID NVARCHAR(100) NOT NULL PRIMARY KEY,
     Name NVARCHAR(50) NOT NULL,
     City NVARCHAR(50) NOT NULL,
-    State NVARCHAR(50) NOT NULL,
-    --Rating INT NOT NULL,
-    --Review NVARCHAR(100) NOT NULL,
-    --NumRatings INT NOT NULL,
-    StoreID NVARCHAR(100) NOT NULL PRIMARY KEY
+    State NVARCHAR(50) NOT NULL
+    
 )
 SELECT * FROM ChopHouse
+
+CREATE TABLE AdminView (
+    StoreID NVARCHAR(100) NOT NULL,
+    UserId NVARCHAR(100) NOT NULL,
+    Rating INT NOT NULL,
+    NumRatings INT NOT NULL,
+    
+)
+
+--DROP TABLE HouseReview
+CREATE TABLE HouseReview (
+    StoreID NVARCHAR(100) NOT NULL,
+    UserId NVARCHAR(100) NOT NULL,
+    Rating INT NOT NULL,
+    Feedback NVARCHAR(100) NOT NULL,
+    
+)
+--Rating INT NOT NULL,
+    --Review NVARCHAR(100) NOT NULL,
+    --NumRatings INT NOT NULL,
 
 --DROP TABLE UserAccount
 

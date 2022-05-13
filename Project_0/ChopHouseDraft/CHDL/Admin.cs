@@ -8,16 +8,17 @@ namespace CHDL
 {
     public class Admin
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Id { get; set; }
+        public string AdminFName { get; set; }
+        public string AdminLName { get; set; }
+        public string AdminId { get; set; }
 
         public Admin()
         {
-            FirstName = "Jane";
-            LastName = "Doe";
-            Id = 00001;
+            AdminFName = "Jane";
+            AdminLName = "Doe";
+            AdminId = "CHA00001";
         }
+
     }
-  
+    
 }
