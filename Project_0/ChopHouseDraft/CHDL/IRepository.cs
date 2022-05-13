@@ -13,8 +13,11 @@ namespace CHDL
 
         
         public HouseReview AddHouseReview(HouseReview view);// method to add review 
-        public List<ChopHouse> SearchRestaurants(string name, string s);// method to view a restaurants filtered in database and return them as a generic list... CALLING A COLLECTION 
-        //List<ChopHouse> DisplayAll();
+        public List<ChopHouse> SearchRestaurants();// method to view a restaurants filtered in database and return them as a generic list... CALLING A COLLECTION 
+        
+        public List<ChopHouse> DisplayAll();
+
+        //List<ChopHouse>? SearchRestaurants();
     }
     public interface IRepositoryUser 
     {

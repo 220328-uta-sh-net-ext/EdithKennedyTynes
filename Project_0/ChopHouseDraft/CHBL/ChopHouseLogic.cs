@@ -66,23 +66,28 @@ namespace CHBL
             //throw new NotImplementedException();
         }
 
-                /*public List<ChopHouse> DisplayAll(string r, string seeAll)
-                {
-                    List<ChopHouse>? seeRest = Repo.DisplayAll();
-                    var filteredRestaurants = seeRest;
-                    throw new NotImplementedException();
-                    if (Console.ReadLine() is not string Name)
-                        throw new InvalidDataException("");
-                    return filteredRestaurants;
-                }*/
-
-
-
-        public List<ChopHouse> SearchRestaurants(string name, string s) // talks to repo 
+        public List<ChopHouse> DisplayAll()//calling method of stored variables in repo of restaurants in chophouse
         {
-            List<ChopHouse>? restaurants = Repo.SearchRestaurants(name, s);
-            var filteredRestaurants = restaurants;
+            var chophouse = Repo.DisplayAll(); 
+            return chophouse;
+            /*var filteredRestaurants = seeRest;
+            throw new NotImplementedException();
             if (Console.ReadLine() is not string Name)
+                throw new InvalidDataException("");
+            return filteredRestaurants;*/
+        }
+
+
+
+        public List<ChopHouse> SearchRestaurants(string name) // talks to repo 
+        {
+            List<ChopHouse>? restaurants = Repo.SearchRestaurants();
+
+            var filteredRestaurants = restaurants.Where(r => r.Name.Contains(name)).ToList();
+            return filteredRestaurants;
+            /*var filteredRestaurants = restaurants;*/
+
+            /*if (Console.ReadLine() is not string Name)
                 throw new InvalidDataException("");
             if (s == "Name")// when ever s is read is it == to name and city? else print all restaurants
                 filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(Name)).ToList();
@@ -146,7 +151,7 @@ namespace CHBL
                         this.Repo = Repo;
                     }*/
 
-           
+
 
         }
     }

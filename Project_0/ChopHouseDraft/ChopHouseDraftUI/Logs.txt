@@ -702,3 +702,44 @@
 2022-05-12 18:29:56.529 -04:00 [DBG] Redirecting user to Search Menu
 2022-05-12 18:29:58.448 -04:00 [INF] Searching database for filtered Restaurants
 2022-05-12 18:30:01.873 -04:00 [INF] Searching by name
+2022-05-13 02:23:48.474 -04:00 [DBG] Register new User
+2022-05-13 02:23:52.791 -04:00 [DBG] Redirected to Account Login
+2022-05-13 10:36:19.763 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-13 10:36:21.041 -04:00 [INF] Returning to Main Menu
+2022-05-13 10:36:21.041 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-13 10:36:24.720 -04:00 [DBG] Adding a Review
+2022-05-13 10:36:30.689 -04:00 [INF] Returning to Main Menu
+2022-05-13 10:36:30.689 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-13 10:36:33.233 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-13 10:36:35.153 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 10:36:35.153 -04:00 [INF] Returning to Main Menu
+2022-05-13 10:36:35.153 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-13 10:43:16.403 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-13 10:43:17.855 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 10:43:21.008 -04:00 [INF] Searching by name
+2022-05-13 11:26:39.021 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-13 11:26:41.323 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 11:26:41.323 -04:00 [INF] Displaying ChopHouses
+2022-05-13 11:34:17.932 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-13 11:34:20.187 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 11:34:20.187 -04:00 [INF] Displaying ChopHouses
+2022-05-13 11:35:43.094 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-13 11:35:44.878 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 11:35:44.878 -04:00 [INF] Displaying ChopHouses
+2022-05-13 11:42:10.957 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-13 11:42:12.283 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 11:42:12.284 -04:00 [INF] Displaying ChopHouses
+2022-05-13 13:21:22.774 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-13 13:21:25.341 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 13:23:26.944 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-13 13:23:28.915 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 13:23:35.745 -04:00 [INF] Searching by name
+2022-05-13 13:23:37.287 -04:00 [INF] Restaurant with search string {name} not found
+2022-05-13 13:23:46.817 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 13:23:50.434 -04:00 [INF] Searching by name
+2022-05-13 13:23:50.509 -04:00 [INF] Restaurant with search string {name} not found
+2022-05-13 13:24:09.474 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 13:24:11.554 -04:00 [INF] Searching by name
+2022-05-13 13:24:11.619 -04:00 [INF] Restaurant with search string {name} not found
+2022-05-13 13:24:15.698 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-13 13:24:18.754 -04:00 [INF] Searching by name

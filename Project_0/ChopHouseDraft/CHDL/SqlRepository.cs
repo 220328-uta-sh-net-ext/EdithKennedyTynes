@@ -13,10 +13,15 @@ namespace CHDL
     {
         public const string connectionStringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
         readonly string connectionString;
+
         public SqlRepository(string connectionString) //initalizing the connection string variable on  line 14 and file path on Line 13 
         {
             connectionString = File.ReadAllText(connectionStringFilePath); //assigning the connection string file path and reading the text.
             this.connectionString = connectionString;
+        }
+
+        public SqlRepository()
+        {
         }
 
         public ChopHouse AddRestaurant(ChopHouse rest)
@@ -65,9 +70,10 @@ namespace CHDL
             return view;
 
         }
-        public List<ChopHouse> SearchRestaurants(string name, string s)
+        public List<ChopHouse> SearchRestaurants()
         {
-            string selectCommandString = $"SELECT * FROM ChopHouse WHERE {name} = '{s}';";
+            string selectCommandString = "SELECT * FROM ChopHouse;";
+            //string selectCommandString = $"SELECT * FROM ChopHouse WHERE {name} = '{s}';";
             //string commandString = "SELECT * FROM ChopHouse";
 
             using SqlConnection connection = new(connectionString);
@@ -84,9 +90,9 @@ namespace CHDL
                 Restaurants.Add(new ChopHouse
                 {
                     StoreID = reader.GetString(0),
-                    Name = reader.GetString(0),
-                    City = reader.GetString(0),
-                    State = reader.GetString(0),
+                    Name = reader.GetString(1),
+                    City = reader.GetString(2),
+                    State = reader.GetString(3),
                     /*Rating = (int)row[3],
                     Review = (string)row[4],
                     NumRatings = (int)row[5],*/
@@ -100,31 +106,64 @@ namespace CHDL
 
 
 
-        public List<ChopHouse> DisplayAll(string r, string seeAll)
+        public List<ChopHouse> DisplayAll()
         {
-            string selectCommandString = $"SELECT * FROM ChopHouse WHERE {r} = '{seeAll}';";
+            var seeAll = DisplayAll();
+
+            string selectCommandString = $"SELECT * FROM ChopHouse;";
+            //string selectCommandString = $"SELECT * FROM ChopHouse WHERE  = '{All}';";
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(selectCommandString, connection);
-            connection.Open();
-            using SqlDataReader reader = command.ExecuteReader();
-
-            var Restaurants = new List<ChopHouse>();
-            while (reader.Read())
+            IDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new();
+            try
             {
-                Restaurants.Add(new ChopHouse
+                connection.Open();
+                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
+            }
+            catch (SqlException ex)
+            {
+                System.Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            var chophouse = new List<ChopHouse>();
+            DataColumn levelColumn = dataSet.Tables[0].Columns[2];
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                chophouse.Add(new ChopHouse
                 {
-                    Name = reader.GetString(0),
-                    City = reader.GetString(1),
-
-                    State = reader.GetString(2),
-                    StoreID = reader.GetString(6),
+                    StoreID = (string)row[0],
+                    Name = (string)row[1],
+                    City = (string)row[2],
+                    State = (string)row[3],
+                    
                 });
             }
-            return Restaurants;
-
-
+            return chophouse;
         }
+        /*connection.Open();
+        using SqlDataReader reader = command.ExecuteReader();
+
+        var Restaurants = new List<ChopHouse>();
+        while (reader.Read())
+        {
+            Restaurants.Add(new ChopHouse
+            {
+                Name = reader.GetString(0),
+                City = reader.GetString(1),
+
+                State = reader.GetString(2),
+                StoreID = reader.GetString(6),
+            });
+        }
+        return Restaurants;*/
+
+
+    
 
     }
 

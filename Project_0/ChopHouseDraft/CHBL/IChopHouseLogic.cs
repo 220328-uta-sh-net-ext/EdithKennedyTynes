@@ -12,9 +12,11 @@ namespace CHBL
         public ChopHouse AddRestaurant(ChopHouse rest);
 
 
-        public List<ChopHouse> SearchRestaurants(string name, string s);
+        public List<ChopHouse> SearchRestaurants(string name);
+        //public List<ChopHouse> SearchRestaurants(string City);
+        //public List<ChopHouse> SearchRestaurants(string name);
 
-        //List<ChopHouse> DisplayAll(string r, string seeAll); // CALLED IN sqlREPO
+        public List<ChopHouse> DisplayAll(); // method returns all restaurants from database CALLED IN sqlREPO
 
 
         public HouseReview AddHouseReview(HouseReview view);
