@@ -30,9 +30,8 @@ namespace CHModel
 
         }
 
-        public User(string connectionString, string userName, string password)
+        public User(string userName, string password)
         {
-            this.connectionString = connectionString;
             UserName = userName;
             Password = password;
         }

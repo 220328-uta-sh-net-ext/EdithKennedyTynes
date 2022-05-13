@@ -19,10 +19,10 @@ namespace CHDL
             connectionString = File.ReadAllText(connectionStringFilePath); //assigning the connection string file path and reading the text.
             this.connectionString = connectionString;
         }
-        
+
         public User CreateUser(User Create)
         {
-            return new User(connectionString, Create.UserName, Create.Password);
+            throw new NotImplementedException();
         }
 
         public bool Login(string username, string password)

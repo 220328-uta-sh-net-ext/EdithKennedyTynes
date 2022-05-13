@@ -13,12 +13,19 @@ namespace ChopHouseDraftUI
     public class RegUserMenu : User
     {
         public static User newRegUser = new User();
-
+        private IChopHouseLogic houseLogic;
+        private User newUser;
         readonly IUserLogic userlogic;
 
-        public RegUserMenu(IUserLogic userlogic)
+        public RegUserMenu(IChopHouseLogic houseLogic, IUserLogic userlogic)
         {
             this.userlogic = userlogic;
+        }
+
+        public RegUserMenu(IChopHouseLogic houseLogic, User newUser)
+        {
+            this.houseLogic = houseLogic;
+            this.newUser = newUser;
         }
 
         bool Register(string username, string password)

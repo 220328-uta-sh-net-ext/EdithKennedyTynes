@@ -58,13 +58,13 @@ while (repeat)
         case "Login":
             Log.Debug("Redirected to Account Login");
             Console.WriteLine("~~~Welcome to Account Login~~~");
-            menu = new Login();
+            //menu = new Login();
             break;
         case "RegUserMenu":
             Log.Debug("Register new User");
             Console.WriteLine("~~~Welcome to Account Registration~~~");
-           
-            menu = new RegUserMenu();
+            User newUser = new User();
+            //menu = new RegUserMenu(HouseLogic, newUser);
             break;
         case "MainMenu":
             Log.Debug("Displaying MainMenu to the User");
