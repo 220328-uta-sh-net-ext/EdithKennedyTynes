@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CHDL;
 using CHModel;
 using CHBL;
-using CHDL;
+
 
 namespace ChopHouseDraftUI
 {
@@ -18,7 +18,7 @@ namespace ChopHouseDraftUI
 
         readonly IChopHouseLogic logic; 
 
-        public static void DisplayAll()
+        public static void GetAllChopHouse()
         {
            
         }
@@ -74,7 +74,7 @@ namespace ChopHouseDraftUI
                     return "SearchRestaurantMenu";
                 case "2":
                     Console.Write("Searching by All Restaurants");
-                    var Chophouse = _repository.DisplayAll();
+                    var Chophouse = _repository.GetAllChopHouses();
                     Log.Information("Searching All ChopHouse");
                     foreach (var chophouse in Chophouse)
                     {

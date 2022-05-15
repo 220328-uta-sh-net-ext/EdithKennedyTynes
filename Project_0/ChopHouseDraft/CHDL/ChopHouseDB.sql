@@ -54,10 +54,12 @@ SELECT CONVERT (NVARCHAR(25), GetDate()
 --,CONVERT (date, SYSUTCDATETIME())   
 -- 
 --SELECT CURRENT_TIMESTAMP;  
-DECLARE @UserID DATETIME = CURRENT_TIMESTAMP;
-DECLARE @myDateTime NVARCHAR(25) = CONVERT(NVARCHAR, @DateTime, 126);
-SELECT @myDateTime AS 'myDateTime' 
+--DECLARE @UserID DATETIME = CURRENT_TIMESTAMP;
+--DECLARE @myDateTime NVARCHAR(25) = CONVERT(NVARCHAR, @DateTime, 126);
+--SELECT @myDateTime AS 'myDateTime' 
 --CONVERT ( data_type [ ( length ) ] , expression [ , style ] )  
+)
+
 INSERT INTO UserAccount(UserID, FirstName, LastName, UserName, Password, Email) VALUES ('myDateTime','Anita', 'Walker', 'Ilike2Eat', 'password1234','Ilike2eat@gmail.com')
 
 SELECT * FROM UserAccount

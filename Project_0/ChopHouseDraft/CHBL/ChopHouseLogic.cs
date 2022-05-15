@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CHBL
 {
-    public class ChopHouseLogic : IChopHouseLogic
+    public class ChopHouseLogic : IChopHouseLogic 
     {
         readonly IRepository Repo;
         
@@ -40,9 +40,6 @@ namespace CHBL
             else
                 Console.WriteLine("Null");*/
 
-
-
-
         }
 
         public HouseReview AddHouseReview(HouseReview view)
@@ -66,17 +63,25 @@ namespace CHBL
             //throw new NotImplementedException();
         }
 
-        public List<ChopHouse> DisplayAll()//calling method of stored variables in repo of restaurants in chophouse
+        public async Task<List<ChopHouse>> SearchAllAsync()
         {
-            var chophouse = Repo.DisplayAll(); 
+            return await Repo.GetAllChopHouseAsync();
+        }
+        public List<ChopHouse> GetAllChopHouses()//calling method of stored variables in repo of restaurants in chophouse
+        {
+            return Repo.GetAllChopHouses();
+            /*var chophouse = Repo.DisplayAll(); 
             return chophouse;
-            /*var filteredRestaurants = seeRest;
+            var filteredRestaurants = seeRest;
             throw new NotImplementedException();
             if (Console.ReadLine() is not string Name)
                 throw new InvalidDataException("");
             return filteredRestaurants;*/
         }
-
+        public List<ChopHouse> SearchAll()
+        {
+            return Repo.GetAllChopHouses();
+        }
 
 
         public List<ChopHouse> SearchRestaurants(string name) // talks to repo 
@@ -85,75 +90,80 @@ namespace CHBL
 
             var filteredRestaurants = restaurants.Where(r => r.Name.Contains(name)).ToList();
             return filteredRestaurants;
-            /*var filteredRestaurants = restaurants;*/
+        }
 
-            /*if (Console.ReadLine() is not string Name)
-                throw new InvalidDataException("");
-            if (s == "Name")// when ever s is read is it == to name and city? else print all restaurants
-                filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(Name)).ToList();
-            else if (s == "City")
-                filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains(s)).ToList();
-            else
-                filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains("")).ToList();
-            return filteredRestaurants;
-                        /*foreach (var rest in Restaurants)
+        
+
+        /*var filteredRestaurants = restaurants;*/
+
+        /*if (Console.ReadLine() is not string Name)
+            throw new InvalidDataException("");
+        if (s == "Name")// when ever s is read is it == to name and city? else print all restaurants
+            filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(Name)).ToList();
+        else if (s == "City")
+            filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains(s)).ToList();
+        else
+            filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains("")).ToList();
+        return filteredRestaurants;
+                    /*foreach (var rest in Restaurants)
+                    {
+                        if (rest.Name.Contains(name))
+                        {
+                            filteredRestaurants.Add(rest);
+                            return filteredRestaurants;
+                        }
+
+
+
+                        /*
+                        List<ChopHouse> filteredRestaurants = new List<ChopHouse>();
+                        foreach (var house in restaurants)
+                        {
+                            if (house.Name.Contains(name))
+                            {
+                                filterRestaurants.Add(house);
+                            }
+                            return restaurants;
+                        }
+
+
+
+                        string Name = Console.ReadLine();
+                            if (Console.ReadLine() is not string Name)
+                            throw new InvalidDataException("");
+                        if (s == "Name")// when ever s is read is it == to name and city? else print all restaurants
+                            filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(Name)).ToList();
+                        else if (s == "City")
+                            filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains(Name)).ToList();
+                        else
+                            filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains("")).ToList();
+                        return filteredRestaurants;
+                        foreach (var rest in Restaurants)
                         {
                             if (rest.Name.Contains(name))
                             {
                                 filteredRestaurants.Add(rest);
-                                return filteredRestaurants;
+
                             }
 
-
-
-                            /*
-                            List<ChopHouse> filteredRestaurants = new List<ChopHouse>();
-                            foreach (var house in restaurants)
-                            {
-                                if (house.Name.Contains(name))
-                                {
-                                    filterRestaurants.Add(house);
-                                }
-                                return restaurants;
-                            }
+                }
 
 
 
-                            string Name = Console.ReadLine();
-                                if (Console.ReadLine() is not string Name)
-                                throw new InvalidDataException("");
-                            if (s == "Name")// when ever s is read is it == to name and city? else print all restaurants
-                                filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(Name)).ToList();
-                            else if (s == "City")
-                                filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains(Name)).ToList();
-                            else
-                                filteredRestaurants = restaurants.Where(restaurant => restaurant.City.Contains("")).ToList();
-                            return filteredRestaurants;
-                            foreach (var rest in Restaurants)
-                            {
-                                if (rest.Name.Contains(name))
-                                {
-                                    filteredRestaurants.Add(rest);
+            public class UserLogic : IUserLogic
+            {
 
-                                }
-                            
-                    }
+                readonly IRepositoryUser Repo;
 
-
-
-                public class CHUserLogic : IUserLogic
+                public UserLogic()//injecting dependency through Re
                 {
-
-                    readonly IRepositoryUser Repo;
-
-                    public CHUserLogic()//injecting dependency through Re
-                    {
-                        this.Repo = Repo;
-                    }*/
+                    this.Repo = Repo;
+                }
 
 
 
-        }
+            }*/
+
     }
 }
   

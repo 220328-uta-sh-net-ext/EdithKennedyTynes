@@ -1,8 +1,9 @@
 using CHBL;
 using CHDL;
 
-string connectinStrringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
-string connectinStrring = File.ReadAllText(connectinStrringFilePath);
+
+string connectionStringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
+string connectionString = File.ReadAllText(connectionStringFilePath);
 // app here refers to the pipeline middleware steps sequential request pass through and processed accordingly
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();//middleware
+
+builder.Services.AddScoped<IRepository>(repo=>new SqlRepository(connectionString));//service call to within the scope
+
+builder.Services.AddScoped<IChopHouseLogic, ChopHouseLogic>();
 
 //builder.Services.AddScoped<IRepository>(repo => new SqlRepository(connectionString));
 //builder.Services.AddScoped<IChopHouseLogic, ChopHouseLogic>();

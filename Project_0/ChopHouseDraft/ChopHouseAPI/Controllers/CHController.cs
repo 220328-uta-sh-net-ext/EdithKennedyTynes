@@ -13,6 +13,14 @@ namespace ChopHouseAPI.Controllers
     [ApiController]
     public class CHController : ControllerBase // Controller base class has the logic to interact with HTTP and communication with client  
     {
+        private IChopHouseLogic _chopBL;
+
+        public CHController(IChopHouseLogic _chopBL) //contructor dependency
+        {
+            this._chopBL = _chopBL;
+        }
+
+
         private static List<ChopHouse> _chBL = new List<ChopHouse>
         {
             new ChopHouse {StoreID = "CH9632", Name = "Golden Dragon", City = "Norfolk", State = "VA" },
@@ -22,20 +30,32 @@ namespace ChopHouseAPI.Controllers
         [HttpGet]//Http method mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
         /*[Http] */
         [ProducesResponseType(200, Type = typeof(List<ChopHouse>))]
-
         public ActionResult<List<ChopHouse>> Get()
         {
-            return Ok(_chBL);
+            List<ChopHouse> chophouse = new List<ChopHouse>();
+            try
+            {
+                chophouse = _chopBL.SearchAll();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            return Ok(chophouse);
         }
+       
         [HttpGet("name")]// passing value in name 
-        [ProducesResponseType(200, Type = typeof(ChopHouse))]
+        [ProducesResponseType(200, Type = typeof(ChopHouse))] 
         [ProducesResponseType(404)]
-        public ActionResult<ChopHouse> Get(string name)
-        {
-            var rest = _chBL.Find(x => x.Name.Contains(name)); //LINQ query using Lambdas expression 
+        public ActionResult<ChopHouse> Get(string name)//primitive type so model binder will look for these values as querystring
+    {
+            var rest = _chopBL.SearchRestaurants(name);
+            //var rest = _chBL.Find(x => x.Name.Contains(name)); //LINQ query using Lambdas expression 
             //^stored in variable 
-            if (rest == null)
-                return BadRequest($"Restaurant {name} you are looking for is not found in database");
+            //if (rest == null)
+            //if (rest == null || rest.Any()) // in body results were []
+            if(rest.Count<=0)
+                return NotFound($"Restaurant {name} you are looking for is not found in database");
             return Ok(rest);
         }
 
@@ -47,7 +67,7 @@ namespace ChopHouseAPI.Controllers
         {
             if (rest == null)//condition check 
                 return BadRequest("Invalid Restaurant, try again with valid values");
-            _chBL.Add(rest);
+            _chopBL.AddRestaurant(rest);//_chBL.Add(rest); (restaurants added to (rest)
             return CreatedAtAction("Get", rest);
         }
         [HttpPut] // BE SURE TO CHANGE Verbs must matcg in code block 
@@ -55,25 +75,31 @@ namespace ChopHouseAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
+        //public ActionResult Put([FromQuery]ChopHouse rest, [FromBody]string name)//non-Default
         public ActionResult Put([FromBody] ChopHouse rest, string name)//[Put] [FromRoute] update restaurant.. to change restaurant by its name 
         {
             if (name == null)//condition check 
                 return BadRequest("Cannot Modify without name, try again with name value"); // if changed to status code 404 "Restaurant name cannot be found....
-            var chophouse = _chBL.Find(x => x.Name.Contains(name));
-            if (chophouse == null)
-                return NotFound("Restaurant NOT FOUND");// bad request can be interchanged with <NotFound> code 404
-            chophouse.StoreID = rest.StoreID;
-            chophouse.Name = rest.Name;
-            chophouse.City = rest.City;
-            chophouse.State = rest.State;
-            /*chophouse.Rating = rest.Rating;
-            chophouse.Review = rest.Review;
-            chophouse.NumRatings = rest.NumRatings;*/
-            
-
-            //_chBL.Remove(rest);
-            //_chBL.Add(rest);
+            try
+            {
+                var chophouse = _chBL.Find(x => x.Name.Contains(name)); //_chBL.Remove(rest);
+                                                                        //_chBL.Add(rest);
+                if (chophouse == null)
+                    return NotFound("Restaurant NOT FOUND");// bad request can be interchanged with <NotFound> code 404
+                chophouse.StoreID = rest.StoreID;
+                chophouse.Name = rest.Name;
+                chophouse.City = rest.City;
+                chophouse.State = rest.State;
+                /*chophouse.Rating = rest.Rating;
+                chophouse.Review = rest.Review;
+                chophouse.NumRatings = rest.NumRatings;*/
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
             return Created("Get", rest);// return Created("Get",rest); ... to return status code 201
+
         }
         [HttpDelete]
         public ActionResult Delete(string name)

@@ -103,18 +103,42 @@ namespace CHDL
             return Restaurants;
 
         }
-
-
-
-        public List<ChopHouse> DisplayAll()
+        public async Task<List<ChopHouse>> GetAllChopHouseConnected()
         {
-            var seeAll = DisplayAll();
+            string commandString = "SELECT * FROM ChopHouse;";
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new SqlCommand(commandString, connection);
+            await connection.OpenAsync();
+            using SqlDataReader reader = await command.ExecuteReaderAsync();
+            var chophouse = new List<ChopHouse>();
+            while (await reader.ReadAsync())
+            {
+                //put all constructors for ChopHouse and Users
+                chophouse.Add(new ChopHouse
+                {
+                    StoreID = reader.GetString(0),
+                    Name = reader.GetString(1),
+                    City = reader.GetString(2),
+                    State = reader.GetString(3),
 
-            string selectCommandString = $"SELECT * FROM ChopHouse;";
+                });
+            }
+            return chophouse;
+        }
+    
+
+
+
+
+        public List<ChopHouse> GetAllChopHouses()
+        {
+            //var seeAll = DisplayAll();
+
+            string commandString = $"SELECT * FROM ChopHouse;";
             //string selectCommandString = $"SELECT * FROM ChopHouse WHERE  = '{All}';";
 
             using SqlConnection connection = new(connectionString);
-            using SqlCommand command = new(selectCommandString, connection);
+            using SqlCommand command = new(commandString, connection);
             IDataAdapter adapter = new SqlDataAdapter(command);
             DataSet dataSet = new();
             try
@@ -145,25 +169,30 @@ namespace CHDL
             }
             return chophouse;
         }
-        /*connection.Open();
-        using SqlDataReader reader = command.ExecuteReader();
 
-        var Restaurants = new List<ChopHouse>();
-        while (reader.Read())
+        public Task<List<ChopHouse>> GetAllChopHouseAsync()
         {
-            Restaurants.Add(new ChopHouse
-            {
-                Name = reader.GetString(0),
-                City = reader.GetString(1),
-
-                State = reader.GetString(2),
-                StoreID = reader.GetString(6),
-            });
+            throw new NotImplementedException();
         }
-        return Restaurants;*/
+                            /*connection.Open();
+                    using SqlDataReader reader = command.ExecuteReader();
+
+                    var Restaurants = new List<ChopHouse>();
+                    while (reader.Read())
+                    {
+                       Restaurants.Add(new ChopHouse
+                       {
+                           Name = reader.GetString(0),
+                           City = reader.GetString(1),
+
+                           State = reader.GetString(2),
+                           StoreID = reader.GetString(6),
+                       });
+                    }
+                    return Restaurants;*/
 
 
-    
+
 
     }
 

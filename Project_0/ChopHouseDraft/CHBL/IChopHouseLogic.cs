@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CHBL
 {
-    public interface IChopHouseLogic
+    public interface IChopHouseLogic : IChopHouseSearch
     {
         public ChopHouse AddRestaurant(ChopHouse rest);
 
@@ -16,17 +16,18 @@ namespace CHBL
         //public List<ChopHouse> SearchRestaurants(string City);
         //public List<ChopHouse> SearchRestaurants(string name);
 
-        public List<ChopHouse> DisplayAll(); // method returns all restaurants from database CALLED IN sqlREPO
+        public List<ChopHouse> GetAllChopHouses(); // method returns all restaurants from database CALLED IN sqlREPO
 
 
         public HouseReview AddHouseReview(HouseReview view);
 
 
     }
-    interface IRestaurantSearch
+    public interface IChopHouseSearch
     {
-        string Name { get; }    
-        //public List<ChopHouse> SearchRestaurants(string name, string city);
+        List<ChopHouse> SearchAll();
+        Task<List<ChopHouse>> SearchAllAsync();
+
     }
     
 }
