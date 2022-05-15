@@ -1,7 +1,6 @@
 using CHBL;
 using CHDL;
 
-
 string connectionStringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
 string connectionString = File.ReadAllText(connectionStringFilePath);
 // app here refers to the pipeline middleware steps sequential request pass through and processed accordingly
