@@ -14,7 +14,7 @@ namespace ChopHouseDraftUI
     {
         public static ChopHouse newSearch = new ChopHouse();
 
-        private IRepository _repository = new SqlRepository();
+        //public IRepository _repository = new SqlRepository();
 
         readonly IChopHouseLogic logic; 
 
@@ -32,7 +32,7 @@ namespace ChopHouseDraftUI
         public void Display()
         {
             Console.WriteLine("Please select an option to filter the Restaurant database");
-            Console.WriteLine("Press <2> Display All"); // + newSearch.ChopHouse);
+            //Console.WriteLine("Press <2> Display All"); // + newSearch.ChopHouse);
             Console.WriteLine("Press <1> By Name"); // + newSearch.Name);
             Console.WriteLine("Press <0> Go Back");
             //Console.WriteLine("Press <3> By City");
@@ -72,7 +72,7 @@ namespace ChopHouseDraftUI
                     //Console.ReadLine();
                     //newSearch.Name = Console.ReadLine();
                     return "SearchRestaurantMenu";
-                case "2":
+                /*case "2":
                     Console.Write("Searching by All Restaurants");
                     var Chophouse = _repository.GetAllChopHouses();
                     Log.Information("Searching All ChopHouse");
@@ -82,7 +82,7 @@ namespace ChopHouseDraftUI
                             Console.WriteLine(chophouse);
                             Console.WriteLine("=================");
                     }
-                    return "SearchRestaurantMenu";
+                    return "SearchRestaurantMenu";*/
                 default:
                     Console.WriteLine("Please enter a valid response");
                     Console.WriteLine("Please press <enter> to continue");

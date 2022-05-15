@@ -14,8 +14,8 @@ namespace CHDL
         
         public HouseReview AddHouseReview(HouseReview view);// method to add review 
         public List<ChopHouse> SearchRestaurants();// method to view a restaurants filtered in database and return them as a generic list... CALLING A COLLECTION 
-        
-        Task<List<ChopHouse>> GetAllChopHouses();
+
+        public List<ChopHouse> GetAllChopHouses();
         Task<List<ChopHouse>> GetAllChopHouseAsync();
 
         //List<ChopHouse>? SearchRestaurants();

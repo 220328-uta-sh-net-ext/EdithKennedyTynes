@@ -30,7 +30,7 @@ namespace ChopHouseAPI.Controllers
         [HttpGet]//Http method mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
         /*[Http] */
         [ProducesResponseType(200, Type = typeof(List<ChopHouse>))]
-        public ActionResult<List<ChopHouse>> Get()
+        public ActionResult<List<ChopHouse>> Get()//***GET METHOD*** needs a parameter to be passed before we can process any value
         {
             List<ChopHouse> chophouse = new List<ChopHouse>();
             try
@@ -47,9 +47,10 @@ namespace ChopHouseAPI.Controllers
         [HttpGet("name")]// passing value in name 
         [ProducesResponseType(200, Type = typeof(ChopHouse))] 
         [ProducesResponseType(404)]
-        public ActionResult<ChopHouse> Get(string name)//primitive type so model binder will look for these values as querystring
-    {
-            var rest = _chopBL.SearchRestaurants(name);
+        // not an explicit method call, its being called through HTTP request to the methods and then it looks for the/ some parameter(s), EVERY ACTION METHOD looks for some values
+        public ActionResult<ChopHouse> Get(string name)//primitive type so model binder will look for these values as querystring "name parameter" model binding" parameter binding an entity
+        { //model binding" parameter binding an entity that automatically maps Json objects coming from HTTP (i.e. Postman) into the C# model
+                var rest = _chopBL.SearchRestaurants(name);
             //var rest = _chBL.Find(x => x.Name.Contains(name)); //LINQ query using Lambdas expression 
             //^stored in variable 
             //if (rest == null)
@@ -63,7 +64,7 @@ namespace ChopHouseAPI.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        public ActionResult Post([FromBody] ChopHouse rest)//Request of values from the body, parameters passed to rest 
+        public ActionResult Post([FromBody] ChopHouse rest)//COMPLEX TYPE Request of values from REQUEST BODY, parameters passed to (rest) "rest parameter" ([FromBody] someModel) is the MAGIC Method that does model binding operation
         {
             if (rest == null)//condition check 
                 return BadRequest("Invalid Restaurant, try again with valid values");
@@ -75,8 +76,9 @@ namespace ChopHouseAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
-        //public ActionResult Put([FromQuery]ChopHouse rest, [FromBody]string name)//non-Default
-        public ActionResult Put([FromBody] ChopHouse rest, string name)//[Put] [FromRoute] update restaurant.. to change restaurant by its name 
+        //public ActionResult Put([FromQuery]ChopHouse rest, [FromBody]string name)//non-Default asks for values from query and the body is used to pass the rest of the values
+        /*Default: public ActionResult Put(ChopHouse rest,string name)Default*/ 
+        public ActionResult Put([FromBody]/*or [FromQuery]*/ ChopHouse rest, string name)//[Put]METHOD: storing the values from [BODY/QUERY]. [FromRoute], [Put]updates restaurant.. to change restaurant by its name 
         {
             if (name == null)//condition check 
                 return BadRequest("Cannot Modify without name, try again with name value"); // if changed to status code 404 "Restaurant name cannot be found....

@@ -21,10 +21,6 @@ namespace CHDL
             this.connectionString = connectionString;
         }
 
-        public SqlRepository()
-        {
-        }
-
         public ChopHouse AddRestaurant(ChopHouse rest)
         /// <summary>
         /// "Restaurant added"
@@ -32,11 +28,11 @@ namespace CHDL
         /// <param name="rest"></param>
         /// <returns>the added restaurant <returns
         {
-            string selectCommandString = "INSERT INTO ChopHouse(StoreID,Name,City,State) VALUES" +
+            string commandString = "INSERT INTO ChopHouse(StoreID,Name,City,State) VALUES" +
                 "(@storeid,@name,@city,@state)";
 
             using SqlConnection connection = new(connectionString);
-            using SqlCommand command = new(selectCommandString, connection);
+            using SqlCommand command = new(commandString, connection);
             command.Parameters.AddWithValue("@storeid", rest.StoreID);
             command.Parameters.AddWithValue("@name", rest.Name);
             command.Parameters.AddWithValue("@city", rest.City);
@@ -127,7 +123,7 @@ namespace CHDL
             return chophouse;
         }// GetAllConnected() method Async.. and return task of list of ChopHouse Restaurants
 
-        public Task<List<ChopHouse>> GetAllChopHouses()
+        public List<ChopHouse> GetAllChopHouses()
         {
             //var seeAll = DisplayAll();
 
@@ -145,7 +141,11 @@ namespace CHDL
             }
             catch (SqlException ex)
             {
-                System.Console.WriteLine(ex.Message);
+                throw; //rethrow the exeption
+            }
+            catch(Exception ex)
+            {
+
             }
             finally
             {
