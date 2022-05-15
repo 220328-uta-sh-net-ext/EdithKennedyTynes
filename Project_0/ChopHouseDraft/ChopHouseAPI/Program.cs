@@ -9,9 +9,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers(options => options.RespectBrowserAcceptHeader = true)
+builder.Services.AddControllers(options => 
+    options.RespectBrowserAcceptHeader = true)
+ //,options.OutputFormatters.RemoveType<JsonFormatter>() example to only allow specific format 
+
 
 .AddXmlSerializerFormatters();//making a call to adding xml formatter 
+
+
+//aggressive caching to increase performance
+builder.Services.AddMemoryCache();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();//middleware

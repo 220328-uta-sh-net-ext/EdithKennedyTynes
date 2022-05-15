@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;///using same controller for MVC as API
 using CHBL;
 using CHModel;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Data.SqlClient;
 
 namespace ChopHouseAPI.Controllers
 {
@@ -14,10 +16,11 @@ namespace ChopHouseAPI.Controllers
     public class CHController : ControllerBase // Controller base class has the logic to interact with HTTP and communication with client  
     {
         private IChopHouseLogic _chopBL;
-
-        public CHController(IChopHouseLogic _chopBL) //contructor dependency
+        private IMemoryCache memoryCache;
+        public CHController(IChopHouseLogic _chopBL, IMemoryCache memoryCache) //contructor injecting dependency
         {
             this._chopBL = _chopBL;
+            this.memoryCache = memoryCache;
         }
 
 
@@ -30,18 +33,28 @@ namespace ChopHouseAPI.Controllers
         [HttpGet]//Http method mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
         /*[Http] */
         [ProducesResponseType(200, Type = typeof(List<ChopHouse>))]
-        public ActionResult<List<ChopHouse>> Get()//***GET METHOD*** needs a parameter to be passed before we can process any value
+
+        //public ActionResult<List<ChopHouse>> Get()//***GET METHOD*** needs a parameter to be passed before we can process any value
+        public async Task<ActionResult<List<ChopHouse>>> Get()
         {
-            List<ChopHouse> chophouse = new List<ChopHouse>();
+            List<ChopHouse> chophouses = new List<ChopHouse>();
             try
             {
-                chophouse = _chopBL.SearchAll();
+                if(!memoryCache.TryGetValue("chopList", out chophouses))// any restaurants will be stored in the chophouses
+                {
+                    chophouses = _chopBL.SearchAll();
+                }   memoryCache.Set("choplist", chophouses, new TimeSpan(0, 1 ,0));// 1 min
+               
+            }
+            catch(SqlException ex)
+            {
+                return NotFound(ex. Message);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-            return Ok(chophouse);
+            return Ok(chophouses);
         }
        
         [HttpGet("name")]// passing value in name 
