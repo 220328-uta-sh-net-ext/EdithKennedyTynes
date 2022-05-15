@@ -17,7 +17,12 @@ namespace ChopHouseAPI.Controllers
     {
         private IChopHouseLogic _chopBL;
         private IMemoryCache memoryCache;
-        public CHController(IChopHouseLogic _chopBL, IMemoryCache memoryCache) //contructor injecting dependency
+        /// <summary>
+        /// contructor injecting dependency
+        /// </summary>
+        /// <param name="_chopBL"></param>
+        /// <param name="memoryCache"></param>
+        public CHController(IChopHouseLogic _chopBL, IMemoryCache memoryCache) 
         {
             this._chopBL = _chopBL;
             this.memoryCache = memoryCache;
@@ -29,6 +34,10 @@ namespace ChopHouseAPI.Controllers
             new ChopHouse {StoreID = "CH9632", Name = "Golden Dragon", City = "Norfolk", State = "VA" },
             new ChopHouse {StoreID = "CH9633", Name = "Golden Rays", City = "Norfolk", State = "VA"},
         };
+        /// <summary>
+        /// Returns the restaurants in ChopHouse Database
+        /// </summary>
+        /// <returns></returns>
         //Action Methods : ways to access or manipulate the resources, its uses the HTTP VERBS/methods(GET, PUT, POST, DELETE, PATCH, HEAD etc....)
         [HttpGet]//Http method mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
         /*[Http] */
@@ -40,7 +49,7 @@ namespace ChopHouseAPI.Controllers
             List<ChopHouse> chophouses = new List<ChopHouse>();
             try
             {
-                if(!memoryCache.TryGetValue("chopList", out chophouses))// any restaurants will be stored in the chophouses
+                if(!memoryCache.TryGetValue("chopList", out chophouses))// any restaurants will be stored in the chophouses parameter
                 {
                     chophouses = _chopBL.SearchAll();
                 }   memoryCache.Set("choplist", chophouses, new TimeSpan(0, 1 ,0));// 1 min

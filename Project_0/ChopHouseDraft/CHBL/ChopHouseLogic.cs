@@ -13,16 +13,21 @@ namespace CHBL
     public class ChopHouseLogic : IChopHouseLogic 
     {
         readonly IRepository Repo;
-        
 
-        /*public ChopHouseLogic()
-        {
-        }*/
 
-        public ChopHouseLogic(IRepository repo)//injecting dependency through Repo
+        /// <summary>
+        /// injecting dependency through Repo
+        /// </summary>
+        /// <param name="repo"></param>
+        public ChopHouseLogic(IRepository repo)
         {
             this.Repo = repo;
         }
+        /// <summary>
+        /// method for adding a Restaurant to the ChopHouse Database
+        /// </summary>
+        /// <param name="rest"></param>
+        /// <returns></returns>
      
 
         public ChopHouse AddRestaurant(ChopHouse rest)/// talks to the IRepo
@@ -41,7 +46,11 @@ namespace CHBL
                 Console.WriteLine("Null");*/
 
         }
-
+        /// <summary>
+        /// method for adding review as User
+        /// </summary>
+        /// <param name="view"></param>
+        /// <returns></returns>
         public HouseReview AddHouseReview(HouseReview view)
 
         {
@@ -62,14 +71,22 @@ namespace CHBL
 
             //throw new NotImplementedException();
         }
+        /// <summary>
+        /// asynchronous method using await keyword
+        /// </summary>
+        /// <returns>results directly from the database out of order of the synchronous thread primarily used for large request of records</returns>
 
         public async Task<List<ChopHouse>> SearchAllAsync()//--async means the method is asynchronous it might have 1 or more awaits
         {
-            return await Repo.GetAllChopHouseAsync();//await keywaord ensures where we wait for intensive computation method and it will release main thread 
+            return await Repo.GetAllChopHouseAsync();//await keyword ensures where we wait for intensive computation method and it will release main thread 
             //Task.Run is used to create a new thread to run this method, but if this method is async as well then we need not to use Task.Run
             //Action is a delegate of type void
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<ChopHouse> GetAllChopHouses()//calling method of stored variables in repo of restaurants in chophouse
         {
             return Repo.GetAllChopHouses();
