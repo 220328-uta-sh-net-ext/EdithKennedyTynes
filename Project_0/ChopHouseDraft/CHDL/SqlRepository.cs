@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
+using System;
 
 
 namespace CHDL
@@ -108,10 +109,10 @@ namespace CHDL
             string commandString = "SELECT * FROM ChopHouse;";
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new SqlCommand(commandString, connection);
-            await connection.OpenAsync();
-            using SqlDataReader reader = await command.ExecuteReaderAsync();
+            await connection.OpenAsync();//Async
+            using SqlDataReader reader = await command.ExecuteReaderAsync();//Async w/ await
             var chophouse = new List<ChopHouse>();
-            while (await reader.ReadAsync())
+            while (await reader.ReadAsync())//Async w/ await keyword
             {
                 //put all constructors for ChopHouse and Users
                 chophouse.Add(new ChopHouse
@@ -122,15 +123,11 @@ namespace CHDL
                     State = reader.GetString(3),
 
                 });
-            }
+            }//
             return chophouse;
-        }
-    
+        }// GetAllConnected() method Async.. and return task of list of ChopHouse Restaurants
 
-
-
-
-        public List<ChopHouse> GetAllChopHouses()
+        public Task<List<ChopHouse>> GetAllChopHouses()
         {
             //var seeAll = DisplayAll();
 
@@ -170,10 +167,44 @@ namespace CHDL
             return chophouse;
         }
 
-        public Task<List<ChopHouse>> GetAllChopHouseAsync()
+        public async Task<List<ChopHouse>> GetAllChopHouseAsync()
         {
-            throw new NotImplementedException();
+            string commandString = $"SELECT * FROM ChopHouse;";
+            //string selectCommandString = $"SELECT * FROM ChopHouse WHERE  = '{All}';";
+
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            IDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new();
+            try
+            {
+                /* async or */ await connection.OpenAsync(); 
+                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
+            }
+            catch (SqlException ex)
+            {
+                System.Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            var chophouse = new List<ChopHouse>();
+            DataColumn levelColumn = dataSet.Tables[0].Columns[2];
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                chophouse.Add(new ChopHouse
+                {
+                    StoreID = (string)row[0],
+                    Name = (string)row[1],
+                    City = (string)row[2],
+                    State = (string)row[3],
+
+                });
+            }
+            return chophouse;
         }
+    }
                             /*connection.Open();
                     using SqlDataReader reader = command.ExecuteReader();
 
@@ -194,7 +225,7 @@ namespace CHDL
 
 
 
-    }
+    
 
 }
 

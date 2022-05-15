@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace CHDL
 {
@@ -34,5 +35,44 @@ namespace CHDL
         {
             throw new NotImplementedException();
         }
+        public async Task<List<ChopHouse>> GetAllChopHouseAsync()
+        {
+            string commandString = $"SELECT * FROM ChopHouse;";
+            //string selectCommandString = $"SELECT * FROM ChopHouse WHERE  = '{All}';";
+
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            IDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new();
+            try
+            {
+                /* async or */
+                await connection.OpenAsync();
+                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
+            }
+            catch (SqlException ex)
+            {
+                System.Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            var chophouse = new List<ChopHouse>();
+            DataColumn levelColumn = dataSet.Tables[0].Columns[2];
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                chophouse.Add(new ChopHouse
+                {
+                    StoreID = (string)row[0],
+                    Name = (string)row[1],
+                    City = (string)row[2],
+                    State = (string)row[3],
+
+                });
+            }
+            return chophouse;
+        }
     }
+    
 }
