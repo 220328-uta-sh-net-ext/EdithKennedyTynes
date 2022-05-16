@@ -8,15 +8,21 @@ using CHModel;
 
 namespace CHBL
 {
-    public abstract class UserLogic : IUserLogic 
+    public class UserLogic : IUserLogic  
     {
-        readonly IRepositoryUser UserRepo;
+         readonly IRepositoryUser UserRepo;
 
-        public UserLogic(IRepositoryUser userRepo)//injecting dependency through user repo
+        public UserLogic(IRepositoryUser repo)//injecting dependency through user repo
         {
-            this.UserRepo = userRepo;
+            this.UserRepo = repo;
         }
-        public abstract void Add(CHDL.Admin admin);
+
+        /*public void Save(User Create)
+        {
+            UserRepo.Save(Create);
+        }  */      
+
+        /*public abstract void Add(CHDL.Admin admin);
        //Add Admin~> Abstract method with only method declaration, no implementation
         public abstract void Delete(CHDL.Admin admin);
 
@@ -27,35 +33,28 @@ namespace CHBL
         {
             throw new NotImplementedException();
         }
-
-        public bool Login(string username, string password)
+*/
+        public bool Login(User login)
         {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class UserImplementations : IUserLogic // ALL abstract methods and must be cast?
-    {
-        public void Add(CHDL.Admin admin) //add
-        {
-            throw new NotImplementedException();
+            return UserRepo.Login(login);
         }
 
-        public User CreateUser(User Create) //Admin and User ability
+        public User CreateUser(User Create)
         {
-            throw new NotImplementedException();
+            return UserRepo.CreateUser(Create);
         }
 
-        public void Delete(CHDL.Admin admin) //remove for AdminUser responsibility but User should be able to make a request to delete account
+        public User Add(Admin admin)
         {
             throw new NotImplementedException();
         }
 
-        public CHDL.Admin SearchUser(string ID) //search for AdminUser
+        public User Delete(Admin admin)
         {
             throw new NotImplementedException();
         }
-        public CHDL.Admin Update(CHDL.Admin Admin) //modify for AdminUser
+
+        public Admin Update(Admin admin)
         {
             throw new NotImplementedException();
         }

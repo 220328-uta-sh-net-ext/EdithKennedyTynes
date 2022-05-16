@@ -75,6 +75,10 @@ if (app.Environment.IsDevelopment())// no error pages
 }
 
 app.UseHttpsRedirection();//read from one page to another all .app are middleware
+/// <summary>
+///  basic auththorization created through JWT for the different roles
+/// </summary>
+app.UseAuthentication();
 
 app.UseAuthorization();//security 
 

@@ -16,7 +16,9 @@ string connectionString = File.ReadAllText(connectionStringFilePath);
 
 
 IRepositoryUser userRepo = new UserRepository(connectionString);
-//IUserLogic userlogic = new SqlRepository();
+
+//UserLogic userlogic = new UserLogic(userRepo);
+IUserLogic userlogic = new UserLogic(userRepo);
 
 IRepository Sqlrepo = new SqlRepository(connectionString); // an object of the class in the sql repository
 IChopHouseLogic HouseLogic = new ChopHouseLogic(Sqlrepo);
@@ -63,8 +65,8 @@ while (repeat)
         case "RegUserMenu":
             Log.Debug("Register new User");
             Console.WriteLine("~~~Welcome to Account Registration~~~");
-            User newUser = new User();
-            //menu = new RegUserMenu(HouseLogic, newUser);
+            //User newUser = new User();
+            menu = new RegUserMenu();
             break;
         case "MainMenu":
             Log.Debug("Displaying MainMenu to the User");

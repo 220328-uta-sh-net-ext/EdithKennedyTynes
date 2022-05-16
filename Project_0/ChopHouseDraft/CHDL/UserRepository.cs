@@ -15,26 +15,39 @@ namespace CHDL
         public const string connectionStringFilePath = "C:/Revature/Project_0/ChopHouseDraft/CHDL/Connection-string.txt";
         readonly string connectionString;
 
-        public UserRepository( string connectionString)
+        public UserRepository(string connectionString)
         {
             connectionString = File.ReadAllText(connectionStringFilePath); //assigning the connection string file path and reading the text.
             this.connectionString = connectionString;
         }
 
-        public User CreateUser(User Create) // how to save to db?
+        public User CreateUser(User Create) 
+        {
+            string selectCommandString = "INSERT INTO User(UserID,FirstName,LastName,UserName,Password,Email) VALUES" +
+                "(@@userid,@firstname,@lastname,@username,@password,@email)";
+
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(selectCommandString, connection);
+            command.Parameters.AddWithValue("@userid", Create.UserID);
+            command.Parameters.AddWithValue("@firstname", Create.FirstName);
+            command.Parameters.AddWithValue("@lastname", Create.LastName);
+            command.Parameters.AddWithValue("@username", Create.UserName);
+            command.Parameters.AddWithValue("@password", Create.Password);
+            command.Parameters.AddWithValue("@email", Create.Email);
+
+
+            connection.Open();
+            command.ExecuteNonQuery();
+
+
+            return Create;
+        }
+
+        public bool Login(User login)// how to save to db? Login for user and admin 
         {
             throw new NotImplementedException();
         }
 
-        public bool Login(string username, string password)// how to save to db?
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Register(string username, string password)// how to save to db?
-        {
-            throw new NotImplementedException();
-        }
         public async Task<List<ChopHouse>> GetAllChopHouseAsync()
         {
             string commandString = $"SELECT * FROM ChopHouse;";
@@ -72,6 +85,16 @@ namespace CHDL
                 });
             }
             return chophouse;
+        }
+
+        public void Save(User Create)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Save(string username, string password)
+        {
+            throw new NotImplementedException();
         }
     }
     

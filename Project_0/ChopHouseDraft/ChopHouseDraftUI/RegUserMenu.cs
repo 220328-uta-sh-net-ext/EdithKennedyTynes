@@ -10,23 +10,11 @@ using ChopHouseDraftUI;
 
 namespace ChopHouseDraftUI
 {
-    public class RegUserMenu : User
+    public class RegUserMenu : User, IMenu
     {
         public static User newRegUser = new User();
-        private IChopHouseLogic houseLogic;
-        private User newUser;
+     
         readonly IUserLogic userlogic;
-
-        public RegUserMenu(IChopHouseLogic houseLogic, IUserLogic userlogic)
-        {
-            this.userlogic = userlogic;
-        }
-
-        public RegUserMenu(IChopHouseLogic houseLogic, User newUser)
-        {
-            this.houseLogic = houseLogic;
-            this.newUser = newUser;
-        }
 
         bool Register(string username, string password)
         {
@@ -34,7 +22,7 @@ namespace ChopHouseDraftUI
         }
         public User CreateUser(User Create)
         {
-            throw new NotImplementedException();
+            return Create;
         }
 
         public void Display()
@@ -52,7 +40,7 @@ namespace ChopHouseDraftUI
         }
 
 
-        string UserChoice()
+        public string UserChoice()
         {
             if (Console.ReadLine() is not string userInput)
                 throw new InvalidDataException("");

@@ -1,49 +1,56 @@
-﻿using CHDL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CHModel;
-
+using CHDL;
 
 
 namespace CHBL
 {
-    public interface IUser 
+    public interface IUserLogic
     {
-        public User CreateUser(User Create);
-
-
-        bool Login(string username, string password);
-        bool Register(string username, string password);
-
-
-        /// <summary>
-        /// Onlu AdminUser should have access to these properties and methods not the User
-        /// </summary>
-        interface Ilog
+       
+        
+        public bool Login(User login)
         {
-            void LogError(string error);
+            Dictionary<string, string> UserRecords = new Dictionary<string, string>()
+            {
+            {"UserName1", "Password1" },
+            {"UserName2", "Password2" },
+            {"UserName3", "Password3" },
+            {"UserName4", "Password4" },
+            {"UserName5", "Password5" }
+            };
 
+            if (!UserRecords.Any(a => a.Key == login.UserName && a.Value == login.Password)) //Lambdas Expression
+            {
+                return false;
+            }
+            else
+            return true;
         }
-        interface IEmail
+
+        public User CreateUser(User Create)
         {
-            bool SendEmail(string emailContent);
+            throw new NotImplementedException();
         }
 
-    }
-    public interface IUserLogic 
-    {
-        User CreateUser(User Create);
-        //List<User> SearchAll();
-        void Add(CHDL.Admin admin); //AdminUser; Abstract methods maybe consider using Delegate?
-        void Delete(CHDL.Admin admin); //AdminUser
-        CHDL.Admin Update(CHDL.Admin admin); //AdminUser
-    }
+        public void Add(Admin admin)
+        {
+            throw new NotImplementedException();
+        }
 
+        public void Delete(Admin admin)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Admin Update(Admin admin)
+        {
+            throw new NotImplementedException();
+        }
+        
+    }
 }
-
-
-
-
