@@ -21,17 +21,17 @@ namespace CHDL
             this.connectionString = connectionString;
         }
 
-        public User CreateUser(User Create)
+        public User CreateUser(User Create) // how to save to db?
         {
             throw new NotImplementedException();
         }
 
-        public bool Login(string username, string password)
+        public bool Login(string username, string password)// how to save to db?
         {
             throw new NotImplementedException();
         }
 
-        public bool Register(string username, string password)
+        public bool Register(string username, string password)// how to save to db?
         {
             throw new NotImplementedException();
         }

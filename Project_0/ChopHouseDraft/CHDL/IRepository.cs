@@ -22,22 +22,33 @@ namespace CHDL
     }
     public interface IRepositoryUser 
     {
-
+        void Save();
         Task<List<ChopHouse>> GetAllChopHouseAsync();
         public User CreateUser(User Create);
 
-
+        /// <summary>
+        /// methods used for the user; username and attempt to implement SOLID Principle: Simple Responsibility Principle
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         bool Login(string username, string password);
         bool Register(string username, string password);
 
+        /// <summary>
+        /// input parameter string with login properties and responsibilities 
+        /// </summary>
         interface Ilog
         {
             void LogError(string error);
 
         }
+        /// <summary>
+        /// input parameter string with login properties and responsibilities
+        /// </summary>
         interface IEmail
         {
-            bool SendEmail(string emailContent);
+            bool SendEmail(string emailContent); 
         }
 
 

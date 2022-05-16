@@ -18,6 +18,10 @@ namespace CHBL
         bool Login(string username, string password);
         bool Register(string username, string password);
 
+
+        /// <summary>
+        /// Onlu AdminUser should have access to these properties and methods not the User
+        /// </summary>
         interface Ilog
         {
             void LogError(string error);
@@ -33,9 +37,9 @@ namespace CHBL
     {
         User CreateUser(User Create);
         //List<User> SearchAll();
-        void Add(CHDL.Admin admin);
-        void Delete(CHDL.Admin admin);
-        CHDL.Admin Update(CHDL.Admin admin);
+        void Add(CHDL.Admin admin); //AdminUser; Abstract methods maybe consider using Delegate?
+        void Delete(CHDL.Admin admin); //AdminUser
+        CHDL.Admin Update(CHDL.Admin admin); //AdminUser
     }
 
 }
