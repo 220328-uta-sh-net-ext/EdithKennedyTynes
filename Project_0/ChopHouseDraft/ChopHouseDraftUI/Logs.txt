@@ -792,3 +792,10 @@
 2022-05-13 17:41:58.273 -04:00 [INF] Restaurant with search string {name} not found
 2022-05-13 17:42:02.625 -04:00 [INF] Searching database for filtered Restaurants
 2022-05-13 17:42:10.002 -04:00 [INF] Searching by name
+2022-05-15 21:29:11.513 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-15 21:29:13.127 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-15 21:29:20.039 -04:00 [INF] Searching by name
+2022-05-15 21:29:26.215 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-15 21:29:34.072 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-15 21:29:34.072 -04:00 [INF] Returning to Main Menu
+2022-05-15 21:29:34.072 -04:00 [DBG] Displaying MainMenu to the User

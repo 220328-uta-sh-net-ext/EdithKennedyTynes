@@ -4,6 +4,7 @@ using CHBL;
 using CHModel;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ChopHouseAPI.Controllers
 {
@@ -13,6 +14,8 @@ namespace ChopHouseAPI.Controllers
     //URI uniform resource identifier, how do you identify a resource...a unique URL
     //URL uniform resource locator
     [ApiController]
+    [Authorize] //Authenticate user 
+    
     public class CHController : ControllerBase // Controller base class has the logic to interact with HTTP and communication with client  
     {
         private IChopHouseLogic _chopBL;
@@ -40,7 +43,7 @@ namespace ChopHouseAPI.Controllers
         /// <returns></returns>
         //Action Methods : ways to access or manipulate the resources, its uses the HTTP VERBS/methods(GET, PUT, POST, DELETE, PATCH, HEAD etc....)
         [HttpGet]//Http method mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
-        /*[Http] */
+        /*[Http] Nethod */
         [ProducesResponseType(200, Type = typeof(List<ChopHouse>))]
 
         //public ActionResult<List<ChopHouse>> Get()//***GET METHOD*** needs a parameter to be passed before we can process any value
@@ -81,25 +84,41 @@ namespace ChopHouseAPI.Controllers
                 return NotFound($"Restaurant {name} you are looking for is not found in database");
             return Ok(rest);
         }
-
+        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        public ActionResult Post([FromBody] ChopHouse rest)//COMPLEX TYPE Request of values from REQUEST BODY, parameters passed to (rest) "rest parameter" ([FromBody] someModel) is the MAGIC Method that does model binding operation
+
+        /// <summary>
+        /// COMPLEX TYPE Request of values REQUEST [FromBody], parameters passed to (rest) "rest parameter" ([FromBody] someModel) 
+        /// is the MAGIC Method that does model binding operation
+        /// </summary>
+        /// <param name="rest"></param>
+        /// <returns>Model binging operation</returns>
+        public ActionResult Post([FromBody] ChopHouse rest)//complex type
         {
             if (rest == null)//condition check 
                 return BadRequest("Invalid Restaurant, try again with valid values");
             _chopBL.AddRestaurant(rest);//_chBL.Add(rest); (restaurants added to (rest)
             return CreatedAtAction("Get", rest);
         }
-        [HttpPut] // BE SURE TO CHANGE Verbs must matcg in code block 
+
+        [HttpPut] // BE SURE TO CHANGE Verbs must match in code block 
+        
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
         //public ActionResult Put([FromQuery]ChopHouse rest, [FromBody]string name)//non-Default asks for values from query and the body is used to pass the rest of the values
-        /*Default: public ActionResult Put(ChopHouse rest,string name)Default*/ 
+        /*Default: public ActionResult Put(ChopHouse rest,string name)Default*/
+
+        /// <summary>
+        ///User not permitted to use make a [Put] request
+        /// </summary>
+        /// <returns>authenticate at Action level</returns>
+        //[Authorize]
+
         public ActionResult Put([FromBody]/*or [FromQuery]*/ ChopHouse rest, string name)//[Put]METHOD: storing the values from [BODY/QUERY]. [FromRoute], [Put]updates restaurant.. to change restaurant by its name 
         {
             if (name == null)//condition check 
