@@ -11,16 +11,17 @@ namespace ChopHouseAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly IJWTManagerRepo repository;
-        public UserController(IJWTManagerRepo repository)
+        public UserController(IJWTManagerRepo repository) //constructor injection dependency 
         {
             this.repository = repository;
         }
-        [AllowAnonymous]
+        [AllowAnonymous]// for if you any method is public we can use to secure them
+       
         [HttpPost]
-        [Route("authenticate")]
-        public IActionResult Authenticate(User user)
+        [Route("Authenticate")]
+        public IActionResult Authenticate(AdminUser aduser)
         {
-            var token = repository.Authenticate(user);
+            var token = repository.Authenticate(aduser);//pass aduser
             if (token == null)
                 return Unauthorized();
             return Ok(token);

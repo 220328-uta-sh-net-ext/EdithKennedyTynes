@@ -4,6 +4,6 @@ namespace ChopHouseAPI.Repository
 {
     public interface IJWTManagerRepo
     {
-        Token Authenticate(User user);
+        Token Authenticate(AdminUser aduser);
     }
 }

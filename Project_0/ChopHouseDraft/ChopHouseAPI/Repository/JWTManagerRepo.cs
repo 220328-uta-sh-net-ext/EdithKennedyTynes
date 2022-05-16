@@ -1,6 +1,5 @@
-﻿
+﻿using Microsoft.IdentityModel.Tokens;
 using CHModel;
-using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -25,32 +24,32 @@ namespace ChopHouseAPI.Repository
     /// </summary>
         public JWTManagerRepo(IConfiguration configuration)
         {
-            this.configuration = configuration;
+            this.configuration = configuration;//instantiating configuration
         }
-        Dictionary<string, string> UserRecords = new Dictionary<string, string>()
+        Dictionary<string, string> UserRecords = new Dictionary<string, string>
         {
-            {"UserName1", "Password1" },
-            {"UserName2", "Password2" },
-            {"UserName3", "Password3" },
-            {"UserName4", "Password4" },
-            {"UserName5", "Password5" }
+            {"User1", "Password1" },
+            {"User2", "Password2" },
+            {"User3", "Password3" },
+            {"User4", "Password4" },
+            {"User5", "Password5" }
         };
 
         /// <summary>
-        /// Checking if the user is matching to that in the dictionary 
+        /// Checking 'if' the user is matching to that in the dictionary 
         /// from database
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public Token Authenticate(User user)
+        public Token Authenticate(AdminUser aduser)
         {
-            if (!UserRecords.Any(a=>a.Key==user.UserName && a.Value == user.Password)) //Lambdas Expression
+            if (!UserRecords.Any(a => a.Key == aduser.UserName && a.Value == aduser.Password)) //Lambdas Expression
             {
                 return null;
-            }
-            //else generate JWT Token
-            var tokenHandler=new JwtSecurityTokenHandler();
-            var tokenKey=Encoding.UTF8.GetBytes(configuration["JWT:KEY"]);
+            }       
+            //else generate JWT Token if username and password match
+            var tokenhandler=new JwtSecurityTokenHandler();
+            var tokenKey=Encoding.UTF32.GetBytes(configuration["JWT:Key"]);
 
             //token descriptor know as the claims..Boiler plate code?
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -58,15 +57,15 @@ namespace ChopHouseAPI.Repository
                 Subject=new System.Security.Claims.ClaimsIdentity(
                     new Claim[]
                     {
-                        new Claim(ClaimTypes.Name, user.UserName)
+                        new Claim(ClaimTypes.Name, aduser.UserName)
                     }),
                 Expires = DateTime.UtcNow.AddMinutes(5),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256), //SecurityAlgorithms.HmacSha256 converts token in unreadable format/encryption for security
 
             };
-
-            var token=tokenHandler.CreateToken(tokenDescriptor);
-            return new Token { ValidToken = tokenHandler.WriteToken(token) };
+            //creating token and storing it in var
+            var token=tokenhandler.CreateToken(tokenDescriptor);
+            return new Token { RToken = tokenhandler.WriteToken(token) };//method returns token
         }
         
 

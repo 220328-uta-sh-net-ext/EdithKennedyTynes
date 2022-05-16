@@ -5,6 +5,7 @@ using CHModel;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Authorization;
+using ChopHouseAPI.Repository;
 
 namespace ChopHouseAPI.Controllers
 {
@@ -14,10 +15,11 @@ namespace ChopHouseAPI.Controllers
     //URI uniform resource identifier, how do you identify a resource...a unique URL
     //URL uniform resource locator
     [ApiController]
-    [Authorize] //Authenticate user 
+    //[Authorize] //Authenticate user 401 error code if not authorized
     
     public class CHController : ControllerBase // Controller base class has the logic to interact with HTTP and communication with client  
     {
+        private readonly IJWTManagerRepo repository;
         private IChopHouseLogic _chopBL;
         private IMemoryCache memoryCache;
         /// <summary>
@@ -25,10 +27,11 @@ namespace ChopHouseAPI.Controllers
         /// </summary>
         /// <param name="_chopBL"></param>
         /// <param name="memoryCache"></param>
-        public CHController(IChopHouseLogic _chopBL, IMemoryCache memoryCache) 
+        public CHController(IChopHouseLogic _chopBL, IMemoryCache memoryCache, IJWTManagerRepo repository)//Constructor Dependency
         {
             this._chopBL = _chopBL;
             this.memoryCache = memoryCache;
+            this.repository = repository;
         }
 
 
@@ -41,13 +44,18 @@ namespace ChopHouseAPI.Controllers
         /// Returns the restaurants in ChopHouse Database
         /// </summary>
         /// <returns></returns>
+        [Authorize]//Authenticate user 401 error code if not authorized, placing here none of the methods will be visible
+
         //Action Methods : ways to access or manipulate the resources, its uses the HTTP VERBS/methods(GET, PUT, POST, DELETE, PATCH, HEAD etc....)
         [HttpGet]//Http method mentioned exclusively in [] http method [HttpPut], [HttpPost], [HttpDelete]
-        /*[Http] Nethod */
+        /*[Http] Nethod*/
         [ProducesResponseType(200, Type = typeof(List<ChopHouse>))]
 
-        //public ActionResult<List<ChopHouse>> Get()//***GET METHOD*** needs a parameter to be passed before we can process any value
-        public async Task<ActionResult<List<ChopHouse>>> Get()
+
+        //public async Task<ActionResult<List<ChopHouse>>> Get()
+        //public ActionResult<List<ChopHouse>> Get()  
+        //***GET METHOD*** needs a parameter to be passed before we can process any value
+        public ActionResult<List<ChopHouse>> Get()
         {
             List<ChopHouse> chophouses = new List<ChopHouse>();
             try
@@ -73,9 +81,10 @@ namespace ChopHouseAPI.Controllers
         [ProducesResponseType(200, Type = typeof(ChopHouse))] 
         [ProducesResponseType(404)]
         // not an explicit method call, its being called through HTTP request to the methods and then it looks for the/ some parameter(s), EVERY ACTION METHOD looks for some values
+        //[Authorize]
         public ActionResult<ChopHouse> Get(string name)//primitive type so model binder will look for these values as querystring "name parameter" model binding" parameter binding an entity
         { //model binding" parameter binding an entity that automatically maps Json objects coming from HTTP (i.e. Postman) into the C# model
-                var rest = _chopBL.SearchRestaurants(name);
+            var rest = _chopBL.SearchRestaurants(name);
             //var rest = _chBL.Find(x => x.Name.Contains(name)); //LINQ query using Lambdas expression 
             //^stored in variable 
             //if (rest == null)
@@ -96,7 +105,7 @@ namespace ChopHouseAPI.Controllers
         /// </summary>
         /// <param name="rest"></param>
         /// <returns>Model binging operation</returns>
-        public ActionResult Post([FromBody] ChopHouse rest)//complex type
+        public ActionResult Post([FromBody] ChopHouse rest)//complex type model binder will look for these values from request body
         {
             if (rest == null)//condition check 
                 return BadRequest("Invalid Restaurant, try again with valid values");

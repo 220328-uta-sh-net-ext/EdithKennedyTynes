@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CHModel
 {
-    public class Token
+    public class AdminUser
     {
-        public string RToken { get; set; }
-        public string RefreshToken { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }    
     }
 }

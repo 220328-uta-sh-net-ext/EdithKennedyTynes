@@ -1,5 +1,6 @@
 using CHBL;
 using CHDL;
+using ChopHouseAPI.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -61,6 +62,7 @@ builder.Services.AddSwaggerGen();//middleware
 builder.Services.AddScoped<IRepository>(repo=>new SqlRepository(connectionString));//service call to within the scope
 
 builder.Services.AddScoped<IChopHouseLogic, ChopHouseLogic>();
+builder.Services.AddSingleton<IJWTManagerRepo, JWTManagerRepo>();//AddSingleton
 
 //builder.Services.AddScoped<IRepository>(repo => new SqlRepository(connectionString));
 //builder.Services.AddScoped<IChopHouseLogic, ChopHouseLogic>();

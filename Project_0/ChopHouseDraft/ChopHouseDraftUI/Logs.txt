@@ -836,3 +836,7 @@
 2022-05-16 04:07:19.395 -04:00 [DBG] Displaying MainMenu to the User
 2022-05-16 04:07:20.499 -04:00 [DBG] Displaying MainMenu to the User
 2022-05-16 04:07:24.146 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-16 12:33:26.371 -04:00 [DBG] Register new User
+2022-05-16 12:33:29.905 -04:00 [DBG] Register new User
+2022-05-16 12:33:34.290 -04:00 [INF] Returning to Main Menu
+2022-05-16 12:33:34.290 -04:00 [DBG] Displaying MainMenu to the User
