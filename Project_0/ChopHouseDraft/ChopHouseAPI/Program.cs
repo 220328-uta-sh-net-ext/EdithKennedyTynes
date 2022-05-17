@@ -33,8 +33,8 @@ builder.Services.AddAuthentication(options =>//Lambdas expression used; boilerpl
         ValidAudience = Config["JWT:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(key),
         ValidateLifetime = true,// making sure lifetime is active and if not will issue a new JWT
-        ValidateIssuer = true,
-        ValidateAudience = true,
+        ValidateIssuer = false,
+        ValidateAudience = false,
         /// <summary>
         /// boiler plate code checking if correct audience, issuer, and lifetime. While setting access request if correct/true 
         /// </summary>

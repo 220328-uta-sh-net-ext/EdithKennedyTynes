@@ -23,11 +23,12 @@ namespace ChopHouseAPI.Controllers
         private IChopHouseLogic _chopBL;
         private IMemoryCache memoryCache;
         /// <summary>
-        /// contructor injecting dependency
+        /// prior to access Key/Token goes through the
+        /// contructor(injection dependency)
         /// </summary>
         /// <param name="_chopBL"></param>
         /// <param name="memoryCache"></param>
-        public CHController(IChopHouseLogic _chopBL, IMemoryCache memoryCache, IJWTManagerRepo repository)//Constructor Dependency
+        public CHController(IChopHouseLogic _chopBL, IMemoryCache memoryCache, IJWTManagerRepo repository)//Constructor injection Dependency
         {
             this._chopBL = _chopBL;
             this.memoryCache = memoryCache;

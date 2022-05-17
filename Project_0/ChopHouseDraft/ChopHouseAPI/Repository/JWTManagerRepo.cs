@@ -29,9 +29,9 @@ namespace ChopHouseAPI.Repository
         Dictionary<string, string> UserRecords = new Dictionary<string, string>
         {
             {"User1", "Password1" },
-            {"User2", "Password2" },
-            {"User3", "Password3" },
-            {"User4", "Password4" },
+            {"ChopHouseAdmin", "Admin123" },
+            {"AdminUser", "Password3" },
+            {"User4", "AdminPassword4" },
             {"User5", "Password5" }
         };
 
@@ -52,6 +52,11 @@ namespace ChopHouseAPI.Repository
             var tokenKey=Encoding.UTF32.GetBytes(configuration["JWT:Key"]);
 
             //token descriptor know as the claims..Boiler plate code?
+            /// <summary>
+            /// configuration set to create a token
+            /// </summary>
+            /// <returns>new token created to be returned in UserController</returns>
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject=new System.Security.Claims.ClaimsIdentity(

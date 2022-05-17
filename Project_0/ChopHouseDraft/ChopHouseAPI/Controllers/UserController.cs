@@ -15,16 +15,20 @@ namespace ChopHouseAPI.Controllers
         {
             this.repository = repository;
         }
-        [AllowAnonymous]// for if you any method is public we can use to secure them
+        [AllowAnonymous]// for if you any method is public we can use to secure them// can allow authentication
        
         [HttpPost]
         [Route("Authenticate")]
+        /// <summary>
+        /// new token is returned through the IActionResult
+        /// </summary>
+        /// <returns>token</returns>
         public IActionResult Authenticate(AdminUser aduser)
         {
-            var token = repository.Authenticate(aduser);//pass aduser
+            var token = repository.Authenticate(aduser);//pass aduser; provides the "Authentication" bearer token and take us to the interface
             if (token == null)
                 return Unauthorized();
             return Ok(token);
         }
-    }
+    }   
 }
