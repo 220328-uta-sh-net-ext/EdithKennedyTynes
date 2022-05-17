@@ -70,8 +70,9 @@ builder.Services.AddSingleton<IJWTManagerRepo, JWTManagerRepo>();//AddSingleton
 var app = builder.Build();// app here refers to the pipeline middleware
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())// no error pages
+if (app.Environment.IsDevelopment()|| app.Environment.IsProduction())// no error pages
 {
+
     app.UseSwagger();
     app.UseSwaggerUI();
 }
