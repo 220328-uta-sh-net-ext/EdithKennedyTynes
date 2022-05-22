@@ -1,0 +1,37 @@
+﻿2022-05-17 06:30:47.533 -04:00 [DBG] redirecting user to AddRestaurant Menu
+2022-05-17 06:30:49.932 -04:00 [INF] Adding a Restaurant - ??
+2022-05-17 06:31:07.388 -04:00 [INF] Restaurant added successfully
+2022-05-17 06:31:12.558 -04:00 [INF] Adding Store ID - CH5555
+2022-05-17 06:31:18.813 -04:00 [INF] ID added successfully
+2022-05-17 06:31:21.405 -04:00 [INF] Saving to ChopHouse.......
+2022-05-17 06:31:23.114 -04:00 [INF] Saved successfully
+2022-05-17 06:31:23.114 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-17 06:31:27.133 -04:00 [DBG] Redirected to Account Login
+2022-05-17 06:31:29.469 -04:00 [DBG] Register new User
+2022-05-17 06:31:32.206 -04:00 [DBG] Register new User
+2022-05-17 06:31:33.966 -04:00 [DBG] Register new User
+2022-05-17 06:31:35.726 -04:00 [DBG] Register new User
+2022-05-17 06:31:37.790 -04:00 [INF] Returning to Main Menu
+2022-05-17 06:31:37.790 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-17 06:31:46.862 -04:00 [DBG] Redirecting user to Search Menu
+2022-05-17 06:31:48.750 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-17 06:31:50.670 -04:00 [INF] Searching by name
+2022-05-17 06:31:50.750 -04:00 [INF] Restaurant with search string {name} not found
+2022-05-17 06:31:54.382 -04:00 [INF] Searching database for filtered Restaurants
+2022-05-17 06:31:54.382 -04:00 [INF] Returning to Main Menu
+2022-05-17 06:31:54.382 -04:00 [DBG] Displaying MainMenu to the User
+2022-05-17 06:32:00.222 -04:00 [DBG] Adding a Review
+2022-05-17 06:32:06.271 -04:00 [INF] Adding HouseReview - 0
+2022-05-17 06:32:17.498 -04:00 [WRN] failed to add HouseReview Rating
+2022-05-17 06:32:17.498 -04:00 [DBG] Adding a Review
+2022-05-17 06:32:29.551 -04:00 [INF] Adding HouseReview - 0
+2022-05-17 06:32:31.664 -04:00 [INF] HouseReview Rating added successfully
+2022-05-17 06:32:31.664 -04:00 [DBG] Adding a Review
+2022-05-17 06:32:34.704 -04:00 [INF] Adding HouseReview - Great Place
+2022-05-17 06:32:44.383 -04:00 [WRN] failed to add HouseReview Feddback
+2022-05-17 06:32:44.383 -04:00 [DBG] Adding a Review
+2022-05-17 06:33:11.218 -04:00 [INF] Saving to ChopHouse.......
+2022-05-17 06:33:11.306 -04:00 [INF] Saved successfully
+2022-05-17 06:33:11.307 -04:00 [DBG] Adding a Review
+2022-05-17 06:33:21.137 -04:00 [INF] Returning to Main Menu
+2022-05-17 06:33:21.137 -04:00 [DBG] Displaying MainMenu to the User
