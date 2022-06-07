@@ -1,0 +1,23 @@
+<div class = "navbar" [ngClass]="isDarkMode? 'dark-theme' : 'light-theme'">
+    <ul class = "nav-list">
+        <li class = "nav-item">
+            <a class = "nav-link" routerLink = "home">
+                <img id = "logo" src = '../../assets/translation-icon.png'>
+            </a>
+        </li>
+        <li class = "nav-item">
+            <a class = "nav-link" routerLink = "roster">
+                Team
+            </a>
+        </li> 
+        <li class="nav-item">
+             <a class = "nav-link" routerLink = "translation">
+                Translate 
+             </a>   
+        </li>  
+        <!-- <li class="nav-item">
+            <button id="add-button" (click)= "navigateLogin()">Login</button>
+        </li> -->
+    </ul>
+    <!-- <mat-slide-toggle class="light-switch" (click)="toggleSwitch()">Light Trigger</mat-slide-toggle> -->
+</div>

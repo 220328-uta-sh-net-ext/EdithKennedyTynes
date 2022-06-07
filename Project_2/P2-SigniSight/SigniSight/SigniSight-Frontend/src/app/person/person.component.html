@@ -1,0 +1,15 @@
+<p>person works!</p>
+<div *ngIf = "selected; else elseBlock">
+    <div [ngClass]="['person', 'selected']" (click) = "selectPerson()">
+            <h2>{{peep.name}}</h2>
+            <h4>about: {{peep.about}}</h4>
+            <h4>interest: {{peep.interest}}</h4>
+    </div>
+</div><ng-template #elseBlock>
+    <div [ngClass]="['person', 'not-selected']" (click) = "selectPerson()">
+        <h2>{{peep.name}}</h2>
+        <h4>about: {{peep.about}}</h4>
+        <h4>interest: {{peep.interest}}</h4>
+
+    </div>
+</ng-template>

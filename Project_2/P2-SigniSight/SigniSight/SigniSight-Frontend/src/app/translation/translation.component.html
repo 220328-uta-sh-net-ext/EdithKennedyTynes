@@ -1,0 +1,46 @@
+<section id="camera-area">
+ 
+  <form class = "translation" (ngSubmit)="ocr()">
+    <div class = "input-div">  
+      <img src = {{this.imageUrl}} height="200px"><br/>
+      <label for="image-url">Image url:</label>
+      <input id="image-url"  name="image-url" type = "text" required [(ngModel)] = "imageUrl" >
+    
+      
+
+    </div>
+    <button id="translate-button"  type = "submit" value = "recognition">OCR</button>
+    <textarea id="image-text-card"> {{this.imageText}}
+    </textarea> 
+  </form>
+    
+ 
+
+<form class = "translation" (ngSubmit)="translate()">
+  <div class = "input-div">
+      <label for="text"> Text:</label>
+      <input id="text" name="text" type = "text" required [(ngModel)] = "textToTranslate" >
+  </div>
+ 
+
+
+  <div class = "input-div">
+    <label for="language"> Translate to:</label>
+    <select name="language" id="language" [(ngModel)] = "endLanguageCode">
+      <option value="en">English</option>
+      <option value="uk">Ukrainian</option>
+      <option value="pl">Polish</option>
+      <option value="hi">Hindi</option>
+      <option value="gu">Gujarati</option>
+    </select>
+  </div>
+
+
+  <button id="translate-button"  type = "submit" value = "translation">TRANSLATE</button>
+  <textarea id="translation-card"> {{this.translatedText}}
+  </textarea> 
+<!-- <p>{{this.translationService.text}}</p> -->
+
+</form>
+
+</section>

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigniSightAPI", "SigniSightAPI\SigniSightAPI.csproj", "{D6567DF5-2E0E-4F03-8CD4-7912E48F9389}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigniSightBL", "SigniSightBL\SigniSightBL.csproj", "{1FB128AD-382B-447B-8ADF-F6F0BB6190D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigniSightDL", "SigniSightDL\SigniSightDL.csproj", "{2BC27D28-9803-4FA5-9DFB-1CD7CF4D31C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigniSightModel", "SigniSightModel\SigniSightModel.csproj", "{540B254A-9E42-43BE-9299-CEA5DA576722}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTest", "XUnitTest\XUnitTest.csproj", "{73ACB637-8D89-451E-BE6F-C20745B8D11D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigniSightDL_DB", "SigniSightDL_DB\SigniSightDL_DB.csproj", "{93E10741-58AB-4ABE-9FEB-27AC4F1333F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6567DF5-2E0E-4F03-8CD4-7912E48F9389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6567DF5-2E0E-4F03-8CD4-7912E48F9389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6567DF5-2E0E-4F03-8CD4-7912E48F9389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6567DF5-2E0E-4F03-8CD4-7912E48F9389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FB128AD-382B-447B-8ADF-F6F0BB6190D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB128AD-382B-447B-8ADF-F6F0BB6190D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB128AD-382B-447B-8ADF-F6F0BB6190D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB128AD-382B-447B-8ADF-F6F0BB6190D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BC27D28-9803-4FA5-9DFB-1CD7CF4D31C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC27D28-9803-4FA5-9DFB-1CD7CF4D31C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC27D28-9803-4FA5-9DFB-1CD7CF4D31C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC27D28-9803-4FA5-9DFB-1CD7CF4D31C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540B254A-9E42-43BE-9299-CEA5DA576722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540B254A-9E42-43BE-9299-CEA5DA576722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540B254A-9E42-43BE-9299-CEA5DA576722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540B254A-9E42-43BE-9299-CEA5DA576722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73ACB637-8D89-451E-BE6F-C20745B8D11D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73ACB637-8D89-451E-BE6F-C20745B8D11D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73ACB637-8D89-451E-BE6F-C20745B8D11D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73ACB637-8D89-451E-BE6F-C20745B8D11D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E10741-58AB-4ABE-9FEB-27AC4F1333F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E10741-58AB-4ABE-9FEB-27AC4F1333F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E10741-58AB-4ABE-9FEB-27AC4F1333F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E10741-58AB-4ABE-9FEB-27AC4F1333F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40ECF93C-FFAF-4561-A443-359547B996F8}
+	EndGlobalSection
+EndGlobal

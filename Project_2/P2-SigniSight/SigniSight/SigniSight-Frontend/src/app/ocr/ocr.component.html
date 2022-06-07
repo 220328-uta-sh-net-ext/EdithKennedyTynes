@@ -1,0 +1,39 @@
+
+   
+
+
+    <section id="camera-area">
+        <div id="drop-area">
+          <form class="my-form">
+            <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+            <label class="button" for="fileElem">Select image</label>
+          </form>
+      
+          <div id="gallery"></div>
+      
+        </div>
+        
+        <form id = "ocr" (ngSubmit)="onSubmit()">
+            <div class = "input-div">
+                <label for="text"> Text:</label>
+                <input id="text" name="text" type = "text" required [(ngModel)] = "imageUrl">
+            </div>
+        
+          
+          <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+      
+      
+        <div id="translation-card" style="display:none"></div>
+      
+        <button id="translate-button"  type = "submit" value = "translation">TRANSLATE</button>
+        <!-- <input type = "submit" value = "translation"/> -->
+      </form>
+        
+      </section>
+      
+      

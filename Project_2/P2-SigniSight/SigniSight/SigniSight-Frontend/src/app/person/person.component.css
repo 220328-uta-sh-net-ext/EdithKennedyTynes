@@ -1,0 +1,18 @@
+.person{
+    margin: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: solid black 2px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.selected{
+    border : solid 2px #4621eb;
+}
+
+.not-selected{
+    border: solid 2px rgb(0, 0, 0);
+}
