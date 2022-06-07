@@ -14,7 +14,7 @@ namespace PokemonApi.Controllers
     [Route("api/[controller]")]
     //anything in the [] is known as decorator/attribute : its like processing the before the class or method
     [ApiController]
-    [EnableCors("pokemonPolicy")]
+    [EnableCors("pokemonPolicy")]//ENABLING CORS
     public class PokemonController : ControllerBase// Controller base class has the logic to interact with HTTP and communication with client
     {
         private readonly IJWTManagerRepository repository;

@@ -6,17 +6,11 @@ using PokemonBL;
 using PokemonDL;
 using System.Text;
 
-
-//"C:\Revature\220328-uta-sh-.net-ext\training-code\3-Services\PokemonApp\PokemonDL\connection-string.txt"
-// connection is in aooSettings.json or appSettings.development.json file
-// string connectionStringFilePath = "../../../../training-code/3-Services/PokemonApp/PokemonDL/connection-string.txt";
-// string connectionString = File.ReadAllText(connectionStringFilePath);
-
 var builder = WebApplication.CreateBuilder(args);
 
 //to access the appSettings.json file JWT token info we will use thi variable
 ConfigurationManager Config = builder.Configuration;
-var pokemonPolicy = "allowedOrigins";
+var pokemonPolicy = "allowedOrigins"; //ADD CORS/POLICY
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: pokemonPolicy,
@@ -71,7 +65,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 }
 
 app.UseHttpsRedirection();
-app.UseCors(pokemonPolicy);
+app.UseCors(pokemonPolicy);//CORS POLICY
 app.UseAuthentication();//this needs for authentication using JWT
 app.UseAuthorization();
 
