@@ -46,7 +46,7 @@ namespace ChopHouseUI
                         {
                             Log.Information("Adding a HouseReview - " + newReview.StoreID);
                             Console.Write("Please enter a Restaurant StoreID");
-                            newReview.StoreID = Console.ReadLine();
+                            newReview.StoreID = Convert.ToInt32(Console.ReadLine());
                             Log.Information("HouseReview StorID added successfully");
                         }
                         catch (Exception ex)
@@ -60,7 +60,7 @@ namespace ChopHouseUI
                         {
                             Log.Information("Adding a HouseReview - " + newReview.UserId);
                             Console.Write("Please enter a UserId");
-                            newReview.UserId = Console.ReadLine();
+                            newReview.UserId = Convert.ToInt32(Console.ReadLine());
                             Log.Information("HouseReview UserId added successfully");
                         }
                         catch (Exception ex)

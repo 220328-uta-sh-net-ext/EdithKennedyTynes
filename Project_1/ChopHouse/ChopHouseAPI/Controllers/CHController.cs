@@ -38,8 +38,8 @@ namespace ChopHouseAPI.Controllers
 
         private static List<ChopHouse> _chBL = new List<ChopHouse>
         {
-            new ChopHouse {StoreID = "CH9632", Name = "Golden Dragon", City = "Norfolk", State = "VA" },
-            new ChopHouse {StoreID = "CH9633", Name = "Golden Rays", City = "Norfolk", State = "VA"},
+            new ChopHouse {StoreID = 9632, Name = "Golden Dragon", City = "Norfolk", State = "VA" ,},
+            new ChopHouse {StoreID = 9633, Name = "Golden Rays", City = "Norfolk", State = "VA"},
         };
         /// <summary>
         /// Returns the restaurants in ChopHouse Database
@@ -157,17 +157,7 @@ namespace ChopHouseAPI.Controllers
             return Created("Get", rest);// return Created("Get",rest); ... to return status code 201
 
         }
-        [HttpDelete]
-        public ActionResult Delete(string name)
-        {
-            if (name == null)//condition check 
-                return BadRequest("Cannot Modify without name, try again with name value"); // if changed to status code 404 "Restaurant name cannot be found....
-            var chophouse = _chBL.Find(x => x.Name.Contains(name));
-            if (chophouse == null)
-                return NotFound("Restaurant NOT FOUND");// bad request can be interchanged with <NotFound> code 404
-            _chBL.Remove(chophouse);
-            return Ok($"Restaurant {name} Deleted");
-        }
+       
 
 
 

@@ -11,12 +11,13 @@ namespace CHBL
     public class UserLogic : IUserLogic
     {
         readonly IRepositoryUser UserRepo;
+        readonly IUserLogic userLogic;
 
         public UserLogic(IRepositoryUser repo)//injecting dependency through user repo
         {
             this.UserRepo = repo;
         }
-
+        
         /*public void Save(User Create)
         {
             UserRepo.Save(Create);

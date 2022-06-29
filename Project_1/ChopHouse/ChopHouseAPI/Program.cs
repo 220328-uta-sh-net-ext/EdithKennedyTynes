@@ -64,7 +64,7 @@ builder.Services.AddMemoryCache();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();//middleware
 
-builder.Services.AddScoped<IRepository>(repo => new SqlRepository(Config.GetConnectionString("connectionString")));
+builder.Services.AddScoped<IRepository>(repo => new SqlRepository(Config.GetConnectionString("connectionString")));//accesses app seettings
 ;//service call to within the scope
 
 builder.Services.AddScoped<IChopHouseLogic, ChopHouseLogic>();
@@ -80,14 +80,27 @@ app.Logger.LogInformation("App Started");
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())// no error pages
 {
 
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+
+    });
+
 }
 
 app.UseHttpsRedirection();//read from one page to another all .app are middleware
+app.UseCors(x => x
+                .AllowAnyOrigin() //Allowing any origin until find fix
+                                  //.SetIsOriginAllowed("http://127.0.0.1:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                );
 /// <summary>
 ///  basic auththorization created through JWT for the different roles
 /// </summary>
+
 app.UseAuthentication();
 
 app.UseAuthorization();//security 

@@ -58,7 +58,7 @@ namespace ChopHouseDraftUI
                     {
                         Log.Information("Adding a newRegUser - " + newRegUser.UserID);
                         Console.Write("Please enter a newRegUser UserID");
-                        newRegUser.UserID = Console.ReadLine();
+                        newRegUser.UserID = Convert.ToInt32(Console.ReadLine());
                         Log.Information("newRegUser Name added successfully");
                     }
                     catch (Exception ex)

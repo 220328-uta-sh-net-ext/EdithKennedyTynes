@@ -10,7 +10,7 @@ namespace CHModel
     {
         private string connectionString;
 
-        public string UserID { get; set; }
+        public int ?UserID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserName { get; set; }
@@ -20,7 +20,7 @@ namespace CHModel
 
         public User()
         {
-            UserID = "CHU0001";
+            UserID = 0001;
             FirstName = "Edith";
             LastName = "KennedyTynes";
             UserName = "Code007";
@@ -37,7 +37,7 @@ namespace CHModel
 
         public override string ToString()
         {
-            return $"UserID: {UserID}\nFirstName: {FirstName}\nLastName: {LastName}\nUserName: {UserName}\npassword: {Password}\nEmail: {Email}";
+            return $"FirstName: {FirstName}\nLastName: {LastName}\nUserName: {UserName}\npassword: {Password}\nEmail: {Email}";
         }
     }
 }

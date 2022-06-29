@@ -14,7 +14,7 @@ namespace CHBL
     public class ChopHouseLogic : IChopHouseLogic
     {
         readonly IRepository Repo;
-
+        
 
         /// <summary>
         /// injecting dependency through Repo
@@ -36,7 +36,7 @@ namespace CHBL
             ChopHouse _chopHouse = new ChopHouse();
             //return Repo.AddRestaurant(rest);
             if (rest == null)
-                return (rest);
+                return rest;
             //_chopHouse.Add(rest);
             return Repo.AddRestaurant(rest);
             /*...or?

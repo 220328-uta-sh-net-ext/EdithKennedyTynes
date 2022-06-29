@@ -96,7 +96,7 @@ namespace ChopHouseUI
                     {
                         Log.Information("Adding Store ID - " + newRestaurant.StoreID);
                         Console.Write("Please enter Store ID");
-                        newRestaurant.StoreID = Console.ReadLine();
+                        newRestaurant.StoreID = Convert.ToInt32(Console.ReadLine());
                         Log.Information("ID added successfully");
                     }
                     catch (Exception ex)

@@ -8,29 +8,31 @@ namespace CHModel
 {
     public class ChopHouse
     {
-        public string StoreID { get; set; }
+        public int ?StoreID { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
         public string State { get; set; }
+        public int Zip { get; set; }
 
 
 
         public ChopHouse()
         {
-            StoreID = "CH5555";
+            StoreID = 00000;
             Name = "??";
             City = "Norfolk";
             State = "Va";
+            Zip = 23508;
 
 
         }
         public string Anything(float i)
         {
-            return $"StoreID: {StoreID}\nName: {Name}\nCity: {City}\nState: {State}";
+            return $"Name: {Name}\nCity: {City}\nState: {State}\nZip: {Zip}";
         }
         public override string ToString()
         {
-            return $"StoreID: {StoreID}\nName: {Name}\nCity: {City}\nState: {State}";
+            return $"Name: {Name}\nCity: {City}\nState: {State}\nZip: {Zip}";
         }
 
     }

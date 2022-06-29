@@ -13,12 +13,12 @@ namespace CHDL
     
     public class SqlRepository : IRepository
     {
-        public const string connectionStringFilePath = "C:/Revature/P1/ChopHouse/CHDL/connection-string.txt";
+        //public const string connectionStringFilePath = "C:/Revature/P1/ChopHouse/CHDL/connection-string.txt";
         readonly string connectionString;
 
         public SqlRepository(string connectionString) //initalizing the connection string variable on  line 14 and file path on Line 13 
         {
-            connectionString = File.ReadAllText(connectionStringFilePath); //assigning the connection string file path and reading the text.
+            //connectionString = File.ReadAllText(connectionStringFilePath); //assigning the connection string file path and reading the text.
             this.connectionString = connectionString;
         }
 
@@ -29,14 +29,16 @@ namespace CHDL
         /// <param name="rest"></param>
         /// <returns>the added restaurant <returns
         {
-            string commandString = "INSERT INTO ChopHouse(StoreID,Name,City,State) VALUES" +
-                "(@storeid,@name,@city,@state)";
+            string commandString = "INSERT INTO ChopHouse(StoreID,Name,City,State,Zip) " + 
+                "VALUES (@storeid, @name, @city, @state, @zip);";
+
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(commandString, connection);
             command.Parameters.AddWithValue("@storeid", rest.StoreID);
             command.Parameters.AddWithValue("@name", rest.Name);
             command.Parameters.AddWithValue("@city", rest.City);
             command.Parameters.AddWithValue("@state", rest.State);
+            command.Parameters.AddWithValue("@zip", rest.Zip);
             connection.Open();
             command.ExecuteNonQuery();
             return rest;
@@ -55,6 +57,8 @@ namespace CHDL
             command.ExecuteNonQuery();
             return view;
         }
+
+
         public List<ChopHouse> SearchRestaurants()
         {
             string selectCommandString = "SELECT * FROM ChopHouse;";
@@ -74,10 +78,11 @@ namespace CHDL
             {
                 Restaurants.Add(new ChopHouse
                 {
-                    StoreID = reader.GetString(0),
+                    StoreID = reader.GetInt32(0),
                     Name = reader.GetString(1),
                     City = reader.GetString(2),
                     State = reader.GetString(3),
+                    Zip = reader.GetInt32(4),
                     /*Rating = (int)row[3],
                     Review = (string)row[4],
                     NumRatings = (int)row[5],*/
@@ -88,7 +93,7 @@ namespace CHDL
             return Restaurants;
 
         }
-        public async Task<List<ChopHouse>> GetAllChopHouseConnected() // GetAllConnected() method Async.. and return task of list of ChopHouse Restaurants
+        /*public async Task<List<ChopHouse>> GetAllChopHouseConnected() // GetAllConnected() method Async.. and return task of list of ChopHouse Restaurants
         {
             string commandString = "SELECT * FROM ChopHouse;";
             using SqlConnection connection = new(connectionString);
@@ -105,11 +110,12 @@ namespace CHDL
                     Name = reader.GetString(1),
                     City = reader.GetString(2),
                     State = reader.GetString(3),
+                    Zip = reader.GetInt32(4),
 
                 });
             }
             return chophouse;
-        }                   
+        }                   */
 
         public List<ChopHouse> GetAllChopHouses()
         {
@@ -145,10 +151,11 @@ namespace CHDL
             {
                 chophouse.Add(new ChopHouse
                 {
-                    StoreID = (string)row[0],
+                    StoreID = (int)row[0],
                     Name = (string)row[1],
                     City = (string)row[2],
                     State = (string)row[3],
+                    Zip = (int)row[4],
 
                 });
             }
@@ -184,19 +191,104 @@ namespace CHDL
             {
                 chophouse.Add(new ChopHouse
                 {
-                    StoreID = (string)row[0],
+                    StoreID = (int)row[0],
                     Name = (string)row[1],
                     City = (string)row[2],
                     State = (string)row[3],
+                    Zip = (int)row[4]
 
                 });
             }
             return chophouse;
         }
+
+        public async Task<List<HouseReview>> GetAllHouseReviewAsync()
+        {
+            string commandString = $"SELECT * FROM ChopHouse;";
+            //string selectCommandString = $"SELECT * FROM ChopHouse WHERE  = '{All}';";
+
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            IDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new();
+            try
+            {
+                /* async or */
+                await connection.OpenAsync();
+                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
+            }
+            catch (SqlException ex)
+            {
+                System.Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            var housereview = new List<HouseReview>();
+            DataColumn levelColumn = dataSet.Tables[0].Columns[2];
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                housereview.Add(new HouseReview
+                {
+                    StoreID = (int)row[0],
+                    UserId = (int)row[1],
+                    Rating = (decimal)row[2],
+                    Feedback = (string)row[3],
+
+                });
+            }
+            return housereview;
+        }
+        public List<HouseReview> GetAllHouseReview()
+        {
+            string commandString = $"SELECT * FROM ChopHouse;";
+            //string selectCommandString = $"SELECT * FROM ChopHouse WHERE  = '{All}';";
+
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            IDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new();
+            try
+            {
+                /* async or */
+                connection.Open();
+                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            var review= new List<HouseReview>();
+            DataColumn levelColumn = dataSet.Tables[0].Columns[2];
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                /*decimal rating = 0.0M;
+                int counter = 0;*/
+                review.Add(new HouseReview
+                {
+                    StoreID = (int)row[0],
+                    UserId = (int)row[1],
+                    Rating = (decimal)row[2],
+                    Feedback = (string)row[3],
+
+                });
+            }
+            return review;
+
+        }
+
     }
+}
+
+    
     
 
 
-}
+
     
              
